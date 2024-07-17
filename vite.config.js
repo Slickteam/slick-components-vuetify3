@@ -45,9 +45,5 @@ export default defineConfig({
       // the name of the output files when the build is run
       fileName: "components-vuetify3",
     },
-    rollupOptions: {
-      // Make sure to exclude Vue from the bundle
-      external: ["vue"],
-    },
   },
 });

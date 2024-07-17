@@ -1,12 +1,15 @@
-import { createApp } from "vue";
 import "@mdi/font/css/materialdesignicons.css";
 import "vuetify/styles";
 import { createVuetify } from "vuetify";
-import App from "./App.vue";
 
-const vuetify = createVuetify();
+import { VBtn, VIcon } from "vuetify/components";
 
-createApp(App).use(vuetify).mount("#app");
+createVuetify({
+  components: {
+    VBtn,
+    VIcon,
+  },
+});
 
 import {
   MoleculeIconButton,
