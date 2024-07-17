@@ -3,16 +3,13 @@
     :size="calculatedSize"
     :variant="variant"
     :color="color"
-    :to="to"
     :title="title"
+    :to="to"
     :href="href ? sanitizeUrl(href) : undefined"
     :target="target"
     @click.stop="emit('click')"
   >
-    <v-icon>{{ icon }}</v-icon>
-    <v-chip v-if="showChip" :size="'small'" class="ml-1">{{
-      contentChip
-    }}</v-chip>
+    <v-icon>{{ icon }}</v-icon> {{ text }}
   </v-btn>
 </template>
 
@@ -22,9 +19,7 @@ import { useDisplay } from "vuetify";
 import { sanitizeUrl } from "@braintree/sanitize-url";
 
 const emit = defineEmits(["click"]);
-
 const { name } = useDisplay();
-
 const props = defineProps({
   size: {
     type: String,
@@ -32,7 +27,7 @@ const props = defineProps({
   },
   variant: {
     type: String,
-    default: "text",
+    default: "outlined",
   },
   color: {
     type: String,
@@ -40,21 +35,17 @@ const props = defineProps({
   },
   icon: {
     type: String,
-    default: "mdi-eye",
+    default: "mdi-plus",
   },
-  to: {
+  text: {
     type: String,
-    default: undefined,
+    default: "Button",
   },
   title: {
     type: String,
-    default: "title button",
+    default: "Button title",
   },
-  showChip: {
-    type: Boolean,
-    default: false,
-  },
-  contentChip: {
+  to: {
     type: String,
     default: undefined,
   },
@@ -74,9 +65,6 @@ const calculatedSize = computed(() => {
   let result;
   switch (name.value) {
     case "xs":
-      result = "x-small";
-      break;
-    case "sm":
       result = "x-small";
       break;
     case "xl":

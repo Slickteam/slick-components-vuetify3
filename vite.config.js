@@ -43,7 +43,7 @@ export default defineConfig({
       entry: resolve(__dirname, "src/main.js"),
       name: "SlickComponentLibrary",
       // the name of the output files when the build is run
-      fileName: "scv-library",
+      fileName: "components-vuetify3",
     },
     rollupOptions: {
       // Make sure to exclude Vue from the bundle

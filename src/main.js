@@ -8,12 +8,16 @@ const vuetify = createVuetify();
 
 createApp(App).use(vuetify).mount("#app");
 
-import { MoleculeIconButton } from "@/components/molecule";
+import {
+  MoleculeIconButton,
+  MoleculeTextIconButton,
+} from "@/components/molecule";
 
 const SlickComponentLibrary = {
   install: (app) => {
     app.component("MoleculeIconButton", MoleculeIconButton);
+    app.component("MoleculeTextIconButton", MoleculeTextIconButton);
   },
 };
 
-export { SlickComponentLibrary, MoleculeIconButton };
+export { SlickComponentLibrary, MoleculeIconButton, MoleculeTextIconButton };
