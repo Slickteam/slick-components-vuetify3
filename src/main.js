@@ -1,15 +1,4 @@
-import "@mdi/font/css/materialdesignicons.css";
-import "vuetify/styles";
-import { createVuetify } from "vuetify";
-
-import { VBtn, VIcon } from "vuetify/components";
-
-createVuetify({
-  components: {
-    VBtn,
-    VIcon,
-  },
-});
+import vuetify from "./utils/vuetify";
 
 import {
   MoleculeIconButton,
@@ -23,4 +12,9 @@ const SlickComponentLibrary = {
   },
 };
 
-export { SlickComponentLibrary, MoleculeIconButton, MoleculeTextIconButton };
+export {
+  vuetify,
+  SlickComponentLibrary,
+  MoleculeIconButton,
+  MoleculeTextIconButton,
+};
