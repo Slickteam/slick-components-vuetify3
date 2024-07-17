@@ -1,0 +1,31 @@
+{
+  "name": "slick-components-vuetify3",
+  "version": "0.0.1",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/scv-library.umd.cjs",
+  "exports": {
+    ".": {
+      "import": "./dist/scv-library.js",
+      "require": "./dist/scv-library.umd.cjs"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@mdi/font": "^7.4.47",
+    "unplugin-fonts": "^1.1.1",
+    "vue": "^3.4.31",
+    "vuetify": "^3.6.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.5",
+    "vite": "^5.3.4",
+    "vite-plugin-vuetify": "^2.0.3"
+  }
+}
