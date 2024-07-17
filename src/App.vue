@@ -1,9 +1,5 @@
 <template>
-  <div>
-    <MoleculeIconButton icon="mdi-plus" />
-  </div>
+  <v-app></v-app>
 </template>
 
-<script setup>
-import { MoleculeIconButton } from "@/components/molecule";
-</script>
+<script setup></script>
