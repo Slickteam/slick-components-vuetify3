@@ -1,7 +1,7 @@
 {
   "name": "@slickteam/components-vuetify3",
   "description": "Components for Vuetify 3 / Vue 3",
-  "version": "0.0.8",
+  "version": "0.0.11",
   "type": "module",
   "keywords": [
     "slickteam",
@@ -39,7 +39,7 @@
     "@mdi/font": "^7.4.47",
     "@vitejs/plugin-vue": "^5.0.5",
     "vite": "^5.3.4",
-    "vue": "^3.4.31",
+    "vue": "^3.4.32",
     "vuetify": "^3.6.13"
   }
 }

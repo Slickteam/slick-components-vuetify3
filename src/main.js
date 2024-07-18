@@ -1,12 +1,12 @@
-import { createApp } from "vue";
-import vuetify from "./utils/vuetify";
+import "@mdi/font/css/materialdesignicons.min.css";
+import "vuetify/styles";
+import { createVuetify } from "vuetify";
+import { VNumberInput } from "vuetify/labs/VNumberInput";
+
 import {
   MoleculeIconButton,
   MoleculeTextIconButton,
 } from "@/components/molecule";
-import App from "./App.vue";
-
-createApp(App).use(vuetify);
 
 const SlickComponentLibrary = {
   install: (app) => {
@@ -15,8 +15,41 @@ const SlickComponentLibrary = {
   },
 };
 
+const VuetifyLibrary = {
+  install(app, options) {
+    console.log("lib slick compo");
+    console.log(options);
+    const chooseTheme = options?.theme ?? {
+      themes: {
+        light: {
+          dark: false,
+          colors: {
+            background: "#f5f5f9",
+            surface: "#fff",
+            primary: "#f18900",
+            secondary: "#0068f1",
+            success: "#00c853",
+            warning: "#ffc107",
+            error: "#f44336",
+            info: "#03c9d7",
+          },
+        },
+      },
+    };
+
+    console.log(chooseTheme);
+    const vuetify = createVuetify({
+      components: {
+        VNumberInput,
+      },
+      theme: chooseTheme,
+    });
+    app.use(vuetify);
+  },
+};
+
 export {
-  vuetify,
+  VuetifyLibrary,
   SlickComponentLibrary,
   MoleculeIconButton,
   MoleculeTextIconButton,
