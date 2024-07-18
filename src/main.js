@@ -17,8 +17,6 @@ const SlickComponentLibrary = {
 
 const VuetifyLibrary = {
   install(app, options) {
-    console.log("lib slick compo");
-    console.log(options);
     const chooseTheme = options?.theme ?? {
       themes: {
         light: {
@@ -37,7 +35,6 @@ const VuetifyLibrary = {
       },
     };
 
-    console.log(chooseTheme);
     const vuetify = createVuetify({
       components: {
         VNumberInput,
