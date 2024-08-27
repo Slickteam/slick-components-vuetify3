@@ -1,7 +1,7 @@
 {
   "name": "@slickteam/components-vuetify3",
   "description": "Components for Vuetify 3 / Vue 3",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "type": "module",
   "keywords": [
     "slickteam",
@@ -31,15 +31,15 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@braintree/sanitize-url": "^7.0.4",
+    "@braintree/sanitize-url": "^7.1.0",
     "unplugin-fonts": "^1.1.1",
-    "vite-plugin-vuetify": "^2.0.3"
+    "vite-plugin-vuetify": "^2.0.4"
   },
   "devDependencies": {
     "@mdi/font": "^7.4.47",
-    "@vitejs/plugin-vue": "^5.0.5",
-    "vite": "^5.3.4",
-    "vue": "^3.4.32",
-    "vuetify": "^3.6.13"
+    "@vitejs/plugin-vue": "^5.1.2",
+    "vite": "^5.4.2",
+    "vue": "^3.4.38",
+    "vuetify": "^3.7.0"
   }
 }
