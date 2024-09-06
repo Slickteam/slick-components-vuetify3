@@ -33,6 +33,7 @@ export default defineConfig({
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
+    extensions: [".js", ".json", ".vue"],
   },
   optimizeDeps: {
     include: ["vuetify"],
