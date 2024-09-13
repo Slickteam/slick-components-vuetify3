@@ -14,11 +14,11 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
-import { useDisplay } from "vuetify";
-import { sanitizeUrl } from "@braintree/sanitize-url";
+import { computed } from 'vue';
+import { useDisplay } from 'vuetify';
+import { sanitizeUrl } from '@braintree/sanitize-url';
 
-const emit = defineEmits(["click"]);
+const emit = defineEmits(['click']);
 const { name } = useDisplay();
 const props = defineProps({
   size: {
@@ -27,23 +27,23 @@ const props = defineProps({
   },
   variant: {
     type: String,
-    default: "outlined",
+    default: 'outlined',
   },
   color: {
     type: String,
-    default: "secondary",
+    default: 'secondary',
   },
   icon: {
     type: String,
-    default: "mdi-plus",
+    default: 'mdi-plus',
   },
   text: {
     type: String,
-    default: "Button",
+    default: 'Button',
   },
   title: {
     type: String,
-    default: "Button title",
+    default: undefined,
   },
   to: {
     type: String,
@@ -64,17 +64,17 @@ const calculatedSize = computed(() => {
   }
   let result;
   switch (name.value) {
-    case "xs":
-      result = "x-small";
+    case 'xs':
+      result = 'x-small';
       break;
-    case "xl":
-      result = "default";
+    case 'xl':
+      result = 'default';
       break;
-    case "xxl":
-      result = "large";
+    case 'xxl':
+      result = 'large';
       break;
     default:
-      result = "small";
+      result = 'small';
   }
   return result;
 });
