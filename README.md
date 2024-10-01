@@ -46,5 +46,11 @@ import { MoleculeIconButton } from "@slickteam/components-vuetify3";
 
 ## Button components
 
-- MoleculeIconButton
-- MoleculeTextIconButton
+- `MoleculeClipboardButton`
+- `MoleculeIconButton`
+- `MoleculeTextIconButton`
+
+## Form components
+
+- `MoleculeColorPickerForm`
+- `MoleculeIconPickerForm`

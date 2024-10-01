@@ -3,8 +3,13 @@ import "vuetify/styles";
 import { createVuetify } from "vuetify";
 
 import {
+  // Buttons
   MoleculeIconButton,
   MoleculeTextIconButton,
+  MoleculeClipboardButton,
+  // Form
+  MoleculeColorPickerForm,
+  MoleculeIconPickerForm,
 } from "@/components/molecule";
 
 const SlickComponentLibrary = {
@@ -44,6 +49,11 @@ const VuetifyLibrary = {
 export {
   VuetifyLibrary,
   SlickComponentLibrary,
+  // Buttons
   MoleculeIconButton,
   MoleculeTextIconButton,
+  MoleculeClipboardButton,
+  // Form
+  MoleculeColorPickerForm,
+  MoleculeIconPickerForm,
 };
