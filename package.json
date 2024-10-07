@@ -41,22 +41,22 @@
   "devDependencies": {
     "@mdi/font": "^7.4.47",
     "@slickteam/prettier": "^1.0.0",
-    "@storybook/addon-essentials": "^8.3.4",
-    "@storybook/addon-interactions": "^8.3.4",
-    "@storybook/addon-links": "^8.3.4",
-    "@storybook/blocks": "^8.3.4",
-    "@storybook/test": "^8.3.4",
-    "@storybook/vue3": "^8.3.4",
-    "@storybook/vue3-vite": "^8.3.4",
+    "@storybook/addon-essentials": "^8.3.5",
+    "@storybook/addon-interactions": "^8.3.5",
+    "@storybook/addon-links": "^8.3.5",
+    "@storybook/blocks": "^8.3.5",
+    "@storybook/test": "^8.3.5",
+    "@storybook/vue3": "^8.3.5",
+    "@storybook/vue3-vite": "^8.3.5",
     "@vitejs/plugin-vue": "^5.1.4",
-    "storybook": "^8.3.4",
+    "storybook": "^8.3.5",
     "vite": "^5.4.8",
-    "vue": "^3.5.10",
+    "vue": "^3.5.11",
     "vuetify": "^3.7.2"
   },
   "prettier": "@slickteam/prettier",
   "volta": {
     "node": "22.9.0",
-    "npm": "10.8.3"
+    "npm": "10.9.0"
   }
 }
