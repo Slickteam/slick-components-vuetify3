@@ -9,7 +9,9 @@ export const withVuetifyTheme = (story, context) => {
     /* html */
     template: `
       <v-app theme="${globalTheme}">
-        <story/>
+        <v-container class="h-100">
+          <story/>
+        </v-container>
       </v-app>
     `,
   };

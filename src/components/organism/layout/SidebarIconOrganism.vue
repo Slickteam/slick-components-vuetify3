@@ -1,12 +1,13 @@
 <template>
-  <v-navigation-drawer class="pa-2" :width="width" :location="location" permanent>
-    <v-list :selected="internalModel" class="pa-0" density="compact" open-strategy="single" nav @update:selected="updateSelected">
+  <v-navigation-drawer class="position-relative overflow-y-auto pa-2" :width="width" :rounded="rounded" floating permanent>
+    <v-list :selected="internalModel" class="pa-0" density="compact" open-strategy="single" @update:selected="updateSelected">
       <v-list-item
         v-for="(item, index) in convertedItems"
         :key="`sidebar-icon-${index}`"
         active-class="sidebar-icon-menu-active"
         :active="item.active"
-        class="px-1 py-2"
+        class="mb-1 px-1 py-2"
+        :rounded="rounded"
         :value="item.value"
       >
         <div
@@ -18,7 +19,7 @@
         >
           <v-icon :style="{ color: item.color }">{{ item.icon }}</v-icon>
         </div>
-        <p class="sidebar-icon-menu-item-text" align="center">{{ item.text }}</p>
+        <p class="sidebar-icon-menu-item-text" align="center" :style="{ color: item.active ? item.color : '' }">{{ item.text }}</p>
       </v-list-item>
     </v-list>
   </v-navigation-drawer>
@@ -30,10 +31,6 @@ import { shallowRef, onMounted, computed } from 'vue';
 const emit = defineEmits(['update:selected']);
 
 const props = defineProps({
-  location: {
-    type: String,
-    default: 'left',
-  },
   selectedItem: {
     type: String,
     default: 'menu01',
@@ -44,7 +41,11 @@ const props = defineProps({
   },
   width: {
     type: Number,
-    default: 64,
+    default: 80,
+  },
+  rounded: {
+    type: String,
+    default: undefined,
   },
 });
 
