@@ -1,12 +1,19 @@
 <template>
   <v-navigation-drawer class="pa-2" :width="width" :location="location" permanent>
-    <v-list class="pa-0" active-class="sidebar-icon-menu-active" density="compact" nav>
-      <v-list-item v-for="(item, index) in items" :key="`sidebar-icon-${index}`" class="pa-0" :value="item.value">
+    <v-list :selected="internalModel" class="pa-0" density="compact" open-strategy="single" nav @update:selected="updateSelected">
+      <v-list-item
+        v-for="(item, index) in convertedItems"
+        :key="`sidebar-icon-${index}`"
+        active-class="sidebar-icon-menu-active"
+        :active="item.active"
+        class="px-1 py-2"
+        :value="item.value"
+      >
         <div
           class="sidebar-icon-menu-item-icon"
           :style="{
-            'border-color': selectedItem === item.value ? item.color : '',
-            'background-color': selectedItem === item.value ? `transparentize(${item.color}, 1)` : '',
+            'border-color': item.active ? item.color : '',
+            'background-color': item.active ? `transparentize(${item.color}, 1)` : '',
           }"
         >
           <v-icon :style="{ color: item.color }">{{ item.icon }}</v-icon>
@@ -18,11 +25,11 @@
 </template>
 
 <script setup>
-import { shallowRef } from 'vue';
+import { shallowRef, onMounted, computed } from 'vue';
 
-const emit = defineEmits(['selected-value']);
+const emit = defineEmits(['update:selected']);
 
-defineProps({
+const props = defineProps({
   location: {
     type: String,
     default: 'left',
@@ -40,6 +47,24 @@ defineProps({
     default: 64,
   },
 });
+
+const model = defineModel({ default: undefined });
+const internalModel = shallowRef([]);
+
+onMounted(() => {
+  internalModel.value = [model.value];
+});
+
+const convertedItems = computed(() => props.items.map((i) => ({ ...i, active: model.value === i.value })));
+
+function updateSelected(values) {
+  internalModel.value = values;
+  if (values?.length > 0) {
+    model.value = values[0];
+  } else {
+    model.value = undefined;
+  }
+}
 </script>
 
 <style scoped>
@@ -48,8 +73,8 @@ defineProps({
   justify-content: center;
   align-items: center;
   margin: auto;
-  width: 47px;
-  height: 47px;
+  width: 48px;
+  height: 48px;
   border: solid #aaa 0.5px;
   border-radius: 50%;
 }

@@ -5,11 +5,11 @@ export default {
   component: SidebarIconOrganism,
   tags: ['docsPage'],
   args: {
-    width: 64,
+    width: 80,
     selectedItem: 'menu01',
     items: [
       { icon: 'mdi-home', text: 'Menu', color: '#3729DD', value: 'menu01' },
-      { icon: 'mdi-cross', text: 'User', color: '#4EBC1A', value: 'menu02' },
+      { icon: 'mdi-delete', text: 'Delete', color: '#4EBC1A', value: 'menu02' },
     ],
   },
   argTypes: {

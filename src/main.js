@@ -13,12 +13,16 @@ import {
 } from '@/components/molecule';
 
 // Layout
-import { SidebarWrapperOrganism, SidebarItemOrganism } from '@/components/organism';
+import { SidebarIconOrganism } from '@/components/organism';
 
 const SlickComponentLibrary = {
   install: (app) => {
     app.component('MoleculeIconButton', MoleculeIconButton);
     app.component('MoleculeTextIconButton', MoleculeTextIconButton);
+    app.component('MoleculeClipboardButton', MoleculeClipboardButton);
+    app.component('MoleculeColorPickerForm', MoleculeColorPickerForm);
+    app.component('MoleculeIconPickerForm', MoleculeIconPickerForm);
+    app.component('SidebarIconOrganism', SidebarIconOrganism);
   },
 };
 
@@ -59,6 +63,5 @@ export {
   MoleculeColorPickerForm,
   MoleculeIconPickerForm,
   // Organism
-  SidebarWrapperOrganism,
-  SidebarItemOrganism,
+  SidebarIconOrganism,
 };
