@@ -1,12 +1,29 @@
 <template>
-  <v-navigation-drawer class="position-relative overflow-y-auto pa-2" :width="width" :rounded="rounded" floating permanent>
-    <v-list :selected="internalModel" class="pa-0" density="compact" open-strategy="single" @update:selected="updateSelected">
+  <v-card
+    class="sidebar-icon-container"
+    :style="{
+      height: height ?? '',
+      background: background ?? '',
+    }"
+    :elevation="elevation"
+    :width="width"
+    :rounded="rounded"
+  >
+    <v-list
+      :selected="internalModel"
+      class="sidebar-icon-list-container"
+      density="compact"
+      open-strategy="single"
+      :rounded="rounded"
+      @update:selected="updateSelected"
+    >
       <v-list-item
         v-for="(item, index) in convertedItems"
         :key="`sidebar-icon-${index}`"
         active-class="sidebar-icon-menu-active"
+        :active-color="item.color"
         :active="item.active"
-        class="mb-1 px-1 py-2"
+        class="sidebar-icon-item-container"
         :rounded="rounded"
         :value="item.value"
       >
@@ -14,15 +31,14 @@
           class="sidebar-icon-menu-item-icon"
           :style="{
             'border-color': item.active ? item.color : '',
-            'background-color': item.active ? `transparentize(${item.color}, 1)` : '',
           }"
         >
-          <v-icon :style="{ color: item.color }">{{ item.icon }}</v-icon>
+          <v-icon :color="item.color">{{ item.icon }}</v-icon>
         </div>
-        <p class="sidebar-icon-menu-item-text" align="center" :style="{ color: item.active ? item.color : '' }">{{ item.text }}</p>
+        <p class="sidebar-icon-menu-item-text" align="center">{{ item.text }}</p>
       </v-list-item>
     </v-list>
-  </v-navigation-drawer>
+  </v-card>
 </template>
 
 <script setup>
@@ -41,11 +57,23 @@ const props = defineProps({
   },
   width: {
     type: Number,
-    default: 80,
+    default: 64,
+  },
+  height: {
+    type: String,
+    default: undefined,
+  },
+  background: {
+    type: String,
+    default: 'transparent',
   },
   rounded: {
     type: String,
     default: undefined,
+  },
+  elevation: {
+    type: [String, Number],
+    default: '2',
   },
 });
 
@@ -69,6 +97,24 @@ function updateSelected(values) {
 </script>
 
 <style scoped>
+.sidebar-icon-container {
+  max-height: 100%;
+  height: 100%;
+}
+.sidebar-icon-list-container {
+  height: 100%;
+  padding: 8px 4px;
+  padding: 0;
+  overflow-y: scroll;
+  background: transparent;
+}
+.sidebar-icon-list-container::-webkit-scrollbar {
+  display: none;
+}
+.sidebar-icon-item-container {
+  margin: 0 0 2px 0;
+  padding: 6px 4px !important;
+}
 .sidebar-icon-menu-item-icon {
   display: flex;
   justify-content: center;
@@ -79,12 +125,15 @@ function updateSelected(values) {
   border: solid #aaa 0.5px;
   border-radius: 50%;
 }
+.sidebar-icon-menu-item-text {
+  font-size: smaller;
+}
 .sidebar-icon-menu-active .sidebar-icon-menu-item-icon {
   border-width: 2px;
   border-radius: 50%;
-  font-weight: 700;
 }
 .sidebar-icon-menu-active .sidebar-icon-menu-item-text {
   font-weight: 700;
+  font-size: small;
 }
 </style>

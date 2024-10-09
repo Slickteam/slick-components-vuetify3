@@ -9,7 +9,7 @@ export const withVuetifyTheme = (story, context) => {
     /* html */
     template: `
       <v-app theme="${globalTheme}">
-        <v-container class="h-100">
+        <v-container class="h-100" style="max-height: 950px;">
           <story/>
         </v-container>
       </v-app>
