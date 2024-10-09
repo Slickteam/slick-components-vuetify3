@@ -21,7 +21,9 @@
         v-for="(item, index) in convertedItems"
         :key="`sidebar-icon-${index}`"
         active-class="sidebar-icon-menu-active"
-        :active-color="item.color"
+        :style="{
+          color: item.active ? item.color : '',
+        }"
         :active="item.active"
         class="sidebar-icon-item-container"
         :rounded="rounded"
@@ -47,10 +49,6 @@ import { shallowRef, onMounted, computed } from 'vue';
 const emit = defineEmits(['update:selected']);
 
 const props = defineProps({
-  selectedItem: {
-    type: String,
-    default: 'menu01',
-  },
   items: {
     type: Array,
     default: () => [],
@@ -88,11 +86,9 @@ const convertedItems = computed(() => props.items.map((i) => ({ ...i, active: mo
 
 function updateSelected(values) {
   internalModel.value = values;
-  if (values?.length > 0) {
-    model.value = values[0];
-  } else {
-    model.value = undefined;
-  }
+  const valueReceived = values?.[0];
+  model.value = valueReceived;
+  emit('update:selected', valueReceived);
 }
 </script>
 
