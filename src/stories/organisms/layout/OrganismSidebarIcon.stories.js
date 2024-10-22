@@ -1,10 +1,10 @@
 import { shallowRef, watch } from 'vue';
 import { action } from '@storybook/addon-actions';
-import { SidebarIconOrganism } from '../../../components/organisms';
+import { OrganismSidebarIcon } from '../../../components/organisms';
 
 export default {
-  title: 'Organisms/layout/SidebarIconOrganism',
-  component: SidebarIconOrganism,
+  title: 'Organisms/layout/OrganismSidebarIcon',
+  component: OrganismSidebarIcon,
   tags: ['docsPage'],
   args: {
     width: 64,
@@ -46,7 +46,7 @@ export default {
 };
 
 const Template = (args) => ({
-  components: { SidebarIconOrganism },
+  components: { OrganismSidebarIcon },
   setup() {
     const model = shallowRef(args.modelValue);
     // Optional: Keeps v-model in sync with storybook args
@@ -65,7 +65,7 @@ const Template = (args) => ({
     return { args, model, updateSelected };
   },
   /* html */
-  template: `<SidebarIconOrganism v-bind="args" v-model="model" @update:selected="updateSelected" />`,
+  template: `<OrganismSidebarIcon v-bind="args" v-model="model" @update:selected="updateSelected" />`,
 });
 
 export const Default = Template.bind({});

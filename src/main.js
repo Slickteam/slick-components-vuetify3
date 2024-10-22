@@ -14,7 +14,10 @@ import {
 
 import {
   // Layout
-  SidebarIconOrganism,
+  OrganismSidebarIcon,
+  OrganismContainerPage,
+  OrganismSidebar,
+  OrganismToolbar,
   // Widget
   OrganismSystemDataTable,
 } from '@/components/organisms';
@@ -26,8 +29,11 @@ const SlickComponentLibrary = {
     app.component('MoleculeClipboardButton', MoleculeClipboardButton);
     app.component('MoleculeColorPickerForm', MoleculeColorPickerForm);
     app.component('MoleculeIconPickerForm', MoleculeIconPickerForm);
-    app.component('SidebarIconOrganism', SidebarIconOrganism);
+    app.component('OrganismSidebarIcon', OrganismSidebarIcon);
     app.component('OrganismSystemDataTable', OrganismSystemDataTable);
+    app.component('OrganismContainerPage', OrganismContainerPage);
+    app.component('OrganismSidebar', OrganismSidebar);
+    app.component('OrganismToolbar', OrganismToolbar);
   },
 };
 
@@ -68,6 +74,9 @@ export {
   MoleculeColorPickerForm,
   MoleculeIconPickerForm,
   // Organism
-  SidebarIconOrganism,
+  OrganismSidebarIcon,
   OrganismSystemDataTable,
+  OrganismContainerPage,
+  OrganismSidebar,
+  OrganismToolbar,
 };
