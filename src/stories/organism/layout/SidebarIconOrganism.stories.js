@@ -31,8 +31,8 @@ export default {
       { icon: 'mdi-home', text: 'Menu 19', color: '#4E9C15', value: 'menu19' },
       { icon: 'mdi-home', text: 'Menu 20', color: '#aEB01A', value: 'menu20' },
     ],
-    rounded: undefined,
-    height: undefined,
+    rounded: '0',
+    height: '800px',
     background: '',
   },
   argTypes: {

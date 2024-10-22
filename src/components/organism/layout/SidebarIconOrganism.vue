@@ -96,11 +96,11 @@ function updateSelected(values) {
 .sidebar-icon-container {
   max-height: 100%;
   height: 100%;
+  padding: 4px 0;
 }
 .sidebar-icon-list-container {
   height: 100%;
-  padding: 8px 4px;
-  padding: 0;
+  padding: 0 4px;
   overflow-y: scroll;
   background: transparent;
 }
@@ -108,7 +108,7 @@ function updateSelected(values) {
   display: none;
 }
 .sidebar-icon-item-container {
-  margin: 0 0 2px 0;
+  margin: 0 0 4px 0;
   padding: 6px 4px !important;
 }
 .sidebar-icon-menu-item-icon {
@@ -122,7 +122,9 @@ function updateSelected(values) {
   border-radius: 50%;
 }
 .sidebar-icon-menu-item-text {
-  font-size: smaller;
+  font-size: x-small;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .sidebar-icon-menu-active .sidebar-icon-menu-item-icon {
   border-width: 2px;
@@ -130,6 +132,5 @@ function updateSelected(values) {
 }
 .sidebar-icon-menu-active .sidebar-icon-menu-item-text {
   font-weight: 700;
-  font-size: small;
 }
 </style>
