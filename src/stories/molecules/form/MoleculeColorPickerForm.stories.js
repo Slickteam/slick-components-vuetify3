@@ -1,7 +1,7 @@
-import { MoleculeColorPickerForm } from '../../../components/molecule';
+import { MoleculeColorPickerForm } from '../../../components/molecules';
 
 export default {
-  title: 'Molecule/form/MoleculeColorPickerForm',
+  title: 'Molecules/form/MoleculeColorPickerForm',
   component: MoleculeColorPickerForm,
   tags: ['docsPage'],
   args: {},

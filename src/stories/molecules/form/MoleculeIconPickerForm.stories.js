@@ -1,7 +1,7 @@
-import { MoleculeIconPickerForm } from '../../../components/molecule';
+import { MoleculeIconPickerForm } from '../../../components/molecules';
 
 export default {
-  title: 'Molecule/form/MoleculeIconPickerForm',
+  title: 'Molecules/form/MoleculeIconPickerForm',
   component: MoleculeIconPickerForm,
   tags: ['docsPage'],
   args: {},

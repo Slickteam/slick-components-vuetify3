@@ -1,9 +1,9 @@
 import { shallowRef, watch } from 'vue';
 import { action } from '@storybook/addon-actions';
-import { SidebarIconOrganism } from '../../../components/organism';
+import { SidebarIconOrganism } from '../../../components/organisms';
 
 export default {
-  title: 'Organism/layout/SidebarIconOrganism',
+  title: 'Organisms/layout/SidebarIconOrganism',
   component: SidebarIconOrganism,
   tags: ['docsPage'],
   args: {

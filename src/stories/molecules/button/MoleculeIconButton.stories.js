@@ -1,7 +1,7 @@
-import { MoleculeIconButton } from '../../../components/molecule';
+import { MoleculeIconButton } from '../../../components/molecules';
 
 export default {
-  title: 'Molecule/button/MoleculeIconButton',
+  title: 'Molecules/button/MoleculeIconButton',
   component: MoleculeIconButton,
   tags: ['docsPage'],
   args: {

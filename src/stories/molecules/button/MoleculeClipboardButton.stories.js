@@ -1,7 +1,7 @@
-import { MoleculeClipboardButton } from '../../../components/molecule';
+import { MoleculeClipboardButton } from '../../../components/molecules';
 
 export default {
-  title: 'Molecule/button/MoleculeClipboardButton',
+  title: 'Molecules/button/MoleculeClipboardButton',
   component: MoleculeClipboardButton,
   tags: ['docsPage'],
   args: {
