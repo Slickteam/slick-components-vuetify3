@@ -4,57 +4,30 @@ export default {
   title: 'Molecule/form/MoleculeIconPickerForm',
   component: MoleculeIconPickerForm,
   tags: ['docsPage'],
-  args: {
-    title: 'Click me',
-  },
+  args: {},
   argTypes: {
     // onClick: {},
-    size: {
+    density: {
       control: {
         type: 'select',
       },
-      options: ['x-small', 'small', 'default', 'large'],
+      options: ['', 'compact', 'comfortable'],
     },
     variant: {
       control: {
         type: 'select',
       },
-      options: ['outlined'],
+      options: ['outlined', 'solo'],
     },
-    color: {
-      control: 'color',
-    },
-    icon: {
-      control: {
-        type: 'select',
-      },
-      options: ['mdi-home', 'mdi-'],
-    },
-    title: {
+    label: {
       control: 'text',
-      description: 'Title accessibility in button',
-    },
-    to: {
-      control: 'text',
-    },
-    href: {
-      control: 'text',
-    },
-    target: {
-      control: 'text',
-    },
-    showChip: {
-      control: 'boolean',
-    },
-    contentChip: {
-      control: 'text',
+      description: 'Label of form',
     },
   },
 };
 
 export const Primary = {
   args: {
-    primary: true,
-    title: 'Click me',
+    label: 'Icône',
   },
 };
