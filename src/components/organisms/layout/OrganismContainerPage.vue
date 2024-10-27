@@ -10,6 +10,7 @@
       <slot name="sidebar-left-footer" :rail="rail"></slot>
     </template>
   </OrganismSidebar>
+  <OrganismSidebarIcon v-if="!hideSidebarRight" :items="itemsSidebarRight"></OrganismSidebarIcon>
   <OrganismToolbar v-if="!hideToolbar" @toggle:menu="drawerState = !drawerState">
     <slot name="toolbar"></slot>
   </OrganismToolbar>
@@ -24,6 +25,7 @@ import { shallowRef } from 'vue';
 import { useDisplay } from 'vuetify';
 import OrganismSidebar from './OrganismSidebar.vue';
 import OrganismToolbar from './OrganismToolbar.vue';
+import OrganismSidebarIcon from './OrganismSidebarIcon.vue';
 
 const { mobile } = useDisplay();
 
@@ -35,6 +37,14 @@ defineProps({
   hideSidebarLeft: {
     type: Boolean,
     default: false,
+  },
+  hideSidebarRight: {
+    type: Boolean,
+    default: false,
+  },
+  itemsSidebarRight: {
+    type: Array,
+    default: () => [],
   },
 });
 

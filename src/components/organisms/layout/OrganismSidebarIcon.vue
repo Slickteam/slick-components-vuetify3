@@ -1,10 +1,12 @@
 <template>
-  <v-card
+  <v-navigation-drawer
+    v-model="stateInternalDrawer"
     class="sidebar-icon-container"
     :style="{
       height: height ?? '',
       background: background ?? '',
     }"
+    location="right"
     :elevation="elevation"
     :width="width"
     :rounded="rounded"
@@ -40,7 +42,19 @@
         <p class="sidebar-icon-menu-item-text" align="center">{{ item.text }}</p>
       </v-list-item>
     </v-list>
-  </v-card>
+  </v-navigation-drawer>
+  <!-- <v-card
+    class="sidebar-icon-container"
+    :style="{
+      height: height ?? '',
+      background: background ?? '',
+    }"
+    :elevation="elevation"
+    :width="width"
+    :rounded="rounded"
+  >
+    
+  </v-card> -->
 </template>
 
 <script setup>
@@ -77,6 +91,7 @@ const props = defineProps({
 
 const model = defineModel({ default: undefined });
 const internalModel = shallowRef([]);
+const stateInternalDrawer = shallowRef(true);
 
 onMounted(() => {
   internalModel.value = [model.value];
