@@ -1,16 +1,16 @@
 <template>
-  <OrganismSidebar v-model="drawerState" :rail="rail" @update:rail="updateRail">
+  <OrganismSidebar v-if="!hideSidebarLeft" v-model="drawerState" :rail="rail" @update:rail="updateRail">
     <template #header="{ rail }">
-      <slot name="sidebar-header" :rail="rail"></slot>
+      <slot name="sidebar-left-header" :rail="rail"></slot>
     </template>
     <template #default="{ rail }">
-      <slot name="sidebar" :rail="rail"></slot>
+      <slot name="sidebar-left" :rail="rail"></slot>
     </template>
     <template #footer="{ rail }">
-      <slot name="sidebar-footer" :rail="rail"></slot>
+      <slot name="sidebar-left-footer" :rail="rail"></slot>
     </template>
   </OrganismSidebar>
-  <OrganismToolbar @toggle:menu="drawerState = !drawerState">
+  <OrganismToolbar v-if="!hideToolbar" @toggle:menu="drawerState = !drawerState">
     <slot name="toolbar"></slot>
   </OrganismToolbar>
 
@@ -26,8 +26,19 @@ import OrganismSidebar from './OrganismSidebar.vue';
 import OrganismToolbar from './OrganismToolbar.vue';
 
 const { mobile } = useDisplay();
-const drawerState = shallowRef(!mobile.value);
 
+defineProps({
+  hideToolbar: {
+    type: Boolean,
+    default: false,
+  },
+  hideSidebarLeft: {
+    type: Boolean,
+    default: false,
+  },
+});
+
+const drawerState = shallowRef(!mobile.value);
 const rail = shallowRef(false);
 
 function updateRail(value) {
