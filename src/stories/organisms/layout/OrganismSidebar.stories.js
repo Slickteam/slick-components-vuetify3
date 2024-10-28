@@ -12,7 +12,7 @@ const Template = () => ({
   components: { OrganismSidebar },
   /* html */
   template: `<OrganismSidebar>
-  <template #header="{ rail }">sidebar {{rail}} </template>
+    <template #header="{ rail }">sidebar {{rail}} </template>
   </OrganismSidebar>`,
 });
 

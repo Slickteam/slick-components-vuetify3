@@ -7,7 +7,7 @@ export default {
   component: OrganismSidebarIcon,
   tags: ['docsPage'],
   args: {
-    width: 64,
+    width: 65,
     elevation: 0,
     items: [
       { icon: 'mdi-home', text: 'Menu 01', color: '#3729DD', value: 'menu01' },
@@ -31,7 +31,7 @@ export default {
       { icon: 'mdi-home', text: 'Menu 19', color: '#4E9C15', value: 'menu19' },
       { icon: 'mdi-home', text: 'Menu 20', color: '#aEB01A', value: 'menu20' },
     ],
-    rounded: '0',
+    rounded: 'sm',
     height: '800px',
     background: '',
   },
@@ -48,27 +48,30 @@ export default {
 const Template = (args) => ({
   components: { OrganismSidebarIcon },
   setup() {
-    const model = shallowRef(args.modelValue);
+    const selectedModel = shallowRef(args.selectedModel);
+    const drawerModel = shallowRef(args.drawerModel);
     // Optional: Keeps v-model in sync with storybook args
     watch(
-      () => args.modelValue,
+      () => args.selectedModel,
       (val) => {
-        model.value = val;
+        selectedModel.value = val;
+      },
+    );
+    watch(
+      () => args.drawerModel,
+      (val) => {
+        drawerModel.value = val;
       },
     );
 
-    const updateSelected = (value) => {
-      model.value = value;
-      action('update:selected');
-    };
-
-    return { args, model, updateSelected };
+    return { args, selectedModel, drawerModel };
   },
   /* html */
-  template: `<OrganismSidebarIcon v-bind="args" v-model="model" @update:selected="updateSelected" />`,
+  template: `<OrganismSidebarIcon v-bind="args" v-model:selected="selectedModel" v-model:drawer="drawerModel" />`,
 });
 
 export const Default = Template.bind({});
 Default.args = {
-  modelValue: 'menu01',
+  selectedModel: 'menu01',
+  drawerModel: true,
 };

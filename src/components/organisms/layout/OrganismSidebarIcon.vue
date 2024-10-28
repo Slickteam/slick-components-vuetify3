@@ -1,16 +1,23 @@
 <template>
   <v-navigation-drawer
-    v-model="stateInternalDrawer"
+    v-model="drawerModel"
     class="sidebar-icon-container"
     :style="{
       height: height ?? '',
       background: background ?? '',
     }"
     location="right"
+    permanent
     :elevation="elevation"
     :width="width"
-    :rounded="rounded"
   >
+    <v-btn
+      icon="mdi-page-layout-sidebar-right"
+      class="sidebar-icon-top-button"
+      variant="text"
+      rounded="0"
+      @click="drawerModel = !drawerModel"
+    />
     <v-list
       :selected="internalModel"
       class="sidebar-icon-list-container"
@@ -43,24 +50,10 @@
       </v-list-item>
     </v-list>
   </v-navigation-drawer>
-  <!-- <v-card
-    class="sidebar-icon-container"
-    :style="{
-      height: height ?? '',
-      background: background ?? '',
-    }"
-    :elevation="elevation"
-    :width="width"
-    :rounded="rounded"
-  >
-    
-  </v-card> -->
 </template>
 
 <script setup>
 import { shallowRef, onMounted, computed } from 'vue';
-
-const emit = defineEmits(['update:selected']);
 
 const props = defineProps({
   items: {
@@ -69,7 +62,7 @@ const props = defineProps({
   },
   width: {
     type: Number,
-    default: 64,
+    default: 65,
   },
   height: {
     type: String,
@@ -81,7 +74,7 @@ const props = defineProps({
   },
   rounded: {
     type: String,
-    default: undefined,
+    default: 'sm',
   },
   elevation: {
     type: [String, Number],
@@ -89,21 +82,21 @@ const props = defineProps({
   },
 });
 
-const model = defineModel({ default: undefined });
+const selectedModel = defineModel('selected', { default: undefined, type: String });
+const drawerModel = defineModel('drawer', { default: undefined, type: Boolean });
 const internalModel = shallowRef([]);
-const stateInternalDrawer = shallowRef(true);
 
 onMounted(() => {
-  internalModel.value = [model.value];
+  internalModel.value = [selectedModel.value];
 });
 
-const convertedItems = computed(() => props.items.map((i) => ({ ...i, active: model.value === i.value })));
+const convertedItems = computed(() => props.items.map((i) => ({ ...i, active: selectedModel.value === i.value })));
 
 function updateSelected(values) {
   internalModel.value = values;
   const valueReceived = values?.[0];
-  model.value = valueReceived;
-  emit('update:selected', valueReceived);
+  selectedModel.value = valueReceived;
+  // emit('update:selected', valueReceived);
 }
 </script>
 
@@ -111,11 +104,11 @@ function updateSelected(values) {
 .sidebar-icon-container {
   max-height: 100%;
   height: 100%;
-  padding: 4px 0;
+  padding: 4px;
 }
 .sidebar-icon-list-container {
   height: 100%;
-  padding: 0 4px;
+  padding: 0;
   overflow-y: scroll;
   background: transparent;
 }
@@ -147,5 +140,13 @@ function updateSelected(values) {
 }
 .sidebar-icon-menu-active .sidebar-icon-menu-item-text {
   font-weight: 700;
+}
+:deep(::-webkit-scrollbar) {
+  width: 0;
+  background: transparent;
+}
+.sidebar-icon-top-button {
+  margin: 0 4px 2px 4px;
+  color: #aaaaaa;
 }
 </style>
