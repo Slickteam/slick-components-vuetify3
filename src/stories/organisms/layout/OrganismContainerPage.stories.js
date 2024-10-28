@@ -1,3 +1,4 @@
+import { shallowRef, watch } from 'vue';
 import { OrganismContainerPage } from '../../../components/organisms';
 
 export default {
@@ -47,16 +48,27 @@ export default {
 const Template = (args) => ({
   components: { OrganismContainerPage },
   setup() {
-    return { args };
+    const selectedModel = shallowRef(args.selectedModel);
+    // Optional: Keeps v-model in sync with storybook args
+    watch(
+      () => args.selectedModel,
+      (val) => {
+        selectedModel.value = val;
+      },
+    );
+    return { args, selectedModel };
   },
   /* html */
-  template: `<OrganismContainerPage v-bind="args">
+  template: `<OrganismContainerPage v-bind="args" v-model:selected="selectedModel">
     <template #sidebar-left-header="{ rail }">Header {{ rail}}</template>
     <template #sidebar-left="{ rail }">Content </template>
     <template #sidebar-left-footer="{ rail }">Footer </template>
-    <template #toolbar>toolbar</template>
+    <template #toolbar-left>left</template>
+    <template #toolbar-right>right</template>
   </OrganismContainerPage>`,
 });
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  selectedModel: 'menu01',
+};

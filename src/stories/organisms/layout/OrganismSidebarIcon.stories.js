@@ -1,5 +1,4 @@
 import { shallowRef, watch } from 'vue';
-import { action } from '@storybook/addon-actions';
 import { OrganismSidebarIcon } from '../../../components/organisms';
 
 export default {

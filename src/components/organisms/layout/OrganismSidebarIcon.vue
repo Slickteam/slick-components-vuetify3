@@ -11,44 +11,46 @@
     :elevation="elevation"
     :width="width"
   >
-    <v-btn
-      icon="mdi-page-layout-sidebar-right"
-      class="sidebar-icon-top-button"
-      variant="text"
-      rounded="0"
-      @click="drawerModel = !drawerModel"
-    />
-    <v-list
-      :selected="internalModel"
-      class="sidebar-icon-list-container"
-      density="compact"
-      open-strategy="single"
-      :rounded="rounded"
-      @update:selected="updateSelected"
-    >
-      <v-list-item
-        v-for="(item, index) in convertedItems"
-        :key="`sidebar-icon-${index}`"
-        active-class="sidebar-icon-menu-active"
-        :style="{
-          color: item.active ? item.color : '',
-        }"
-        :active="item.active"
-        class="sidebar-icon-item-container"
+    <slot>
+      <v-btn
+        icon="mdi-page-layout-sidebar-right"
+        class="sidebar-icon-top-button"
+        variant="text"
+        rounded="0"
+        @click="drawerModel = !drawerModel"
+      />
+      <v-list
+        :selected="internalModel"
+        class="sidebar-icon-list-container"
+        density="compact"
+        open-strategy="single"
         :rounded="rounded"
-        :value="item.value"
+        @update:selected="updateSelected"
       >
-        <div
-          class="sidebar-icon-menu-item-icon"
+        <v-list-item
+          v-for="(item, index) in convertedItems"
+          :key="`sidebar-icon-${index}`"
+          active-class="sidebar-icon-menu-active"
           :style="{
-            'border-color': item.active ? item.color : '',
+            color: item.active ? item.color : '',
           }"
+          :active="item.active"
+          class="sidebar-icon-item-container"
+          :rounded="rounded"
+          :value="item.value"
         >
-          <v-icon :color="item.color">{{ item.icon }}</v-icon>
-        </div>
-        <p class="sidebar-icon-menu-item-text" align="center">{{ item.text }}</p>
-      </v-list-item>
-    </v-list>
+          <div
+            class="sidebar-icon-menu-item-icon"
+            :style="{
+              'border-color': item.active ? item.color : '',
+            }"
+          >
+            <v-icon :color="item.color">{{ item.icon }}</v-icon>
+          </div>
+          <p class="sidebar-icon-menu-item-text" align="center">{{ item.text }}</p>
+        </v-list-item>
+      </v-list>
+    </slot>
   </v-navigation-drawer>
 </template>
 

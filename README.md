@@ -10,8 +10,8 @@ npm i -S @slickteam/components-vuetify3
 
 ```js
 //...
-import "@slickteam/components-vuetify3/style.css";
-import { VuetifyLibrary } from "@slickteam/components-vuetify3";
+import '@slickteam/components-vuetify3/style.css';
+import { VuetifyLibrary } from '@slickteam/components-vuetify3';
 // options are optional
 const options = {
   theme: {
@@ -20,14 +20,14 @@ const options = {
       light: {
         dark: false,
         colors: {
-          background: "#RRGGBB",
-          surface: "#RRGGBB",
-          primary: "#RRGGBB",
-          secondary: "#RRGGBB",
-          success: "#RRGGBB",
-          warning: "#RRGGBB",
-          error: "#RRGGBB",
-          info: "#RRGGBB",
+          background: '#RRGGBB',
+          surface: '#RRGGBB',
+          primary: '#RRGGBB',
+          secondary: '#RRGGBB',
+          success: '#RRGGBB',
+          warning: '#RRGGBB',
+          error: '#RRGGBB',
+          info: '#RRGGBB',
         },
       },
     },
@@ -41,7 +41,7 @@ createApp(app).use(VuetifyLibrary, options);
 - In your file where you want use a component, add this line for style
 
 ```js
-import { MoleculeIconButton } from "@slickteam/components-vuetify3";
+import { MoleculeIconButton } from '@slickteam/components-vuetify3';
 ```
 
 ## Button components
@@ -54,3 +54,14 @@ import { MoleculeIconButton } from "@slickteam/components-vuetify3";
 
 - `MoleculeColorPickerForm`
 - `MoleculeIconPickerForm`
+
+## Layout components
+
+- `OrganismSidebarIcon`
+- `OrganismContainerPage`
+- `OrganismSidebar`
+- `OrganismToolbar`
+
+## Widget components
+
+- `OrganismSystemDataTable`
