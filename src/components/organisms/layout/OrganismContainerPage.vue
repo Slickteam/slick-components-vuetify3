@@ -34,24 +34,26 @@
     </template>
   </OrganismToolbar>
 
-  <v-row class="page-container" no-gutters>
-    <v-col class="page-container-content">
+  <div class="page-container" no-gutters>
+    <div class="page-container-content">
       <slot></slot>
-    </v-col>
-    <v-col v-if="selectedModel" cols="auto" class="sidebar-menu-wrapper">
-      <v-card class="sidebar-menu d-flex flex-column elevation-4" rounded="lg" :style="{ height: `${$vuetify.display.height - 72}px` }">
-        <v-card-title class="sidebar-menu-padding">
-          <slot name="sidebar-right-menu-header" :selected="selectedModel"></slot>
-        </v-card-title>
-        <v-card-text class="sidebar-menu-content sidebar-menu-padding">
-          <slot name="sidebar-right-menu" :selected="selectedModel"></slot>
-        </v-card-text>
-        <v-card-actions class="sidebar-menu-padding">
-          <slot name="sidebar-right-menu-actions" :selected="selectedModel"></slot>
-        </v-card-actions>
-      </v-card>
-    </v-col>
-  </v-row>
+    </div>
+    <Transition name="slide-fade">
+      <div v-if="selectedModel" class="sidebar-menu-wrapper">
+        <v-card class="sidebar-menu d-flex flex-column elevation-4" rounded="lg" :style="{ height: `${$vuetify.display.height - 72}px` }">
+          <v-card-title class="sidebar-menu-padding">
+            <slot name="sidebar-right-menu-header" :selected="selectedModel"></slot>
+          </v-card-title>
+          <v-card-text class="sidebar-menu-content sidebar-menu-padding">
+            <slot name="sidebar-right-menu" :selected="selectedModel"></slot>
+          </v-card-text>
+          <v-card-actions class="sidebar-menu-padding">
+            <slot name="sidebar-right-menu-actions" :selected="selectedModel"></slot>
+          </v-card-actions>
+        </v-card>
+      </div>
+    </Transition>
+  </div>
 </template>
 
 <script setup>
@@ -95,19 +97,24 @@ function updateRail(value) {
 <style scoped>
 .page-container {
   height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 
 .page-container-content {
   padding: 12px 24px !important;
+  flex-grow: 1;
 }
 
 .sidebar-menu-wrapper {
   padding: 8px 8px 8px 0px !important;
+  flex-grow: 0.25;
+  padding: 8px 8px 8px 0;
 }
 
 .sidebar-menu {
   position: sticky;
-  width: 283px;
   top: 64px;
   bottom: 0px;
 }
@@ -120,5 +127,20 @@ function updateRail(value) {
 .sidebar-menu-padding {
   padding-left: 8px;
   padding-right: 8px;
+}
+.slide-fade-enter-active {
+  transition: all 0.35s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.35s ease-out;
+  flex-grow: 0.25 !important;
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(100%);
+  flex-grow: 0 !important;
+  opacity: 0;
 }
 </style>
