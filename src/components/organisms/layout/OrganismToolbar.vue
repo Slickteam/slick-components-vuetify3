@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar class="app-bar" elevation="0" height="56">
+  <v-app-bar class="app-bar" color="background" elevation="0" height="56">
     <template v-if="mobile" v-slot:prepend>
       <v-app-bar-nav-icon @click="emit('toggle:menu')" />
     </template>
@@ -29,7 +29,6 @@ const { mobile } = useDisplay();
 <style scoped>
 .app-bar {
   height: 56px;
-  background: transparent !important;
   border-bottom: solid 1px #aaaaaa;
 }
 .app-bar-container {

@@ -34,9 +34,24 @@
     </template>
   </OrganismToolbar>
 
-  <div class="page-container">
-    <slot></slot>
-  </div>
+  <v-row class="page-container" no-gutters>
+    <v-col class="page-container-content">
+      <slot></slot>
+    </v-col>
+    <v-col v-if="selectedModel" cols="auto" class="sidebar-menu-wrapper">
+      <v-card class="sidebar-menu d-flex flex-column elevation-4" rounded="lg" :style="{ height: `${$vuetify.display.height - 72}px` }">
+        <v-card-title class="sidebar-menu-padding">
+          <slot name="sidebar-right-menu-header" :selected="selectedModel"></slot>
+        </v-card-title>
+        <v-card-text class="sidebar-menu-content sidebar-menu-padding">
+          <slot name="sidebar-right-menu" :selected="selectedModel"></slot>
+        </v-card-text>
+        <v-card-actions class="sidebar-menu-padding">
+          <slot name="sidebar-right-menu-actions" :selected="selectedModel"></slot>
+        </v-card-actions>
+      </v-card>
+    </v-col>
+  </v-row>
 </template>
 
 <script setup>
@@ -79,7 +94,31 @@ function updateRail(value) {
 
 <style scoped>
 .page-container {
-  padding: 12px 24px;
   height: 100%;
+}
+
+.page-container-content {
+  padding: 12px 24px !important;
+}
+
+.sidebar-menu-wrapper {
+  padding: 8px 8px 8px 0px !important;
+}
+
+.sidebar-menu {
+  position: sticky;
+  width: 283px;
+  top: 64px;
+  bottom: 0px;
+}
+
+.sidebar-menu-content {
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.sidebar-menu-padding {
+  padding-left: 8px;
+  padding-right: 8px;
 }
 </style>

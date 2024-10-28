@@ -65,6 +65,15 @@ const Template = (args) => ({
     <template #sidebar-left-footer="{ rail }">Footer </template>
     <template #toolbar-left>left</template>
     <template #toolbar-right>right</template>
+    <template #sidebar-right-menu-header>Title</template>
+    <template #sidebar-right-menu={selected}>
+      {{ selected }}
+    </template>
+    <template #sidebar-right-menu-actions>Actions</template>
+
+    <div style="border: 2px dashed #BBBBBB; height: 1000px">
+      Content
+    </div>
   </OrganismContainerPage>`,
 });
 

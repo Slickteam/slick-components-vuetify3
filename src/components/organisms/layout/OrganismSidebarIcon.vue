@@ -72,7 +72,7 @@ const props = defineProps({
   },
   background: {
     type: String,
-    default: 'transparent',
+    default: undefined,
   },
   rounded: {
     type: String,
@@ -109,7 +109,7 @@ function updateSelected(values) {
   padding: 4px;
 }
 .sidebar-icon-list-container {
-  height: 100%;
+  height: calc(100% - 52px);
   padding: 0;
   overflow-y: scroll;
   background: transparent;
