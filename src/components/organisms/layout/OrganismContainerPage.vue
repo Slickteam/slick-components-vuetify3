@@ -39,7 +39,7 @@
       <slot></slot>
     </div>
     <Transition name="slide-fade">
-      <div v-if="selectedModel" class="sidebar-menu-wrapper">
+      <div v-if="drawerRightState && selectedModel" class="sidebar-menu-wrapper">
         <v-card class="sidebar-menu d-flex flex-column elevation-4" rounded="lg" :style="{ height: `${$vuetify.display.height - 72}px` }">
           <v-card-title class="sidebar-menu-padding">
             <slot name="sidebar-right-menu-header" :selected="selectedModel"></slot>
