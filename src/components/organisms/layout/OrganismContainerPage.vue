@@ -104,12 +104,13 @@ function updateRail(value) {
 
 .page-container-content {
   padding: 12px 24px !important;
-  flex-grow: 1;
+  flex-grow: 3;
 }
 
 .sidebar-menu-wrapper {
   padding: 8px 8px 8px 0px !important;
-  flex-grow: 0.25;
+  flex-grow: 1;
+  min-width: 291px !important;
   padding: 8px 8px 8px 0;
 }
 
@@ -129,12 +130,12 @@ function updateRail(value) {
   padding-right: 8px;
 }
 .slide-fade-enter-active {
-  transition: all 0.35s ease-out;
+  transition: all 0.2s linear;
 }
 
 .slide-fade-leave-active {
-  transition: all 0.35s ease-out;
-  flex-grow: 0.25 !important;
+  transition: all 0.2s linear;
+  flex-grow: 1 !important;
 }
 
 .slide-fade-enter-from,
