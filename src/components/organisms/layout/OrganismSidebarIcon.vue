@@ -32,7 +32,7 @@
           :key="`sidebar-icon-${index}`"
           active-class="sidebar-icon-menu-active"
           :style="{
-            color: item.active ? item.color : '',
+            color: item.active ? `${item.color} !important` : '',
           }"
           :active="item.active"
           class="sidebar-icon-item-container"
