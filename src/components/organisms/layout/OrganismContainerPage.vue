@@ -22,7 +22,7 @@
   </OrganismSidebarIcon>
   <OrganismToolbar
     v-if="!hideToolbar"
-    :sidebar-right-icon="!hideToolbar && !drawerRightState"
+    :sidebar-right-icon="!hideSidebarRight && !drawerRightState"
     @toggle:menu="drawerLeftState = !drawerLeftState"
     @toggle:right-menu="drawerRightState = !drawerRightState"
   >
@@ -39,7 +39,7 @@
       <slot></slot>
     </div>
     <Transition name="slide-fade">
-      <div v-if="drawerRightState && selectedModel" class="sidebar-menu-wrapper">
+      <div v-if="!hideSidebarRight && drawerRightState && selectedModel" class="sidebar-menu-wrapper">
         <v-card class="sidebar-menu d-flex flex-column elevation-4" rounded="lg" :style="{ height: `${$vuetify.display.height - 72}px` }">
           <v-card-title class="sidebar-menu-padding">
             <slot name="sidebar-right-menu-header" :selected="selectedModel"></slot>
@@ -109,8 +109,7 @@ function updateRail(value) {
 
 .sidebar-menu-wrapper {
   padding: 8px 8px 8px 0px !important;
-  flex-grow: 1;
-  min-width: 291px !important;
+  width: 291px !important;
   padding: 8px 8px 8px 0;
 }
 
@@ -135,13 +134,11 @@ function updateRail(value) {
 
 .slide-fade-leave-active {
   transition: all 0.2s linear;
-  flex-grow: 1 !important;
 }
 
 .slide-fade-enter-from,
 .slide-fade-leave-to {
   transform: translateX(100%);
-  flex-grow: 0 !important;
   opacity: 0;
 }
 </style>

@@ -1,7 +1,7 @@
 {
   "name": "@slickteam/components-vuetify3",
   "description": "Components for Vuetify 3 / Vue 3",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "type": "module",
   "keywords": [
     "slickteam",
@@ -56,8 +56,8 @@
     "vuetify": "^3.7.3"
   },
   "prettier": "@slickteam/prettier",
+  "packageManager": "pnpm@9.12.3",
   "volta": {
-    "node": "22.10.0",
-    "npm": "10.9.0"
+    "node": "22.11.0"
   }
 }

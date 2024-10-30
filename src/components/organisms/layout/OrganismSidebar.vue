@@ -1,8 +1,23 @@
 <template>
-  <v-navigation-drawer v-model="modelDrawer" class="sidebar-root-container" elevation="2" :rail="rail" @click="emit('update:rail', false)">
+  <v-navigation-drawer
+    v-model="modelDrawer"
+    class="sidebar-root-container"
+    elevation="2"
+    :rail="!mobile && rail"
+    @click="emit('update:rail', false)"
+  >
     <div class="sidebar-header" :style="{ padding: !rail ? '8px 12px' : '' }">
       <slot name="header" :rail="rail"></slot>
-      <v-btn v-if="!rail" density="compact" icon rounded="0" width="24" height="24" elevation="0" @click.stop="emit('update:rail', !rail)">
+      <v-btn
+        v-if="!rail && !mobile"
+        density="compact"
+        icon
+        rounded="0"
+        width="24"
+        height="24"
+        elevation="0"
+        @click.stop="emit('update:rail', !rail)"
+      >
         <v-icon icon="mdi-chevron-left" color="#aaaaaa" />
       </v-btn>
     </div>
@@ -16,6 +31,8 @@
 </template>
 
 <script setup>
+import { useDisplay } from 'vuetify';
+
 const modelDrawer = defineModel({ default: true });
 const emit = defineEmits(['update:rail']);
 defineProps({
@@ -24,6 +41,7 @@ defineProps({
     default: false,
   },
 });
+const { mobile } = useDisplay();
 </script>
 
 <style scoped>
