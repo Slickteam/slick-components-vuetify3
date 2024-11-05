@@ -5,7 +5,12 @@
     </template>
     <template v-slot:append>
       <slot name="toolbar-right"></slot>
-      <v-btn v-if="sidebarRightIcon" icon="mdi-page-layout-sidebar-right" variant="text" rounded="0" @click="emit('toggle:right-menu')" />
+
+      <v-tooltip v-if="sidebarRightIcon" text="Ouvrir le menu d'édition">
+        <template #activator="{ props }">
+          <v-btn icon="mdi-page-layout-sidebar-right" variant="text" rounded="0" v-bind="props" @click="emit('toggle:right-menu')" />
+        </template>
+      </v-tooltip>
     </template>
     <div class="app-bar-container">
       <slot></slot>
