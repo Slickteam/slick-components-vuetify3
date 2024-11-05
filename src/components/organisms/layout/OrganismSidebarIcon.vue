@@ -28,8 +28,8 @@
         @update:selected="updateSelected"
       >
         <v-list-item
-          v-for="(item, index) in convertedItems"
-          :key="`sidebar-icon-${index}`"
+          v-for="item in convertedItems"
+          :key="`sidebar-icon-${item.value}`"
           active-class="sidebar-icon-menu-active"
           :style="{
             color: item.active ? `${item.color} !important` : '',
@@ -55,7 +55,7 @@
 </template>
 
 <script setup>
-import { shallowRef, onMounted, computed } from 'vue';
+import { shallowRef, onMounted, computed, watch } from 'vue';
 
 const props = defineProps({
   items: {
@@ -89,6 +89,10 @@ const drawerModel = defineModel('drawer', { default: undefined, type: Boolean })
 const internalModel = shallowRef([]);
 
 onMounted(() => {
+  internalModel.value = [selectedModel.value];
+});
+
+watch(selectedModel, () => {
   internalModel.value = [selectedModel.value];
 });
 

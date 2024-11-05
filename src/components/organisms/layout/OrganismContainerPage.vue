@@ -34,7 +34,7 @@
     </template>
   </OrganismToolbar>
 
-  <div class="page-container" no-gutters>
+  <div class="page-container">
     <div class="page-container-content">
       <slot></slot>
     </div>
@@ -110,7 +110,6 @@ function updateRail(value) {
 .sidebar-menu-wrapper {
   padding: 8px 8px 8px 0px !important;
   width: 291px !important;
-  padding: 8px 8px 8px 0;
 }
 
 .sidebar-menu {
