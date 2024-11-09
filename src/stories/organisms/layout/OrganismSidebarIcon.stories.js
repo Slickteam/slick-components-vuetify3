@@ -1,5 +1,5 @@
 import { shallowRef, watch } from 'vue';
-import { OrganismSidebarIcon } from '../../../components/organisms';
+import OrganismSidebarIcon from '../../../components/organisms/OrganismSidebarIcon.vue';
 
 export default {
   title: 'Organisms/layout/OrganismSidebarIcon',

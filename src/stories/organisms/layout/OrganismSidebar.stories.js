@@ -1,4 +1,4 @@
-import { OrganismSidebar } from '../../../components/organisms';
+import OrganismSidebar from '../../../components/organisms/OrganismSidebar.vue';
 
 export default {
   title: 'Organisms/layout/OrganismSidebar',

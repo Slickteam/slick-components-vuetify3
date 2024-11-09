@@ -13,7 +13,7 @@
 
 <script setup>
 import { computed } from 'vue';
-import { icons } from '../../icons';
+import { icons } from '@/icons';
 
 const model = defineModel({ type: String, default: undefined });
 defineProps({

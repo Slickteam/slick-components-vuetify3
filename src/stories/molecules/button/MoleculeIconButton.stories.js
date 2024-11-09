@@ -1,4 +1,4 @@
-import { MoleculeIconButton } from '../../../components/molecules';
+import MoleculeIconButton from '../../../components/molecules/MoleculeIconButton.vue';
 
 export default {
   title: 'Molecules/button/MoleculeIconButton',

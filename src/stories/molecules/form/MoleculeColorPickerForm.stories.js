@@ -1,4 +1,4 @@
-import { MoleculeColorPickerForm } from '../../../components/molecules';
+import MoleculeColorPickerForm from '../../../components/molecules/MoleculeColorPickerForm.vue';
 
 export default {
   title: 'Molecules/form/MoleculeColorPickerForm',

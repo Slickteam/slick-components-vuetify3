@@ -1,4 +1,4 @@
-import { OrganismSystemDataTable } from '../../../components/organisms';
+import OrganismSystemDataTable from '../../../components/organisms/OrganismSystemDataTable.vue';
 
 export default {
   title: 'Organisms/widget/OrganismSystemDataTable',

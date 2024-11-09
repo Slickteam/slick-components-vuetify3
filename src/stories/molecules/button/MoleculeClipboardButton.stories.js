@@ -1,4 +1,4 @@
-import { MoleculeClipboardButton } from '../../../components/molecules';
+import MoleculeClipboardButton from '../../../components/molecules/MoleculeClipboardButton.vue';
 
 export default {
   title: 'Molecules/button/MoleculeClipboardButton',

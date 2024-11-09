@@ -1,4 +1,4 @@
-import { MoleculeIconPickerForm } from '../../../components/molecules';
+import MoleculeIconPickerForm from '../../../components/molecules/MoleculeIconPickerForm.vue';
 
 export default {
   title: 'Molecules/form/MoleculeIconPickerForm',

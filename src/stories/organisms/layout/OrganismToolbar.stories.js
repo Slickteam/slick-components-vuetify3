@@ -1,4 +1,4 @@
-import { OrganismToolbar } from '../../../components/organisms';
+import OrganismToolbar from '../../../components/organisms/OrganismToolbar.vue';
 
 export default {
   title: 'Organisms/layout/OrganismToolbar',

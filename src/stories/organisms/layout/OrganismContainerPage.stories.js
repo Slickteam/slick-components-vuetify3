@@ -1,5 +1,5 @@
 import { shallowRef, watch } from 'vue';
-import { OrganismContainerPage } from '../../../components/organisms';
+import OrganismContainerPage from '../../../components/organisms/OrganismContainerPage.vue';
 
 export default {
   title: 'Organisms/layout/OrganismContainerPage',
