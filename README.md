@@ -41,27 +41,27 @@ createApp(app).use(VuetifyLibrary, options);
 - In your file where you want use a component, add this line for style
 
 ```js
-import { MoleculeIconButton } from '@slickteam/components-vuetify3';
+import { SlickteamIconButton } from '@slickteam/components-vuetify3';
 ```
 
 ## Button components
 
-- `MoleculeClipboardButton`
-- `MoleculeIconButton`
-- `MoleculeTextIconButton`
+- `SlickteamClipboardButton`
+- `SlickteamIconButton`
+- `SlickteamTextIconButton`
 
 ## Form components
 
-- `MoleculeColorPickerForm`
-- `MoleculeIconPickerForm`
+- `SlickteamColorPicker`
+- `SlickteamIconPicker`
 
 ## Layout components
 
-- `OrganismSidebarIcon`
-- `OrganismContainerPage`
-- `OrganismSidebar`
-- `OrganismToolbar`
+- `SlickteamSidebarIcon`
+- `SlickteamContainer`
+- `SlickteamSidebar`
+- `SlickteamToolbar`
 
 ## Widget components
 
-- `OrganismSystemDataTable`
+- `SlickteamDataTable`
