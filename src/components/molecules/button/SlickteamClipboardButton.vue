@@ -1,5 +1,5 @@
 <template>
-  <v-tooltip :text="text" :open-delay="500">
+  <v-tooltip :text="tooltip" :open-delay="500">
     <template #activator="{ props }">
       <v-btn v-bind="props" variant="text" :size="calculatedSize" @click="copieValue">
         <v-icon>mdi-clipboard-outline</v-icon>
@@ -17,7 +17,7 @@ const { name } = useDisplay();
 const emit = defineEmits(['after:copy']);
 
 const props2 = defineProps({
-  text: {
+  tooltip: {
     type: String,
     default: 'Clipboard',
   },
@@ -26,7 +26,7 @@ const props2 = defineProps({
     default: '',
   },
   size: {
-    type: String,
+    type: [String, Number],
     default: undefined,
   },
   color: {
