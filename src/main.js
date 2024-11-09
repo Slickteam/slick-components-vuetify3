@@ -2,38 +2,30 @@ import '@mdi/font/css/materialdesignicons.min.css';
 import 'vuetify/styles';
 import { createVuetify } from 'vuetify';
 
-import {
-  // Buttons
-  MoleculeIconButton,
-  MoleculeTextIconButton,
-  MoleculeClipboardButton,
-  // Form
-  MoleculeColorPickerForm,
-  MoleculeIconPickerForm,
-} from '@/components/molecules';
+import SlickteamClipboardButton from '@/components/molecules/button/SlickteamClipboardButton.vue';
+import SlickteamIconButton from '@/components/molecules/button/SlickteamIconButton.vue';
+import SlickteamTextIconButton from '@/components/molecules/button/SlickteamTextIconButton.vue';
+import SlickteamColorPicker from '@/components/molecules/picker/SlickteamColorPicker.vue';
+import SlickteamIconPicker from '@/components/molecules/picker/SlickteamIconPicker.vue';
 
-import {
-  // Layout
-  OrganismSidebarIcon,
-  OrganismContainerPage,
-  OrganismSidebar,
-  OrganismToolbar,
-  // Widget
-  OrganismSystemDataTable,
-} from '@/components/organisms';
+import SlickteamContainer from '@/components/organisms/SlickteamContainer.vue';
+import SlickteamToolbar from '@/components/organisms/SlickteamToolbar.vue';
+import SlickteamSidebarIcon from '@/components/organisms/SlickteamSidebarIcon.vue';
+import SlickteamSidebar from '@/components/organisms/SlickteamSidebar.vue';
+import SlickteamDataTable from '@/components/organisms/SlickteamDataTable.vue';
 
 const SlickComponentLibrary = {
   install: (app) => {
-    app.component('MoleculeIconButton', MoleculeIconButton);
-    app.component('MoleculeTextIconButton', MoleculeTextIconButton);
-    app.component('MoleculeClipboardButton', MoleculeClipboardButton);
-    app.component('MoleculeColorPickerForm', MoleculeColorPickerForm);
-    app.component('MoleculeIconPickerForm', MoleculeIconPickerForm);
-    app.component('OrganismSidebarIcon', OrganismSidebarIcon);
-    app.component('OrganismSystemDataTable', OrganismSystemDataTable);
-    app.component('OrganismContainerPage', OrganismContainerPage);
-    app.component('OrganismSidebar', OrganismSidebar);
-    app.component('OrganismToolbar', OrganismToolbar);
+    app.component('SlickteamClipboardButton', SlickteamClipboardButton);
+    app.component('SlickteamIconButton', SlickteamIconButton);
+    app.component('SlickteamTextIconButton', SlickteamTextIconButton);
+    app.component('SlickteamColorPicker', SlickteamColorPicker);
+    app.component('SlickteamIconPicker', SlickteamIconPicker);
+    app.component('SlickteamContainer', SlickteamContainer);
+    app.component('SlickteamToolbar', SlickteamToolbar);
+    app.component('SlickteamSidebarIcon', SlickteamSidebarIcon);
+    app.component('SlickteamSidebar', SlickteamSidebar);
+    app.component('SlickteamDataTable', SlickteamDataTable);
   },
 };
 
@@ -67,16 +59,16 @@ const VuetifyLibrary = {
 export {
   VuetifyLibrary,
   SlickComponentLibrary,
-  // Molecule
-  MoleculeIconButton,
-  MoleculeTextIconButton,
-  MoleculeClipboardButton,
-  MoleculeColorPickerForm,
-  MoleculeIconPickerForm,
-  // Organism
-  OrganismSidebarIcon,
-  OrganismSystemDataTable,
-  OrganismContainerPage,
-  OrganismSidebar,
-  OrganismToolbar,
+  // Molecules
+  SlickteamClipboardButton,
+  SlickteamIconButton,
+  SlickteamTextIconButton,
+  SlickteamColorPicker,
+  SlickteamIconPicker,
+  // Organisms
+  SlickteamContainer,
+  SlickteamToolbar,
+  SlickteamSidebarIcon,
+  SlickteamSidebar,
+  SlickteamDataTable,
 };
