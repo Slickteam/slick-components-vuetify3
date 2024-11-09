@@ -61,7 +61,7 @@ const props = defineProps({
   },
   height: {
     type: String,
-    default: '576',
+    default: undefined,
   },
   messageNoContent: {
     type: String,
