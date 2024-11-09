@@ -1,8 +1,8 @@
-import MoleculeIconPickerForm from '../../../components/molecules/MoleculeIconPickerForm.vue';
+import SlickteamIconPicker from '../../../components/molecules/picker/SlickteamIconPicker.vue';
 
 export default {
-  title: 'Molecules/form/MoleculeIconPickerForm',
-  component: MoleculeIconPickerForm,
+  title: 'Molecules/form/SlickteamIconPicker',
+  component: SlickteamIconPicker,
   tags: ['docsPage'],
   args: {},
   argTypes: {

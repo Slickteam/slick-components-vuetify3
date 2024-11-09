@@ -1,9 +1,9 @@
 import { shallowRef, watch } from 'vue';
-import OrganismContainerPage from '../../../components/organisms/OrganismContainerPage.vue';
+import SlickteamContainer from '../../../components/organisms/SlickteamContainer.vue';
 
 export default {
-  title: 'Organisms/layout/OrganismContainerPage',
-  component: OrganismContainerPage,
+  title: 'Organisms/layout/SlickteamContainer',
+  component: SlickteamContainer,
   tags: ['docsPage'],
   args: {
     hideSidebarLeft: false,
@@ -46,7 +46,7 @@ export default {
 };
 
 const Template = (args) => ({
-  components: { OrganismContainerPage },
+  components: { SlickteamContainer },
   setup() {
     const selectedModel = shallowRef(args.selectedModel);
     // Optional: Keeps v-model in sync with storybook args
@@ -59,7 +59,7 @@ const Template = (args) => ({
     return { args, selectedModel };
   },
   /* html */
-  template: `<OrganismContainerPage v-bind="args" v-model:selected="selectedModel">
+  template: `<SlickteamContainer v-bind="args" v-model:selected="selectedModel">
     <template #sidebar-left-header="{ rail }">Header {{ rail}}</template>
     <template #sidebar-left="{ rail }">Content </template>
     <template #sidebar-left-footer="{ rail }">Footer </template>
@@ -74,7 +74,7 @@ const Template = (args) => ({
     <div style="border: 2px dashed #BBBBBB; height: 1000px">
       Content
     </div>
-  </OrganismContainerPage>`,
+  </SlickteamContainer>`,
 });
 
 export const Default = Template.bind({});

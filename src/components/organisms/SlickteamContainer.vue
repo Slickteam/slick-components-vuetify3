@@ -1,5 +1,5 @@
 <template>
-  <OrganismSidebar v-if="!hideSidebarLeft" v-model="drawerLeftState" :rail="rail" @update:rail="updateRail">
+  <slickteam-sidebar v-if="!hideSidebarLeft" v-model="drawerLeftState" :rail="rail" @update:rail="updateRail">
     <template #header="{ rail }">
       <slot name="sidebar-left-header" :rail="rail"></slot>
     </template>
@@ -9,8 +9,8 @@
     <template #footer="{ rail }">
       <slot name="sidebar-left-footer" :rail="rail"></slot>
     </template>
-  </OrganismSidebar>
-  <OrganismSidebarIcon
+  </slickteam-sidebar>
+  <slickteam-sidebar-icon
     v-if="!hideSidebarRight"
     v-model:drawer="drawerRightState"
     v-model:selected="selectedModel"
@@ -19,8 +19,8 @@
     <template #default>
       <slot name="sidebar-right"></slot>
     </template>
-  </OrganismSidebarIcon>
-  <OrganismToolbar
+  </slickteam-sidebar-icon>
+  <slickteam-toolbar
     v-if="!hideToolbar"
     :sidebar-right-icon="!hideSidebarRight && !drawerRightState"
     @toggle:menu="drawerLeftState = !drawerLeftState"
@@ -32,7 +32,7 @@
     <template #default>
       <slot name="toolbar-left"></slot>
     </template>
-  </OrganismToolbar>
+  </slickteam-toolbar>
 
   <div class="page-container">
     <div class="page-container-content">
@@ -59,9 +59,9 @@
 <script setup>
 import { shallowRef } from 'vue';
 import { useDisplay } from 'vuetify';
-import OrganismSidebar from './OrganismSidebar.vue';
-import OrganismToolbar from './OrganismToolbar.vue';
-import OrganismSidebarIcon from './OrganismSidebarIcon.vue';
+import SlickteamSidebar from './SlickteamSidebar.vue';
+import SlickteamToolbar from './SlickteamToolbar.vue';
+import SlickteamSidebarIcon from './SlickteamSidebarIcon.vue';
 
 const { mobile } = useDisplay();
 const selectedModel = defineModel('selected', { default: undefined, type: String });

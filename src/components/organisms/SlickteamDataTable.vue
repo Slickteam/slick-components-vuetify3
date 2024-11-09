@@ -22,7 +22,7 @@
       {{ formatDate(value) }}
     </template>
     <template #item.id="{ item }">
-      <MoleculeClipboardButton :text="item.id" :value="item.id" />
+      <slickteam-clipboard-button :text="item.id" :value="item.id" />
     </template>
     <template #item.actions="{ item }">
       <v-btn-group color="secondary" density="compact">
@@ -46,7 +46,7 @@
 import { computed } from 'vue';
 import { useDisplay } from 'vuetify';
 import { formatDate } from '@/components/utils';
-import MoleculeClipboardButton from '@/components/molecules/MoleculeClipboardButton.vue';
+import SlickteamClipboardButton from '@/components/molecules/button/SlickteamClipboardButton.vue';
 
 const { name } = useDisplay();
 

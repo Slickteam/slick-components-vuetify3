@@ -1,8 +1,8 @@
-import MoleculeClipboardButton from '../../../components/molecules/MoleculeClipboardButton.vue';
+import SlickteamClipboardButton from '../../../components/molecules/button/SlickteamClipboardButton.vue';
 
 export default {
-  title: 'Molecules/button/MoleculeClipboardButton',
-  component: MoleculeClipboardButton,
+  title: 'Molecules/button/SlickteamClipboardButton',
+  component: SlickteamClipboardButton,
   tags: ['docsPage'],
   args: {
     text: 'Copy me',

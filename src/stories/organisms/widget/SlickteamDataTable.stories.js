@@ -1,8 +1,8 @@
-import OrganismSystemDataTable from '../../../components/organisms/OrganismSystemDataTable.vue';
+import SlickteamDataTable from '../../../components/organisms/SlickteamDataTable.vue';
 
 export default {
-  title: 'Organisms/widget/OrganismSystemDataTable',
-  component: OrganismSystemDataTable,
+  title: 'Organisms/widget/SlickteamDataTable',
+  component: SlickteamDataTable,
   tags: ['docsPage'],
   args: {
     data: [

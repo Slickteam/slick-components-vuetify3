@@ -1,8 +1,8 @@
-import MoleculeTextIconButton from '../../../components/molecules/MoleculeTextIconButton.vue';
+import SlickteamTextIconButton from '../../../components/molecules/button/SlickteamTextIconButton.vue';
 
 export default {
-  title: 'Molecules/button/MoleculeTextIconButton',
-  component: MoleculeTextIconButton,
+  title: 'Molecules/button/SlickteamTextIconButton',
+  component: SlickteamTextIconButton,
   tags: ['button', 'molecule'],
   args: {
     text: 'Click me',
