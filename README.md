@@ -48,19 +48,19 @@ import { SlickteamIconButton } from '@slickteam/components-vuetify3';
 
 ### Button components
 
-- [slickteam-clipboard-button](./docs/molecules/button/SlickteamClipboardButton.md)
-- [slickteam-icon-button](./docs/molecules/button/SlickteamIconButton.md)
-- [slickteam-text-icon-button](./docs/molecules/button/SlickteamTextIconButton.md)
+- [slickteam-clipboard-button](./docs/components/molecules/button/SlickteamClipboardButton.md)
+- [slickteam-icon-button](./docs/components/molecules/button/SlickteamIconButton.md)
+- [slickteam-text-icon-button](./docs/components/molecules/button/SlickteamTextIconButton.md)
 
 ### Picker components
 
-- [slickteam-color-picker](./docs/molecules/picker/SlickteamColorPicker.md)
-- [slickteam-icon-picker](./docs/molecules/picker/SlickteamIconPicker.md)
+- [slickteam-color-picker](./docs/components/molecules/picker/SlickteamColorPicker.md)
+- [slickteam-icon-picker](./docs/components/molecules/picker/SlickteamIconPicker.md)
 
 ## Organisms
 
-- [slickteam-container](./docs/molecules/picker/SlickteamContainer.md)
-- [slickteam-toolbar](./docs/molecules/picker/SlickteamToolbar.md)
-- [slickteam-sidebar-icon](./docs/molecules/picker/SlickteamSidebarIcon.md)
-- [slickteam-sidebar](./docs/molecules/picker/SlickteamSidebar.md)
-- [slickteam-data-table](./docs/molecules/picker/SlickteamDataTable.md)
+- [slickteam-container](./docs/components/organisms/SlickteamContainer.md)
+- [slickteam-toolbar](./docs/components/organisms/SlickteamToolbar.md)
+- [slickteam-sidebar-icon](./docs/components/organisms/SlickteamSidebarIcon.md)
+- [slickteam-sidebar](./docs/components/organisms/SlickteamSidebar.md)
+- [slickteam-data-table](./docs/components/organisms/SlickteamDataTable.md)
