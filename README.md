@@ -44,24 +44,23 @@ createApp(app).use(VuetifyLibrary, options);
 import { SlickteamIconButton } from '@slickteam/components-vuetify3';
 ```
 
-## Button components
+## Molecules
 
-- `SlickteamClipboardButton`
-- `SlickteamIconButton`
-- `SlickteamTextIconButton`
+### Button components
 
-## Form components
+- [slickteam-clipboard-button](./docs/molecules/button/SlickteamClipboardButton.md)
+- [slickteam-icon-button](./docs/molecules/button/SlickteamIconButton.md)
+- [slickteam-text-icon-button](./docs/molecules/button/SlickteamTextIconButton.md)
 
-- `SlickteamColorPicker`
-- `SlickteamIconPicker`
+### Picker components
 
-## Layout components
+- [slickteam-color-picker](./docs/molecules/picker/SlickteamColorPicker.md)
+- [slickteam-icon-picker](./docs/molecules/picker/SlickteamIconPicker.md)
 
-- `SlickteamSidebarIcon`
-- `SlickteamContainer`
-- `SlickteamSidebar`
-- `SlickteamToolbar`
+## Organisms
 
-## Widget components
-
-- `SlickteamDataTable`
+- [slickteam-container](./docs/molecules/picker/SlickteamContainer.md)
+- [slickteam-toolbar](./docs/molecules/picker/SlickteamToolbar.md)
+- [slickteam-sidebar-icon](./docs/molecules/picker/SlickteamSidebarIcon.md)
+- [slickteam-sidebar](./docs/molecules/picker/SlickteamSidebar.md)
+- [slickteam-data-table](./docs/molecules/picker/SlickteamDataTable.md)
