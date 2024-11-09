@@ -1,11 +1,11 @@
-import { MoleculeIconButton } from '../../../components/molecules';
+import SlickteamTextIconButton from '../../../components/molecules/button/SlickteamTextIconButton.vue';
 
 export default {
-  title: 'Molecules/button/MoleculeIconButton',
-  component: MoleculeIconButton,
-  tags: ['docsPage'],
+  title: 'Molecules/button/SlickteamTextIconButton',
+  component: SlickteamTextIconButton,
+  tags: ['button', 'molecule'],
   args: {
-    title: 'Click me',
+    text: 'Click me',
   },
   argTypes: {
     // onClick: {},
@@ -30,6 +30,10 @@ export default {
       },
       options: ['mdi-home', 'mdi-'],
     },
+    text: {
+      control: 'text',
+      description: 'Label in button',
+    },
     title: {
       control: 'text',
       description: 'Title accessibility in button',
@@ -43,18 +47,12 @@ export default {
     target: {
       control: 'text',
     },
-    showChip: {
-      control: 'boolean',
-    },
-    contentChip: {
-      control: 'text',
-    },
   },
 };
 
 export const Primary = {
   args: {
-    primary: true,
-    title: 'Click me',
+    size: 'default',
+    text: 'Click me',
   },
 };

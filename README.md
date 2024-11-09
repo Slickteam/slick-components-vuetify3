@@ -41,27 +41,26 @@ createApp(app).use(VuetifyLibrary, options);
 - In your file where you want use a component, add this line for style
 
 ```js
-import { MoleculeIconButton } from '@slickteam/components-vuetify3';
+import { SlickteamIconButton } from '@slickteam/components-vuetify3';
 ```
 
-## Button components
+## Molecules
 
-- `MoleculeClipboardButton`
-- `MoleculeIconButton`
-- `MoleculeTextIconButton`
+### Button components
 
-## Form components
+- [slickteam-clipboard-button](./docs/components/molecules/button/SlickteamClipboardButton.md)
+- [slickteam-icon-button](./docs/components/molecules/button/SlickteamIconButton.md)
+- [slickteam-text-icon-button](./docs/components/molecules/button/SlickteamTextIconButton.md)
 
-- `MoleculeColorPickerForm`
-- `MoleculeIconPickerForm`
+### Picker components
 
-## Layout components
+- [slickteam-color-picker](./docs/components/molecules/picker/SlickteamColorPicker.md)
+- [slickteam-icon-picker](./docs/components/molecules/picker/SlickteamIconPicker.md)
 
-- `OrganismSidebarIcon`
-- `OrganismContainerPage`
-- `OrganismSidebar`
-- `OrganismToolbar`
+## Organisms
 
-## Widget components
-
-- `OrganismSystemDataTable`
+- [slickteam-container](./docs/components/organisms/SlickteamContainer.md)
+- [slickteam-toolbar](./docs/components/organisms/SlickteamToolbar.md)
+- [slickteam-sidebar-icon](./docs/components/organisms/SlickteamSidebarIcon.md)
+- [slickteam-sidebar](./docs/components/organisms/SlickteamSidebar.md)
+- [slickteam-data-table](./docs/components/organisms/SlickteamDataTable.md)

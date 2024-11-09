@@ -1,13 +1,28 @@
 <template>
-  <v-data-table :headers="headersBySize" :height="height" :items="data" :no-data-text="messageNoContent" hover>
+  <v-data-table
+    :class="{ 'flex-fill': height === undefined }"
+    :headers="headersBySize"
+    :height="height"
+    :items="data"
+    :no-data-text="messageNoContent"
+    :expand-on-click="showExpand"
+    :fixed-header="fixedHeader"
+    hover
+  >
     <template #item.createdAt="{ item }">
       {{ formatDate(item.createdAt) }}
     </template>
     <template #item.updatedAt="{ item }">
       {{ formatDate(item.updatedAt) }}
     </template>
+    <template #item.startAt="{ value }">
+      {{ formatDate(value) }}
+    </template>
+    <template #item.endAt="{ value }">
+      {{ formatDate(value) }}
+    </template>
     <template #item.id="{ item }">
-      <MoleculeClipboardButton :text="item.id" :value="item.id" />
+      <slickteam-clipboard-button :text="item.id" :value="item.id" />
     </template>
     <template #item.actions="{ item }">
       <v-btn-group color="secondary" density="compact">
@@ -17,14 +32,21 @@
     <template v-for="k in headersKeys" #[`item.${k}`]="slotData">
       <slot :name="`item.${k}`" v-bind="slotData">{{ slotData.value }}</slot>
     </template>
+    <template v-slot:expanded-row="slotData">
+      <tr>
+        <td :colspan="slotData.columns.length">
+          <slot name="expanded-row" v-bind="slotData">{{ slotData.value }}</slot>
+        </td>
+      </tr>
+    </template>
   </v-data-table>
 </template>
 
 <script setup>
 import { computed } from 'vue';
 import { useDisplay } from 'vuetify';
-import { MoleculeClipboardButton } from '@/components/molecules';
 import { formatDate } from '@/components/utils';
+import SlickteamClipboardButton from '@/components/molecules/button/SlickteamClipboardButton.vue';
 
 const { name } = useDisplay();
 
@@ -39,7 +61,7 @@ const props = defineProps({
   },
   height: {
     type: String,
-    default: '576',
+    default: undefined,
   },
   messageNoContent: {
     type: String,
@@ -48,6 +70,14 @@ const props = defineProps({
   overrideKeys: {
     type: Array,
     default: () => [],
+  },
+  showExpand: {
+    type: Boolean,
+    default: false,
+  },
+  fixedHeader: {
+    type: Boolean,
+    default: true,
   },
 });
 const forbiddenKeysList = ['id', 'createdAt', 'updatedAt', 'actions'];

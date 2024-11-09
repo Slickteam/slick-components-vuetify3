@@ -1,7 +1,7 @@
 {
   "name": "@slickteam/components-vuetify3",
   "description": "Components for Vuetify 3 / Vue 3",
-  "version": "0.2.8",
+  "version": "0.3.0",
   "type": "module",
   "keywords": [
     "slickteam",
@@ -15,6 +15,18 @@
     "name": "Ronan MOREL",
     "url": "https://slickteam.fr"
   },
+  "maintainers": [
+    {
+      "email": "ronan.morel@slickteam.fr",
+      "name": "Ronan MOREL",
+      "url": "https://slickteam.fr"
+    },
+    {
+      "email": "martin.garnier@slickteam.fr",
+      "name": "Martin GARNIER",
+      "url": "https://slickteam.fr"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/Slickteam/slick-components-vuetify3.git"
@@ -31,7 +43,7 @@
     "./style.css": "./dist/style.css"
   },
   "scripts": {
-    "dev": "vite",
+    "vite": "vite",
     "build": "vite build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -39,8 +51,6 @@
   "dependencies": {
     "@braintree/sanitize-url": "^7.1.0",
     "date-fns": "^4.1.0",
-    "unplugin-fonts": "^1.1.1",
-    "vite-plugin-vuetify": "^2.0.4",
     "webfontloader": "^1.6.28"
   },
   "devDependencies": {
@@ -55,7 +65,9 @@
     "@storybook/vue3-vite": "^8.4.2",
     "@vitejs/plugin-vue": "^5.1.4",
     "storybook": "^8.4.2",
+    "unplugin-fonts": "^1.1.1",
     "vite": "^5.4.10",
+    "vite-plugin-vuetify": "^2.0.4",
     "vue": "^3.5.12",
     "vuetify": "^3.7.4"
   },

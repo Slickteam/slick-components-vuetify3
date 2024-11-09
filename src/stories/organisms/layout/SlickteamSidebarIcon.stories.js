@@ -1,9 +1,9 @@
 import { shallowRef, watch } from 'vue';
-import { OrganismSidebarIcon } from '../../../components/organisms';
+import SlickteamSidebarIcon from '../../../components/organisms/SlickteamSidebarIcon.vue';
 
 export default {
-  title: 'Organisms/layout/OrganismSidebarIcon',
-  component: OrganismSidebarIcon,
+  title: 'Organisms/layout/SlickteamSidebarIcon',
+  component: SlickteamSidebarIcon,
   tags: ['docsPage'],
   args: {
     width: 65,
@@ -45,7 +45,7 @@ export default {
 };
 
 const Template = (args) => ({
-  components: { OrganismSidebarIcon },
+  components: { SlickteamSidebarIcon },
   setup() {
     const selectedModel = shallowRef(args.selectedModel);
     const drawerModel = shallowRef(args.drawerModel);
@@ -66,7 +66,7 @@ const Template = (args) => ({
     return { args, selectedModel, drawerModel };
   },
   /* html */
-  template: `<OrganismSidebarIcon v-bind="args" v-model:selected="selectedModel" v-model:drawer="drawerModel" />`,
+  template: `<SlickteamSidebarIcon v-bind="args" v-model:selected="selectedModel" v-model:drawer="drawerModel" />`,
 });
 
 export const Default = Template.bind({});

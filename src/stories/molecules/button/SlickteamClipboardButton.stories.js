@@ -1,12 +1,10 @@
-import { MoleculeClipboardButton } from '../../../components/molecules';
+import SlickteamClipboardButton from '../../../components/molecules/button/SlickteamClipboardButton.vue';
 
 export default {
-  title: 'Molecules/button/MoleculeClipboardButton',
-  component: MoleculeClipboardButton,
+  title: 'Molecules/button/SlickteamClipboardButton',
+  component: SlickteamClipboardButton,
   tags: ['docsPage'],
-  args: {
-    text: 'Copy me',
-  },
+  args: {},
   argTypes: {
     onClick: {},
     size: {
@@ -18,9 +16,9 @@ export default {
     color: {
       control: 'color',
     },
-    text: {
+    tooltip: {
       control: 'text',
-      description: 'Title accessibility in button',
+      description: 'tooltip of button',
     },
     value: {
       control: 'text',
@@ -32,6 +30,6 @@ export default {
 export const Primary = {
   args: {
     primary: true,
-    text: 'Copy me',
+    tooltip: 'Copy me',
   },
 };

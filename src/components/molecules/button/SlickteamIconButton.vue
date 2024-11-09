@@ -25,7 +25,7 @@ const { name } = useDisplay();
 
 const props = defineProps({
   size: {
-    type: String,
+    type: [String, Number],
     default: undefined,
   },
   variant: {
