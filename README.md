@@ -1,5 +1,7 @@
 # Slick Components for Vuetify 3 / Vue 3
 
+Available on npmjs.org : [@slickteam/components-vuetify3](https://www.npmjs.com/package/@slickteam/components-vuetify3)
+
 ## How to install
 
 ```bash

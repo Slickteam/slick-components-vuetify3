@@ -1,7 +1,7 @@
 {
   "name": "@slickteam/components-vuetify3",
   "description": "Components for Vuetify 3 / Vue 3",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "type": "module",
   "keywords": [
     "slickteam",
@@ -46,7 +46,9 @@
     "vite": "vite",
     "build": "vite build",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prettier": "prettier --cache --check .",
+    "prettier:fix": "prettier --cache --write ."
   },
   "dependencies": {
     "@braintree/sanitize-url": "^7.1.0",
@@ -55,7 +57,7 @@
   },
   "devDependencies": {
     "@mdi/font": "^7.4.47",
-    "@slickteam/prettier": "^1.0.0",
+    "@slickteam/prettier": "^1.0.3",
     "@storybook/addon-essentials": "^8.4.2",
     "@storybook/addon-interactions": "^8.4.2",
     "@storybook/addon-links": "^8.4.2",

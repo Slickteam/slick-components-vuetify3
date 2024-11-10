@@ -22,8 +22,8 @@ importers:
         specifier: ^7.4.47
         version: 7.4.47
       '@slickteam/prettier':
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^1.0.3
+        version: 1.0.3
       '@storybook/addon-essentials':
         specifier: ^8.4.2
         version: 8.4.2(@types/react@18.3.12)(storybook@8.4.2(prettier@3.3.3))
@@ -496,8 +496,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@slickteam/prettier@1.0.0':
-    resolution: {integrity: sha512-bCULXyn+OQkbsXbsrAJgjz0ncTANFZ/KUSB8skJkxoOg/VrWeaJJQpg9M97gjT5z/rFedaanDBFHQDKdq1P9iQ==}
+  '@slickteam/prettier@1.0.3':
+    resolution: {integrity: sha512-mPyULP61nruxhHz1Ggw1jCMpEpoidxw/tzw1tD67hisEH5sxKl+54n3q12UTfqT4oV8nhYzJq2ZbIYBBwbvYqg==}
 
   '@storybook/addon-actions@8.4.2':
     resolution: {integrity: sha512-+hA200XN5aeA4T3jq8IifQq6Y+9FyNQ0Q+blM1L0Tl7WLzBc7B1kHQnKvhSj5pvMSBWc/Q/kY7Ev5t9gdOu13g==}
@@ -1762,7 +1762,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.24.3':
     optional: true
 
-  '@slickteam/prettier@1.0.0':
+  '@slickteam/prettier@1.0.3':
     dependencies:
       prettier: 3.3.3
 
