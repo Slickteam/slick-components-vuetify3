@@ -7,7 +7,6 @@
     :prepend-inner-icon="model ? `mdi-${model}` : undefined"
     :clearable="clearable"
     item-props
-    @update:model-value="onUpdateInternalValue"
   />
 </template>
 
