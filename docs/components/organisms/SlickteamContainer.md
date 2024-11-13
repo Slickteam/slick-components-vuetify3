@@ -29,10 +29,10 @@ import { shallowRef } from 'vue';
 const selected = shallowRef(undefined);
 
 const items = [
-  { icon: 'mdi-home', text: 'Menu 01', color: '#3729DD', value: 'menu01' },
-  { icon: 'mdi-home', text: 'Menu 02', color: '#4EBC1A', value: 'menu02' },
-  { icon: 'mdi-home', text: 'Menu 03', color: '#40fC1A', value: 'menu03' },
-  { icon: 'mdi-home', text: 'Menu 04', color: '#3EBC1A', value: 'menu04' },
+  { icon: 'mdi-home', text: 'Menu 01', color: '#3729DD', value: 'menu01', count: 1 },
+  { icon: 'mdi-home', text: 'Menu 02', color: '#4EBC1A', value: 'menu02', count: undefined },
+  { icon: 'mdi-home', text: 'Menu 03', color: '#40fC1A', value: 'menu03', count: undefined },
+  { icon: 'mdi-home', text: 'Menu 04', color: '#3EBC1A', value: 'menu04', count: 19 },
 ];
 </script>
 ```
