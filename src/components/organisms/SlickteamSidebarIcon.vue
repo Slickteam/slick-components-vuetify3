@@ -45,7 +45,20 @@
               'border-color': item.active ? item.color : '',
             }"
           >
-            <v-icon :color="item.color">{{ item.icon }}</v-icon>
+            <template v-if="item.count !== undefined">
+              <v-badge
+                :color="item.color"
+                :content="item.count > 9 ? '9+' : item.count"
+                bordered
+                :offset-x="item.count > 9 ? 2 : -4"
+                :offset-y="-4"
+              >
+                <v-icon :color="item.color">{{ item.icon }}</v-icon>
+              </v-badge>
+            </template>
+            <template v-else>
+              <v-icon :color="item.color">{{ item.icon }}</v-icon>
+            </template>
           </div>
           <p class="sidebar-icon-menu-item-text" align="center">{{ item.text }}</p>
         </v-list-item>
