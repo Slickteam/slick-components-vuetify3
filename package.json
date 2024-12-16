@@ -1,7 +1,7 @@
 {
   "name": "@slickteam/components-vuetify3",
   "description": "Components for Vuetify 3 / Vue 3",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "type": "module",
   "keywords": [
     "slickteam",
@@ -40,7 +40,7 @@
       "import": "./dist/components-vuetify3.js",
       "require": "./dist/components-vuetify3.umd.cjs"
     },
-    "./style.css": "./dist/style.css"
+    "./style.css": "./dist/components-vuetify3.css"
   },
   "scripts": {
     "vite": "vite",
