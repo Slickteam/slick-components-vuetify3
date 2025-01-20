@@ -1,24 +1,27 @@
 <template>
   <v-navigation-drawer
     v-model="modelDrawer"
-    class="sidebar-root-container"
-    elevation="2"
+    :elevation="elevation"
     :rail="!mobile && rail"
+    :color="backgroundColor"
+    :border="false"
+    :style="{ border: showBorder ? '' : 'none' }"
     @click="emit('update:rail', false)"
   >
-    <div class="sidebar-header" :style="{ padding: !rail ? '8px 12px' : '' }">
+    <div class="sidebar-header" :style="{ padding: !rail ? '8px 12px' : '', borderBottom: showBottomBorder ? 'solid 1px #aaaaaa' : '' }">
       <slot name="header" :rail="rail"></slot>
       <v-btn
-        v-if="!rail && !mobile"
+        v-if="showRailButton && !rail && !mobile"
         density="compact"
         icon
         rounded="0"
         width="24"
         height="24"
         elevation="0"
+        :color="backgroundColor"
         @click.stop="emit('update:rail', !rail)"
       >
-        <v-icon icon="mdi-chevron-left" color="#aaaaaa" />
+        <v-icon icon="mdi-chevron-left" :color="iconRailButtonColor" />
       </v-btn>
     </div>
     <div class="sidebar-content-container">
@@ -41,9 +44,21 @@ const emit = defineEmits<{
 withDefaults(
   defineProps<{
     rail?: boolean;
+    elevation?: string | number;
+    showBottomBorder?: boolean;
+    iconRailButtonColor?: string;
+    showRailButton?: boolean;
+    backgroundColor?: string;
+    showBorder?: boolean;
   }>(),
   {
     rail: false,
+    elevation: '2',
+    showBottomBorder: true,
+    showRailButton: true,
+    iconRailButtonColor: '#aaaaaa',
+    backgroundColor: '#ffffff',
+    showBorder: true,
   },
 );
 const { mobile } = useDisplay();
@@ -54,23 +69,13 @@ const { mobile } = useDisplay();
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: white;
   z-index: 100;
   height: 56px;
-  border-bottom: solid 1px #aaaaaa;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-}
-.sidebar-nav-footer {
-  height: 188px;
-  border-top: solid 1px #aaaaaa;
-}
-.sidebar-footer {
-  height: 92px;
-  border-top: solid 1px #aaaaaa;
 }
 .sidebar-content-container {
   margin-top: 57px;

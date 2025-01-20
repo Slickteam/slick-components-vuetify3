@@ -1,7 +1,7 @@
 {
   "name": "@slickteam/components-vuetify3",
   "description": "Components for Vuetify 3 / Vue 3",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "type": "module",
   "keywords": [
     "slickteam",
@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "@braintree/sanitize-url": "^7.1.1",
+    "@storybook/client-api": "^7.6.17",
     "date-fns": "^4.1.0",
     "webfontloader": "^1.6.28"
   },

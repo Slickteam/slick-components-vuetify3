@@ -1,5 +1,6 @@
 // .storybook/preview.js
 import { setup } from '@storybook/vue3';
+import { useArgs } from '@storybook/client-api';
 import { withVuetifyTheme, DEFAULT_THEME } from './withVuetifyTheme.decorator';
 import '@mdi/font/css/materialdesignicons.css';
 import 'vuetify/styles';
@@ -57,4 +58,10 @@ export const parameters = {
   layout: 'fullscreen',
 };
 
-export const decorators = [withVuetifyTheme];
+export const decorators = [
+  withVuetifyTheme,
+  (story, context) => {
+    const [_, updateArgs] = useArgs();
+    return story({ ...context, updateArgs });
+  },
+];
