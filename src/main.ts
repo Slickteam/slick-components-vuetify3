@@ -1,6 +1,7 @@
 import '@mdi/font/css/materialdesignicons.min.css';
-import 'vuetify/styles';
+//import 'vuetify/styles';
 import { createVuetify } from 'vuetify';
+import type { App } from 'vue';
 
 import SlickteamClipboardButton from '@/components/molecules/button/SlickteamClipboardButton.vue';
 import SlickteamIconButton from '@/components/molecules/button/SlickteamIconButton.vue';
@@ -15,7 +16,7 @@ import SlickteamSidebar from '@/components/organisms/SlickteamSidebar.vue';
 import SlickteamDataTable from '@/components/organisms/SlickteamDataTable.vue';
 
 const SlickComponentLibrary = {
-  install: (app) => {
+  install: (app: App<Element>) => {
     app.component('SlickteamClipboardButton', SlickteamClipboardButton);
     app.component('SlickteamIconButton', SlickteamIconButton);
     app.component('SlickteamTextIconButton', SlickteamTextIconButton);
@@ -30,7 +31,7 @@ const SlickComponentLibrary = {
 };
 
 const VuetifyLibrary = {
-  install(app, options) {
+  install(app: App<Element>, options: any) {
     const defaultOptions = options ?? {
       theme: {
         themes: {

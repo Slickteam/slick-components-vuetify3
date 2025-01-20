@@ -9,7 +9,6 @@ import ViteFonts from 'unplugin-fonts/vite';
 export default defineConfig({
   server: {
     port: '9999',
-    host: true,
   },
   plugins: [
     vue({
@@ -33,7 +32,7 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
-    extensions: ['.js', '.json', '.vue'],
+    extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue'],
   },
   optimizeDeps: {
     include: ['vuetify'],
@@ -41,7 +40,7 @@ export default defineConfig({
   build: {
     lib: {
       // src/main.ts is where we have exported our component(s)
-      entry: resolve(__dirname, 'src/main.js'),
+      entry: resolve(__dirname, 'src/main.ts'),
       name: 'SlickComponentLibrary',
       // the name of the output files when the build is run
       fileName: 'components-vuetify3',

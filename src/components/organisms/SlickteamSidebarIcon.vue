@@ -67,55 +67,54 @@
   </v-navigation-drawer>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { shallowRef, onMounted, computed, watch } from 'vue';
 
-const props = defineProps({
-  items: {
-    type: Array,
-    default: () => [],
-  },
-  width: {
-    type: Number,
-    default: 65,
-  },
-  height: {
-    type: String,
-    default: undefined,
-  },
-  background: {
-    type: String,
-    default: undefined,
-  },
-  rounded: {
-    type: String,
-    default: 'sm',
-  },
-  elevation: {
-    type: [String, Number],
-    default: '2',
-  },
-});
+const selectedModel = defineModel<string | undefined>('selected', { default: undefined });
+const drawerModel = defineModel<boolean>('drawer', { default: false });
 
-const selectedModel = defineModel('selected', { default: undefined, type: String });
-const drawerModel = defineModel('drawer', { default: undefined, type: Boolean });
-const internalModel = shallowRef([]);
+const props = withDefaults(
+  defineProps<{
+    items?: { icon: string; text: string; color: string; value: string; count: number | undefined }[];
+    width?: string | number;
+    height?: string;
+    background?: string;
+    rounded?: string | number | boolean;
+    elevation?: string | number;
+  }>(),
+  {
+    items: () => [],
+    width: 65,
+    rounded: 'sm',
+    elevation: '2',
+  },
+);
+
+const internalModel = shallowRef<string[]>([]);
 
 onMounted(() => {
-  internalModel.value = [selectedModel.value];
+  if (selectedModel.value) {
+    internalModel.value = [selectedModel.value];
+  } else {
+    internalModel.value = [];
+  }
 });
 
 watch(selectedModel, () => {
-  internalModel.value = [selectedModel.value];
+  if (selectedModel.value) {
+    internalModel.value = [selectedModel.value];
+  } else {
+    internalModel.value = [];
+  }
 });
 
 const convertedItems = computed(() => props.items.map((i) => ({ ...i, active: selectedModel.value === i.value })));
 
-function updateSelected(values) {
+function updateSelected(values: string[]) {
   internalModel.value = values;
-  const valueReceived = values?.[0];
-  selectedModel.value = valueReceived;
-  // emit('update:selected', valueReceived);
+  if (values.length > 0) {
+    selectedModel.value = values[0];
+  }
 }
 </script>
 

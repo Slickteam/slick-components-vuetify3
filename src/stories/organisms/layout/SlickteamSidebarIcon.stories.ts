@@ -1,15 +1,18 @@
+import type { Meta, StoryObj } from '@storybook/vue3';
+import type { ComponentProps } from 'vue-component-type-helpers';
 import { shallowRef, watch } from 'vue';
-import SlickteamContainer from '../../../components/organisms/SlickteamContainer.vue';
+import SlickteamSidebarIcon from '../../../components/organisms/SlickteamSidebarIcon.vue';
 
-export default {
-  title: 'Organisms/layout/SlickteamContainer',
-  component: SlickteamContainer,
+type PageSlickteamSidebarIconArgs = ComponentProps<typeof SlickteamSidebarIcon> & { selectedModel?: string; drawerModel?: boolean };
+
+const meta: Meta<PageSlickteamSidebarIconArgs> = {
+  title: 'Organisms/layout/SlickteamSidebarIcon',
+  component: SlickteamSidebarIcon,
   tags: ['docsPage'],
   args: {
-    hideSidebarLeft: false,
-    hideToolbar: false,
-    hideSidebarRight: false,
-    itemsSidebarRight: [
+    width: 65,
+    elevation: 0,
+    items: [
       { icon: 'mdi-home', text: 'Menu 01', color: '#3729DD', value: 'menu01', count: 4 },
       { icon: 'mdi-home', text: 'Menu 02', color: '#4EBC1A', value: 'menu02', count: undefined },
       { icon: 'mdi-home', text: 'Menu 03', color: '#40fC1A', value: 'menu03', count: 19 },
@@ -31,53 +34,50 @@ export default {
       { icon: 'mdi-home', text: 'Menu 19', color: '#4E9C15', value: 'menu19', count: undefined },
       { icon: 'mdi-home', text: 'Menu 20', color: '#aEB01A', value: 'menu20', count: undefined },
     ],
+    rounded: 'sm',
+    height: '800px',
+    background: '',
   },
   argTypes: {
-    hideSidebarLeft: {
-      control: 'boolean',
-    },
-    hideToolbar: {
-      control: 'boolean',
-    },
-    hideSidebarRight: {
-      control: 'boolean',
-    },
-  },
-};
-
-const Template = (args) => ({
-  components: { SlickteamContainer },
-  setup() {
-    const selectedModel = shallowRef(args.selectedModel);
-    // Optional: Keeps v-model in sync with storybook args
-    watch(
-      () => args.selectedModel,
-      (val) => {
-        selectedModel.value = val;
+    rounded: {
+      control: {
+        type: 'select',
       },
-    );
-    return { args, selectedModel };
+      options: ['0', 'xs', 'sm', 'lg', 'md', 'xl', 'pill', 'circle', 'shaped'],
+    },
   },
-  /* html */
-  template: `<SlickteamContainer v-bind="args" v-model:selected="selectedModel">
-    <template #sidebar-left-header="{ rail }">Header {{ rail}}</template>
-    <template #sidebar-left="{ rail }">Content </template>
-    <template #sidebar-left-footer="{ rail }">Footer </template>
-    <template #toolbar-left>left</template>
-    <template #toolbar-right>right</template>
-    <template #sidebar-right-menu-header>Title</template>
-    <template #sidebar-right-menu={selected}>
-      {{ selected }}
-    </template>
-    <template #sidebar-right-menu-actions>Actions</template>
+  render: (args) => ({
+    components: { SlickteamSidebarIcon },
+    setup() {
+      const selectedModel = shallowRef(args.selectedModel);
+      const drawerModel = shallowRef(args.drawerModel);
+      // Optional: Keeps v-model in sync with storybook args
+      watch(
+        () => args.selectedModel,
+        (val) => {
+          selectedModel.value = val;
+        },
+      );
+      watch(
+        () => args.drawerModel,
+        (val) => {
+          drawerModel.value = val;
+        },
+      );
 
-    <div style="border: 2px dashed #BBBBBB; height: 1000px">
-      Content
-    </div>
-  </SlickteamContainer>`,
-});
-
-export const Default = Template.bind({});
-Default.args = {
-  selectedModel: 'menu01',
+      return { args, selectedModel, drawerModel };
+    },
+    /* html */
+    template: `<SlickteamSidebarIcon v-bind="args" v-model:selected="selectedModel" v-model:drawer="drawerModel" />`,
+  }),
 };
+export default meta;
+
+type Story = StoryObj<PageSlickteamSidebarIconArgs>;
+
+export const Default = {
+  args: {
+    selectedModel: 'menu01',
+    drawerModel: true,
+  },
+} satisfies Story;

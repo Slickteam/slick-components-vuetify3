@@ -1,12 +1,12 @@
+import type { Meta, StoryObj } from '@storybook/vue3';
 import SlickteamClipboardButton from '../../../components/molecules/button/SlickteamClipboardButton.vue';
 
-export default {
+const meta: Meta<typeof SlickteamClipboardButton> = {
   title: 'Molecules/button/SlickteamClipboardButton',
   component: SlickteamClipboardButton,
   tags: ['docsPage'],
   args: {},
   argTypes: {
-    onClick: {},
     size: {
       control: {
         type: 'select',
@@ -26,10 +26,12 @@ export default {
     },
   },
 };
+export default meta;
+
+type Story = StoryObj<typeof SlickteamClipboardButton>;
 
 export const Primary = {
   args: {
-    primary: true,
     tooltip: 'Copy me',
   },
-};
+} satisfies Story;

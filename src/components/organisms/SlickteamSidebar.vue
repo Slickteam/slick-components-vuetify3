@@ -30,17 +30,22 @@
   </v-navigation-drawer>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { useDisplay } from 'vuetify';
 
-const modelDrawer = defineModel({ default: true });
-const emit = defineEmits(['update:rail']);
-defineProps({
-  rail: {
-    type: Boolean,
-    default: false,
+const modelDrawer = defineModel<boolean>({ default: true });
+const emit = defineEmits<{
+  (e: 'update:rail', value: boolean): void;
+}>();
+
+withDefaults(
+  defineProps<{
+    rail?: boolean;
+  }>(),
+  {
+    rail: false,
   },
-});
+);
 const { mobile } = useDisplay();
 </script>
 

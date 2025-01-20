@@ -8,7 +8,7 @@ Available on npmjs.org : [@slickteam/components-vuetify3](https://www.npmjs.com/
 npm i -S @slickteam/components-vuetify3
 ```
 
-- In `main.js`, add this line for style
+- In `main.ts`, add this line for style
 
 ```js
 //...

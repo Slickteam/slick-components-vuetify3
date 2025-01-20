@@ -13,51 +13,37 @@
   </v-btn>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { computed } from 'vue';
 import { useDisplay } from 'vuetify';
 import { sanitizeUrl } from '@braintree/sanitize-url';
 
-const emit = defineEmits(['click']);
+const emit = defineEmits<{
+  (e: 'click'): void;
+}>();
+
 const { name } = useDisplay();
-const props = defineProps({
-  size: {
-    type: String,
-    default: undefined,
+
+const props = withDefaults(
+  defineProps<{
+    size?: string;
+    variant?: 'flat' | 'text' | 'elevated' | 'tonal' | 'outlined' | 'plain';
+    color?: string;
+    icon?: string;
+    text?: string;
+    title?: string;
+    to?: string;
+    href?: string;
+    target?: string;
+  }>(),
+  {
+    variant: 'outlined',
+    color: 'secondary',
+    icon: 'mdi-plus',
+    text: 'Button',
   },
-  variant: {
-    type: String,
-    default: 'outlined',
-  },
-  color: {
-    type: String,
-    default: 'secondary',
-  },
-  icon: {
-    type: String,
-    default: 'mdi-plus',
-  },
-  text: {
-    type: String,
-    default: 'Button',
-  },
-  title: {
-    type: String,
-    default: undefined,
-  },
-  to: {
-    type: String,
-    default: undefined,
-  },
-  href: {
-    type: String,
-    default: undefined,
-  },
-  target: {
-    type: String,
-    default: undefined,
-  },
-});
+);
+
 const calculatedSize = computed(() => {
   if (props.size !== undefined) {
     return props.size;

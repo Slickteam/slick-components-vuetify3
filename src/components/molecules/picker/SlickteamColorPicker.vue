@@ -11,11 +11,11 @@
   </v-menu>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { shallowRef } from 'vue';
 
-const modelValue = defineModel({ type: String, default: '#1976D2' });
-const menu = shallowRef(false);
+const modelValue = defineModel<string>({ default: '#1976D2' });
+const menu = shallowRef<boolean>(false);
 </script>
 
 <style scoped>

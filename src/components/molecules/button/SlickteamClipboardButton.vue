@@ -8,34 +8,31 @@
   </v-tooltip>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { computed } from 'vue';
 import { useDisplay } from 'vuetify';
 
 const { name } = useDisplay();
 
-const emit = defineEmits(['after:copy']);
+const emit = defineEmits<{
+  (e: 'after:copy'): void;
+}>();
 
-const props2 = defineProps({
-  tooltip: {
-    type: String,
-    default: 'Clipboard',
+const props2 = withDefaults(
+  defineProps<{
+    tooltip?: string;
+    value?: string;
+    size?: string | number;
+    color?: string;
+  }>(),
+  {
+    tooltip: 'Clipboard',
+    color: 'secondary',
   },
-  value: {
-    type: String,
-    default: '',
-  },
-  size: {
-    type: [String, Number],
-    default: undefined,
-  },
-  color: {
-    type: String,
-    default: 'secondary',
-  },
-});
+);
+
 function copieValue() {
-  navigator.clipboard.writeText(props2.value);
+  navigator.clipboard.writeText(props2.value ?? '');
   emit('after:copy');
 }
 const calculatedSize = computed(() => {

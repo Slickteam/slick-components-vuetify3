@@ -56,7 +56,7 @@
   </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { shallowRef } from 'vue';
 import { useDisplay } from 'vuetify';
 import SlickteamSidebar from './SlickteamSidebar.vue';
@@ -64,32 +64,28 @@ import SlickteamToolbar from './SlickteamToolbar.vue';
 import SlickteamSidebarIcon from './SlickteamSidebarIcon.vue';
 
 const { mobile } = useDisplay();
-const selectedModel = defineModel('selected', { default: undefined, type: String });
+const selectedModel = defineModel<string | undefined>('selected', { default: undefined });
 
-defineProps({
-  hideToolbar: {
-    type: Boolean,
-    default: false,
+withDefaults(
+  defineProps<{
+    hideToolbar?: boolean;
+    hideSidebarLeft?: boolean;
+    hideSidebarRight?: boolean;
+    itemsSidebarRight?: { icon: string; text: string; color: string; value: string; count: number | undefined }[];
+  }>(),
+  {
+    hideToolbar: false,
+    hideSidebarLeft: false,
+    hideSidebarRight: false,
+    itemsSidebarRight: () => [],
   },
-  hideSidebarLeft: {
-    type: Boolean,
-    default: false,
-  },
-  hideSidebarRight: {
-    type: Boolean,
-    default: false,
-  },
-  itemsSidebarRight: {
-    type: Array,
-    default: () => [],
-  },
-});
+);
 
 const drawerLeftState = shallowRef(!mobile.value);
 const drawerRightState = shallowRef(!mobile.value);
 const rail = shallowRef(false);
 
-function updateRail(value) {
+function updateRail(value: boolean) {
   rail.value = value;
 }
 </script>

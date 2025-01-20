@@ -1,6 +1,7 @@
+import type { Meta, StoryObj } from '@storybook/vue3';
 import SlickteamColorPicker from '../../../components/molecules/picker/SlickteamColorPicker.vue';
 
-export default {
+const meta: Meta<typeof SlickteamColorPicker> = {
   title: 'Molecules/form/SlickteamColorPicker',
   component: SlickteamColorPicker,
   tags: ['docsPage'],
@@ -9,9 +10,10 @@ export default {
     // onClick: {},
   },
 };
+export default meta;
+
+type Story = StoryObj<typeof SlickteamColorPicker>;
 
 export const Primary = {
-  args: {
-    primary: true,
-  },
-};
+  args: {},
+} satisfies Story;

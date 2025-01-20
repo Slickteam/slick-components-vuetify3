@@ -1,6 +1,7 @@
+import type { Meta, StoryObj } from '@storybook/vue3';
 import SlickteamIconButton from '../../../components/molecules/button/SlickteamIconButton.vue';
 
-export default {
+const meta: Meta<typeof SlickteamIconButton> = {
   title: 'Molecules/button/SlickteamIconButton',
   component: SlickteamIconButton,
   tags: ['docsPage'],
@@ -51,10 +52,11 @@ export default {
     },
   },
 };
+export default meta;
+type Story = StoryObj<typeof SlickteamIconButton>;
 
 export const Primary = {
   args: {
-    primary: true,
     title: 'Click me',
   },
-};
+} satisfies Story;

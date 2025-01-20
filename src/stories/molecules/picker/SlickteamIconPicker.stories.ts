@@ -1,6 +1,7 @@
+import type { Meta, StoryObj } from '@storybook/vue3';
 import SlickteamIconPicker from '../../../components/molecules/picker/SlickteamIconPicker.vue';
 
-export default {
+const meta: Meta<typeof SlickteamIconPicker> = {
   title: 'Molecules/form/SlickteamIconPicker',
   component: SlickteamIconPicker,
   tags: ['docsPage'],
@@ -17,7 +18,7 @@ export default {
       control: {
         type: 'select',
       },
-      options: ['outlined', 'solo'],
+      options: ['filled', 'underlined', 'outlined', 'plain', 'solo', 'solo-inverted', 'solo-filled'],
     },
     label: {
       control: 'text',
@@ -25,9 +26,12 @@ export default {
     },
   },
 };
+export default meta;
+
+type Story = StoryObj<typeof SlickteamIconPicker>;
 
 export const Primary = {
   args: {
     label: 'Icône',
   },
-};
+} satisfies Story;

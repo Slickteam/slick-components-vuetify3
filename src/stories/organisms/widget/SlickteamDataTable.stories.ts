@@ -1,6 +1,7 @@
+import type { Meta, StoryObj } from '@storybook/vue3';
 import SlickteamDataTable from '../../../components/organisms/SlickteamDataTable.vue';
 
-export default {
+const meta: Meta<typeof SlickteamDataTable> = {
   title: 'Organisms/widget/SlickteamDataTable',
   component: SlickteamDataTable,
   tags: ['docsPage'],
@@ -36,7 +37,10 @@ export default {
   },
   argTypes: {},
 };
+export default meta;
+
+type Story = StoryObj<typeof SlickteamDataTable>;
 
 export const Primary = {
   args: {},
-};
+} satisfies Story;

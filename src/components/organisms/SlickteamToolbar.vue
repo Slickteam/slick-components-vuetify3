@@ -18,16 +18,22 @@
   </v-app-bar>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { useDisplay } from 'vuetify';
 
-const emit = defineEmits(['toggle:menu', 'toggle:right-menu']);
-defineProps({
-  sidebarRightIcon: {
-    type: Boolean,
-    default: false,
+const emit = defineEmits<{
+  (e: 'toggle:menu'): void;
+  (e: 'toggle:right-menu'): void;
+}>();
+
+withDefaults(
+  defineProps<{
+    sidebarRightIcon?: boolean;
+  }>(),
+  {
+    sidebarRightIcon: false,
   },
-});
+);
 const { mobile } = useDisplay();
 </script>
 

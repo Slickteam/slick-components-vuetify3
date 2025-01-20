@@ -35,14 +35,14 @@
     <template v-slot:expanded-row="slotData">
       <tr>
         <td :colspan="slotData.columns.length">
-          <slot name="expanded-row" v-bind="slotData">{{ slotData.value }}</slot>
+          <slot name="expanded-row" v-bind="slotData">{{ slotData }}</slot>
         </td>
       </tr>
     </template>
   </v-data-table>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { computed } from 'vue';
 import { useDisplay } from 'vuetify';
 import { formatDate } from '@/components/utils';
@@ -50,36 +50,26 @@ import SlickteamClipboardButton from '@/components/molecules/button/SlickteamCli
 
 const { name } = useDisplay();
 
-const props = defineProps({
-  headers: {
-    type: Array,
-    default: () => [],
+const props = withDefaults(
+  defineProps<{
+    headers?: { key: string; title: string; align?: 'start' | 'end' | 'center'; sortable?: boolean; rDisplay?: string }[];
+    data?: any[];
+    height?: string | number;
+    messageNoContent?: string;
+    overrideKeys?: string[];
+    showExpand?: boolean;
+    fixedHeader?: boolean;
+  }>(),
+  {
+    headers: () => [],
+    data: () => [],
+    messageNoContent: 'Pas de données à afficher',
+    overrideKeys: () => [],
+    showExpand: false,
+    fixedHeader: true,
   },
-  data: {
-    type: Array,
-    default: () => [],
-  },
-  height: {
-    type: String,
-    default: undefined,
-  },
-  messageNoContent: {
-    type: String,
-    default: 'Pas de données à afficher',
-  },
-  overrideKeys: {
-    type: Array,
-    default: () => [],
-  },
-  showExpand: {
-    type: Boolean,
-    default: false,
-  },
-  fixedHeader: {
-    type: Boolean,
-    default: true,
-  },
-});
+);
+
 const forbiddenKeysList = ['id', 'createdAt', 'updatedAt', 'actions'];
 const forbiddenKeys = computed(() => {
   const overrideKeysFiltered = props.overrideKeys.filter((o) => o !== 'actions');
@@ -88,7 +78,7 @@ const forbiddenKeys = computed(() => {
 const headersKeys = computed(() => props.headers.map((h) => h.key).filter((k) => !forbiddenKeys.value.includes(k)));
 const headersBySize = computed(() => props.headers.filter((h) => haveToBeDisplayFromSizeName(name.value, h.rDisplay)));
 
-function haveToBeDisplayFromSizeName(value, sizeName) {
+function haveToBeDisplayFromSizeName(value: string, sizeName: string | undefined): boolean {
   let result = false;
   switch (value) {
     case 'xs':
