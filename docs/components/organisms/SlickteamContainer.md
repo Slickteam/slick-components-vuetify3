@@ -49,9 +49,32 @@ import { SlickteamContainer } from '@slickteam/components-vuetify3';
 
 ### Props
 
-| Name                   | Description                                | Type     | Default     |
-| ---------------------- | ------------------------------------------ | -------- | ----------- |
-| `model-value:selected` | value of selected item (for sidebar right) | `string` | `undefined` |
+| Name                                     | Description                                | Type                                                             | Default      |
+| ---------------------------------------- | ------------------------------------------ | ---------------------------------------------------------------- | ------------ |
+| `model-value:selected`                   | value of selected item (for sidebar right) | `string`                                                         | `undefined`  |
+| `hide-toolbar`                           |                                            | `boolean`                                                        | `false`      |
+| `hide-sidebar-left`                      |                                            | `boolean`                                                        | `false`      |
+| `hide-sidebar-right`                     |                                            | `boolean`                                                        | `false`      |
+| `sidebar-left-background-color`          |                                            | `string`                                                         | `#ffffff`    |
+| `sidebar-left-elevation`                 |                                            | `string` \| `number`                                             | `2`          |
+| `sidebar-left-icon-rail-button-color`    |                                            | `string`                                                         | `#aaaaaa`    |
+| `sidebar-left-show-header-bottom-border` |                                            | `boolean`                                                        | `true`       |
+| `sidebar-left-show-rail-button`          |                                            | `boolean`                                                        | `true`       |
+| `sidebar-left-show-border`               |                                            | `boolean`                                                        | `true`       |
+| `toolbar-show-bottom-border`             |                                            | `boolean`                                                        | `true`       |
+| `toolbar-color`                          |                                            | `string`                                                         | `background` |
+| `toolbar-elevation`                      |                                            | `string` \| `number`                                             | `2`          |
+| `toolbar-height`                         |                                            | `number`                                                         | `56`         |
+| `sidebar-right-items`                    |                                            | `[{ icon: string, text: string, color: string, value: string }]` | `[]`         |
+| `sidebar-right-height`                   |                                            | `number`                                                         | `undefined`  |
+| `sidebar-right-width`                    |                                            | `number`                                                         | `65`         |
+| `sidebar-right-background`               |                                            | `string`                                                         | `undefined`  |
+| `sidebar-right-show-border`              |                                            | `boolean`                                                        | `true`       |
+| `sidebar-right-rounded`                  |                                            | `string` \| `number`\| `boolean`                                 | `sm`         |
+| `sidebar-right-elevation`                |                                            | `string` \| `number`                                             | `2`          |
+| `menu-right-elevation`                   |                                            | `string` \| `number`                                             | `4`          |
+| `menu-right-rounded`                     |                                            | `string` \| `number`\| `boolean`                                 | `lg`         |
+| `menu-right-color`                       |                                            | `string`                                                         | `#ffffff`    |
 
 ### Events
 

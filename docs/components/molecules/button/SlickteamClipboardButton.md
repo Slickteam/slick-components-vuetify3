@@ -29,12 +29,12 @@ import { SlickteamClipboardButton } from '@slickteam/components-vuetify3';
 
 ### Props
 
-| Name      | Description                                        | Type               | Default       |
-| --------- | -------------------------------------------------- | ------------------ | ------------- |
-| `color`   | Color of button                                    | `string`           | `'secondary'` |
-| `size`    | Size of button                                     | `string \| number` | `undefined`   |
-| `tooltip` | Text display in tooltip                            | `string`           | `'Clipboard'` |
-| `value`   | Value to pass for this action of copy in clipboard | `string`           | `''`          |
+| Name      | Description                                        | Type                 | Default       |
+| --------- | -------------------------------------------------- | -------------------- | ------------- |
+| `color`   | Color of button                                    | `string`             | `'secondary'` |
+| `size`    | Size of button                                     | `string` \| `number` | `undefined`   |
+| `tooltip` | Text display in tooltip                            | `string`             | `'Clipboard'` |
+| `value`   | Value to pass for this action of copy in clipboard | `string`             | `''`          |
 
 ### Events
 

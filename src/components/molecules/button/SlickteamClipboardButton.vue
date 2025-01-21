@@ -20,10 +20,10 @@ const emit = defineEmits<{
 
 const props2 = withDefaults(
   defineProps<{
+    color?: string;
+    size?: string | number;
     tooltip?: string;
     value?: string;
-    size?: string | number;
-    color?: string;
   }>(),
   {
     tooltip: 'Clipboard',

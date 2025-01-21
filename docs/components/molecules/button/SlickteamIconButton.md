@@ -29,18 +29,18 @@ import { SlickteamIconButton } from '@slickteam/components-vuetify3';
 
 ### Props
 
-| Name           | Description                                 | Type               | Default       |
-| -------------- | ------------------------------------------- | ------------------ | ------------- |
-| `color`        | Color of button                             | `string`           | `'secondary'` |
-| `content-chip` | Content of chip in button                   | `string`           | `undefined`   |
-| `icon`         | Icon to pass in button                      | `string`           | `'mdi-eye'`   |
-| `href`         | Navigate to an other page                   | `string`           | `undefined`   |
-| `show-chip`    | Show a chip in button                       | `boolean`          | `undefined`   |
-| `size`         | Size of button                              | `string \| number` | `undefined`   |
-| `target`       | Option target of component like native html | `string`           | `undefined`   |
-| `title`        | Title of button                             | `string`           | `undefined`   |
-| `to`           | Activate router-link et pass an path url    | `string`           | `undefined`   |
-| `variant`      | Variant of button                           | `string`           | `'text'`      |
+| Name           | Description                                 | Type                                                               | Default       |
+| -------------- | ------------------------------------------- | ------------------------------------------------------------------ | ------------- |
+| `color`        | Color of button                             | `string`                                                           | `'secondary'` |
+| `content-chip` | Content of chip in button                   | `string`                                                           | `undefined`   |
+| `href`         | Navigate to an other page                   | `string`                                                           | `undefined`   |
+| `icon`         | Icon to pass in button                      | `string`                                                           | `'mdi-eye'`   |
+| `show-chip`    | Show a chip in button                       | `boolean`                                                          | `undefined`   |
+| `size`         | Size of button                              | `string` \| `number`                                               | `undefined`   |
+| `target`       | Option target of component like native html | `string`                                                           | `undefined`   |
+| `title`        | Title of button                             | `string`                                                           | `undefined`   |
+| `to`           | Activate router-link et pass an path url    | `string`                                                           | `undefined`   |
+| `variant`      | Variant of button                           | `flat` \| `text` \| `elevated` \| `tonal` \| `outlined` \| `plain` | `'text'`      |
 
 ### Events
 

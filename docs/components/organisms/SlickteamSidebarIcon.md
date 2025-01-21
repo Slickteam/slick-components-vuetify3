@@ -36,23 +36,24 @@ import { SlickteamSidebarIcon } from '@slickteam/components-vuetify3';
 
 ### Props
 
-| Name                   | Description           | Type                                                             | Default     |
-| ---------------------- | --------------------- | ---------------------------------------------------------------- | ----------- |
-| `background`           | background of sidebar | `string`                                                         | `undefined` |
-| `elevation`            | elevation of sidebar  | `string \| number`                                               | `'2'`       |
-| `height`               | height of sidebar     | `string`                                                         | `undefined` |
-| `items`                | selected item value   | `[{ icon: string, text: string, color: string, value: string }]` | `[]`        |
-| `model-value:selected` | selected item value   | `string`                                                         | `undefined` |
-| `model-value:drawer`   | show or non sidebar   | `boolean`                                                        | `undefined` |
-| `rounded`              | rounded sidebar       | `string`                                                         | `'sm'`      |
-| `width`                | width of sidebar      | `number`                                                         | `65`        |
+| Name                   | Description                   | Type                                                             | Default     |
+| ---------------------- | ----------------------------- | ---------------------------------------------------------------- | ----------- |
+| `background`           | background of sidebar         | `string`                                                         | `undefined` |
+| `elevation`            | elevation of sidebar          | `string` \| `number`                                             | `2`         |
+| `height`               | height of sidebar             | `string`                                                         | `undefined` |
+| `items`                | selected item value           | `[{ icon: string, text: string, color: string, value: string }]` | `[]`        |
+| `model-value:drawer`   | show or non sidebar           | `boolean`                                                        | `undefined` |
+| `model-value:selected` | selected item value           | `string`                                                         | `undefined` |
+| `rounded`              | rounded sidebar               | `string`                                                         | `'sm'`      |
+| `show-left-border`     | show left border of component | `boolean`                                                        | `true`      |
+| `width`                | width of sidebar              | `number`                                                         | `65`        |
 
 ### Events
 
 | Name                          | Description                                       | Type      |
 | ----------------------------- | ------------------------------------------------- | --------- |
-| `update:model-value:selected` | Trigger an emit when selected model value changed | `string`  |
 | `update:model-value:drawer`   | Trigger an emit when drawer model value changed   | `boolean` |
+| `update:model-value:selected` | Trigger an emit when selected model value changed | `string`  |
 
 ### Slots
 

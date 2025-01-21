@@ -23,7 +23,7 @@ const meta: Meta<PageSlickteamSidebarIconArgs> = {
     elevation: {
       control: 'text',
     },
-    showBottomBorder: {
+    showHeaderBottomBorder: {
       control: 'boolean',
     },
     iconRailButtonColor: {
@@ -77,7 +77,7 @@ export const Default = {
     modelValue: true,
     rail: false,
     elevation: '2',
-    showBottomBorder: true,
+    showHeaderBottomBorder: true,
     iconRailButtonColor: '#aaaaaa',
     showRailButton: true,
     backgroundColor: '#ffffff',
@@ -90,7 +90,7 @@ export const Inverted = {
     modelValue: true,
     rail: false,
     elevation: '0',
-    showBottomBorder: false,
+    showHeaderBottomBorder: false,
     iconRailButtonColor: '#aaaaaa',
     showRailButton: true,
     backgroundColor: '#f5f5f5',

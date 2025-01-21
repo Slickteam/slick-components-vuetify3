@@ -1,3 +1,4 @@
+import { fn } from '@storybook/test';
 import type { Meta, StoryObj } from '@storybook/vue3';
 import type { ComponentProps } from 'vue-component-type-helpers';
 import { shallowRef, watch } from 'vue';
@@ -10,10 +11,138 @@ const meta: Meta<PageSlickteamContainerArgs> = {
   component: SlickteamContainer,
   tags: ['docsPage'],
   args: {
+    'onUpdate:selected': fn(),
+  },
+  argTypes: {
+    hideSidebarLeft: {
+      control: 'boolean',
+    },
+    hideToolbar: {
+      control: 'boolean',
+    },
+    hideSidebarRight: {
+      control: 'boolean',
+    },
+    sidebarLeftElevation: {
+      control: 'text',
+    },
+    sidebarLeftShowHeaderBottomBorder: {
+      control: 'boolean',
+    },
+    sidebarLeftShowRailButton: {
+      control: 'boolean',
+    },
+    sidebarLeftIconRailButtonColor: {
+      control: 'color',
+    },
+    sidebarLeftBackgroundColor: {
+      control: 'color',
+    },
+    sidebarLeftShowBorder: {
+      control: 'boolean',
+    },
+    toolbarShowBottomBorder: {
+      control: 'boolean',
+    },
+    toolbarColor: {
+      control: 'color',
+    },
+    toolbarElevation: {
+      control: 'text',
+    },
+    toolbarHeight: {
+      control: 'number',
+    },
+    sidebarRightItems: {
+      control: false,
+    },
+    sidebarRightWidth: {
+      control: 'number',
+    },
+    sidebarRightHeight: {
+      control: 'number',
+    },
+    sidebarRightBackground: {
+      control: 'color',
+    },
+    sidebarRightRounded: {
+      control: 'text',
+    },
+    sidebarRightElevation: {
+      control: 'text',
+    },
+    sidebarRightShowBorder: {
+      control: 'boolean',
+    },
+    menuRightElevation: {
+      control: 'text',
+    },
+    menuRightRounded: {
+      control: 'text',
+    },
+    menuRightColor: {
+      control: 'color',
+    },
+  },
+  render: (args, { updateArgs }) => ({
+    components: { SlickteamContainer },
+    setup() {
+      const selectedModel = shallowRef(args.selectedModel);
+      // Optional: Keeps v-model in sync with storybook args
+      watch(
+        () => args.selectedModel,
+        (val) => {
+          selectedModel.value = val;
+        },
+      );
+      function onUpdateModelSelected(value: string) {
+        updateArgs({ selectedModel: value });
+      }
+
+      return { args, selectedModel, onUpdateModelSelected };
+    },
+    /* html */
+    template: `<SlickteamContainer
+      v-bind="args"
+      v-model:selected="selectedModel"
+      @update:selected="onUpdateModelSelected">
+        <template #sidebar-left-header="{ rail }">Header {{ rail}}</template>
+        <template #sidebar-left="{ rail }">Content </template>
+        <template #sidebar-left-footer="{ rail }">Footer </template>
+        <template #toolbar-left>left</template>
+        <template #toolbar-right>right</template>
+        <template #sidebar-right-menu-header>Title</template>
+        <template #sidebar-right-menu={selected}>
+          {{ selected }}
+        </template>
+        <template #sidebar-right-menu-actions>Actions</template>
+        <div style="border: 2px dashed #BBBBBB; height: 1000px">
+          Content
+        </div>
+    </SlickteamContainer>`,
+  }),
+};
+export default meta;
+
+type Story = StoryObj<PageSlickteamContainerArgs>;
+
+export const Default = {
+  args: {
+    selectedModel: 'menu01',
     hideSidebarLeft: false,
     hideToolbar: false,
     hideSidebarRight: false,
-    itemsSidebarRight: [
+    sidebarLeftElevation: '2',
+    sidebarLeftShowHeaderBottomBorder: true,
+    sidebarLeftShowRailButton: true,
+    sidebarLeftIconRailButtonColor: `aaaaaa`,
+    sidebarLeftBackgroundColor: '#ffffff',
+    sidebarLeftShowBorder: true,
+    toolbarShowBottomBorder: true,
+    toolbarColor: 'background',
+    toolbarElevation: '0',
+    toolbarHeight: 56,
+    sidebarRightItems: [
       { icon: 'mdi-home', text: 'Menu 01', color: '#3729DD', value: 'menu01', count: 4 },
       { icon: 'mdi-home', text: 'Menu 02', color: '#4EBC1A', value: 'menu02', count: undefined },
       { icon: 'mdi-home', text: 'Menu 03', color: '#40fC1A', value: 'menu03', count: 19 },
@@ -35,55 +164,12 @@ const meta: Meta<PageSlickteamContainerArgs> = {
       { icon: 'mdi-home', text: 'Menu 19', color: '#4E9C15', value: 'menu19', count: undefined },
       { icon: 'mdi-home', text: 'Menu 20', color: '#aEB01A', value: 'menu20', count: undefined },
     ],
-  },
-  argTypes: {
-    hideSidebarLeft: {
-      control: 'boolean',
-    },
-    hideToolbar: {
-      control: 'boolean',
-    },
-    hideSidebarRight: {
-      control: 'boolean',
-    },
-  },
-  render: (args) => ({
-    components: { SlickteamContainer },
-    setup() {
-      const selectedModel = shallowRef(args.selectedModel);
-      // Optional: Keeps v-model in sync with storybook args
-      watch(
-        () => args.selectedModel,
-        (val) => {
-          selectedModel.value = val;
-        },
-      );
-      return { args, selectedModel };
-    },
-    /* html */
-    template: `<SlickteamContainer v-bind="args" v-model:selected="selectedModel">
-      <template #sidebar-left-header="{ rail }">Header {{ rail}}</template>
-      <template #sidebar-left="{ rail }">Content </template>
-      <template #sidebar-left-footer="{ rail }">Footer </template>
-      <template #toolbar-left>left</template>
-      <template #toolbar-right>right</template>
-      <template #sidebar-right-menu-header>Title</template>
-      <template #sidebar-right-menu={selected}>
-        {{ selected }}
-      </template>
-      <template #sidebar-right-menu-actions>Actions</template>
-      <div style="border: 2px dashed #BBBBBB; height: 1000px">
-        Content
-      </div>
-    </SlickteamContainer>`,
-  }),
-};
-export default meta;
-
-type Story = StoryObj<PageSlickteamContainerArgs>;
-
-export const Default = {
-  args: {
-    selectedModel: 'menu01',
+    sidebarRightWidth: 65,
+    sidebarRightRounded: 'sm',
+    sidebarRightElevation: '2',
+    sidebarRightShowBorder: true,
+    menuRightElevation: '4',
+    menuRightRounded: 'lg',
+    menuRightColor: '#ffffff',
   },
 } satisfies Story;

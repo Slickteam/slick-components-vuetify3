@@ -1,3 +1,4 @@
+import { fn } from '@storybook/test';
 import type { Meta, StoryObj } from '@storybook/vue3';
 import type { ComponentProps } from 'vue-component-type-helpers';
 import { shallowRef, watch } from 'vue';
@@ -10,8 +11,87 @@ const meta: Meta<PageSlickteamSidebarIconArgs> = {
   component: SlickteamSidebarIcon,
   tags: ['docsPage'],
   args: {
+    'onUpdate:drawer': fn(),
+    'onUpdate:selected': fn(),
+  },
+  argTypes: {
+    width: {
+      control: 'number',
+    },
+    height: {
+      control: 'number',
+    },
+    background: {
+      control: 'color',
+    },
+    showLeftBorder: {
+      control: 'boolean',
+    },
+    rounded: {
+      control: {
+        type: 'select',
+      },
+      options: ['0', 'xs', 'sm', 'lg', 'md', 'xl', 'pill', 'circle', 'shaped'],
+    },
+    elevation: {
+      control: 'text',
+    },
+    items: {
+      control: false,
+    },
+  },
+  render: (args, { updateArgs }) => ({
+    components: { SlickteamSidebarIcon },
+    setup() {
+      const selectedModel = shallowRef(args.selectedModel);
+      const drawerModel = shallowRef(args.drawerModel);
+
+      // Optional: Keeps v-model in sync with storybook args
+      watch(
+        () => args.selectedModel,
+        (val) => {
+          selectedModel.value = val;
+        },
+      );
+      watch(
+        () => args.drawerModel,
+        (val) => {
+          drawerModel.value = val;
+        },
+      );
+      function onUpdateModelDrawer(value: boolean) {
+        updateArgs({ drawerModel: value });
+      }
+      function onUpdateModelSelected(value: string) {
+        updateArgs({ selectedModel: value });
+      }
+
+      return { args, selectedModel, drawerModel, onUpdateModelDrawer, onUpdateModelSelected };
+    },
+    /* html */
+    template: `<SlickteamSidebarIcon
+      v-bind="args"
+      v-model:selected="selectedModel"
+      v-model:drawer="drawerModel"
+      @update:drawer="onUpdateModelDrawer"
+      @update:selected="onUpdateModelSelected"
+    />`,
+  }),
+};
+export default meta;
+
+type Story = StoryObj<PageSlickteamSidebarIconArgs>;
+
+export const Default = {
+  args: {
+    selectedModel: 'menu01',
+    drawerModel: true,
     width: 65,
-    elevation: 0,
+    elevation: '0',
+    rounded: 'sm',
+    height: 800,
+    background: '#ffffff',
+    showLeftBorder: true,
     items: [
       { icon: 'mdi-home', text: 'Menu 01', color: '#3729DD', value: 'menu01', count: 4 },
       { icon: 'mdi-home', text: 'Menu 02', color: '#4EBC1A', value: 'menu02', count: undefined },
@@ -34,50 +114,5 @@ const meta: Meta<PageSlickteamSidebarIconArgs> = {
       { icon: 'mdi-home', text: 'Menu 19', color: '#4E9C15', value: 'menu19', count: undefined },
       { icon: 'mdi-home', text: 'Menu 20', color: '#aEB01A', value: 'menu20', count: undefined },
     ],
-    rounded: 'sm',
-    height: '800px',
-    background: '',
-  },
-  argTypes: {
-    rounded: {
-      control: {
-        type: 'select',
-      },
-      options: ['0', 'xs', 'sm', 'lg', 'md', 'xl', 'pill', 'circle', 'shaped'],
-    },
-  },
-  render: (args) => ({
-    components: { SlickteamSidebarIcon },
-    setup() {
-      const selectedModel = shallowRef(args.selectedModel);
-      const drawerModel = shallowRef(args.drawerModel);
-      // Optional: Keeps v-model in sync with storybook args
-      watch(
-        () => args.selectedModel,
-        (val) => {
-          selectedModel.value = val;
-        },
-      );
-      watch(
-        () => args.drawerModel,
-        (val) => {
-          drawerModel.value = val;
-        },
-      );
-
-      return { args, selectedModel, drawerModel };
-    },
-    /* html */
-    template: `<SlickteamSidebarIcon v-bind="args" v-model:selected="selectedModel" v-model:drawer="drawerModel" />`,
-  }),
-};
-export default meta;
-
-type Story = StoryObj<PageSlickteamSidebarIconArgs>;
-
-export const Default = {
-  args: {
-    selectedModel: 'menu01',
-    drawerModel: true,
   },
 } satisfies Story;

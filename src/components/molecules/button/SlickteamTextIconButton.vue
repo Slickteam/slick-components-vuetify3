@@ -26,15 +26,15 @@ const { name } = useDisplay();
 
 const props = withDefaults(
   defineProps<{
-    size?: string;
-    variant?: 'flat' | 'text' | 'elevated' | 'tonal' | 'outlined' | 'plain';
     color?: string;
+    href?: string;
     icon?: string;
+    size?: string;
+    target?: string;
     text?: string;
     title?: string;
     to?: string;
-    href?: string;
-    target?: string;
+    variant?: 'flat' | 'text' | 'elevated' | 'tonal' | 'outlined' | 'plain';
   }>(),
   {
     variant: 'outlined',

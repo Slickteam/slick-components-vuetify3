@@ -28,9 +28,13 @@ import { SlickteamIconPicker } from '@slickteam/components-vuetify3';
 
 ### Props
 
-| Name          | Description   | Type     | Default     |
-| ------------- | ------------- | -------- | ----------- |
-| `model-value` | value of icon | `string` | `'#1976D2'` |
+| Name          | Description           | Type                                                               | Default     |
+| ------------- | --------------------- | ------------------------------------------------------------------ | ----------- |
+| `clearable`   | if value is clearable | `boolean`                                                          | `true`      |
+| `density`     | density of select     | `default` \| `comfortable` \| `compact`                            | `'default'` |
+| `label`       | label of select       | `string`                                                           | `'Icône'`   |
+| `model-value` | value of icon         | `string`                                                           | `undefined` |
+| `variant`     | Variant of button     | `flat` \| `text` \| `elevated` \| `tonal` \| `outlined` \| `plain` | `'text'`    |
 
 ### Events
 

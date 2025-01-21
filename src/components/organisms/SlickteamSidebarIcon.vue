@@ -3,8 +3,9 @@
     v-model="drawerModel"
     class="sidebar-icon-container"
     :style="{
-      height: height ?? '',
+      height: height ? `${height}px` : '',
       background: background ?? '',
+      border: showLeftBorder ? '' : 'none',
     }"
     location="right"
     permanent
@@ -76,9 +77,10 @@ const drawerModel = defineModel<boolean>('drawer', { default: false });
 const props = withDefaults(
   defineProps<{
     items?: { icon: string; text: string; color: string; value: string; count: number | undefined }[];
-    width?: string | number;
-    height?: string;
+    width?: number;
+    height?: number;
     background?: string;
+    showLeftBorder?: boolean;
     rounded?: string | number | boolean;
     elevation?: string | number;
   }>(),
@@ -87,6 +89,7 @@ const props = withDefaults(
     width: 65,
     rounded: 'sm',
     elevation: '2',
+    showLeftBorder: true,
   },
 );
 
@@ -112,9 +115,7 @@ const convertedItems = computed(() => props.items.map((i) => ({ ...i, active: se
 
 function updateSelected(values: string[]) {
   internalModel.value = values;
-  if (values.length > 0) {
-    selectedModel.value = values[0];
-  }
+  selectedModel.value = values?.[0];
 }
 </script>
 

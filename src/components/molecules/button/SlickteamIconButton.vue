@@ -27,16 +27,16 @@ const { name } = useDisplay();
 
 const props = withDefaults(
   defineProps<{
-    size?: string | number;
-    variant?: 'flat' | 'text' | 'elevated' | 'tonal' | 'outlined' | 'plain';
     color?: string;
-    icon?: string;
-    to?: string;
-    title?: string;
-    showChip?: boolean;
     contentChip?: string;
+    icon?: string;
     href?: string;
+    showChip?: boolean;
+    size?: string | number;
     target?: string;
+    title?: string;
+    to?: string;
+    variant?: 'flat' | 'text' | 'elevated' | 'tonal' | 'outlined' | 'plain';
   }>(),
   {
     variant: 'text',

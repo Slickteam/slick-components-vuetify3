@@ -27,9 +27,13 @@ import { SlickteamToolbar } from '@slickteam/components-vuetify3';
 
 ### Props
 
-| Name                 | Description                 | Type      | Default |
-| -------------------- | --------------------------- | --------- | ------- |
-| `sidebar-right-icon` | show the sidebar right icon | `boolean` | `false` |
+| Name                 | Description                 | Type                 | Default      |
+| -------------------- | --------------------------- | -------------------- | ------------ |
+| `color`              | color of toolbar            | `string`             | `background` |
+| `elevation`          | elevation of toolbar        | `string` \| `number` | `0`          |
+| `height`             | height of toolbar           | `number`             | `56`         |
+| `show-bottom-border` | show bottom border          | `boolean`            | `true`       |
+| `sidebar-right-icon` | show the sidebar right icon | `boolean`            | `false`      |
 
 ### Events
 

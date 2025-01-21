@@ -8,7 +8,10 @@
     :style="{ border: showBorder ? '' : 'none' }"
     @click="emit('update:rail', false)"
   >
-    <div class="sidebar-header" :style="{ padding: !rail ? '8px 12px' : '', borderBottom: showBottomBorder ? 'solid 1px #aaaaaa' : '' }">
+    <div
+      class="sidebar-header"
+      :style="{ padding: !rail ? '8px 12px' : '', borderBottom: showHeaderBottomBorder ? 'solid 1px #aaaaaa' : '' }"
+    >
       <slot name="header" :rail="rail"></slot>
       <v-btn
         v-if="showRailButton && !rail && !mobile"
@@ -45,16 +48,16 @@ withDefaults(
   defineProps<{
     rail?: boolean;
     elevation?: string | number;
-    showBottomBorder?: boolean;
-    iconRailButtonColor?: string;
+    showHeaderBottomBorder?: boolean;
     showRailButton?: boolean;
+    iconRailButtonColor?: string;
     backgroundColor?: string;
     showBorder?: boolean;
   }>(),
   {
     rail: false,
     elevation: '2',
-    showBottomBorder: true,
+    showHeaderBottomBorder: true,
     showRailButton: true,
     iconRailButtonColor: '#aaaaaa',
     backgroundColor: '#ffffff',

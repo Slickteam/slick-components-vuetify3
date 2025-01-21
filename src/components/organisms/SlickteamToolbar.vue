@@ -1,5 +1,10 @@
 <template>
-  <v-app-bar class="app-bar" color="background" elevation="0" height="56">
+  <v-app-bar
+    :style="{ height: `${height}px`, borderBottom: showBottomBorder ? 'solid 1px #aaaaaa' : '' }"
+    :color="color"
+    :elevation="elevation"
+    :height="height"
+  >
     <template v-if="mobile" v-slot:prepend>
       <v-app-bar-nav-icon @click="emit('toggle:menu')" />
     </template>
@@ -29,19 +34,23 @@ const emit = defineEmits<{
 withDefaults(
   defineProps<{
     sidebarRightIcon?: boolean;
+    showBottomBorder?: boolean;
+    color?: string;
+    elevation?: string | number;
+    height?: number;
   }>(),
   {
     sidebarRightIcon: false,
+    showBottomBorder: true,
+    color: 'background',
+    elevation: 0,
+    height: 56,
   },
 );
 const { mobile } = useDisplay();
 </script>
 
 <style scoped>
-.app-bar {
-  height: 56px;
-  border-bottom: solid 1px #aaaaaa;
-}
 .app-bar-container {
   width: 100%;
   padding: 8px 12px;

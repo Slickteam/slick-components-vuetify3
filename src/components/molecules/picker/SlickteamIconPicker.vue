@@ -19,9 +19,9 @@ const model = defineModel<string | undefined>({ default: undefined });
 
 withDefaults(
   defineProps<{
-    label?: string;
-    density?: 'default' | 'comfortable' | 'compact';
     clearable?: boolean;
+    density?: 'default' | 'comfortable' | 'compact';
+    label?: string;
     variant?: 'filled' | 'underlined' | 'outlined' | 'plain' | 'solo' | 'solo-inverted' | 'solo-filled';
   }>(),
   {

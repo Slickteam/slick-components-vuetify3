@@ -1,5 +1,16 @@
 <template>
-  <slickteam-sidebar v-if="!hideSidebarLeft" v-model="drawerLeftState" :rail="rail" @update:rail="updateRail">
+  <slickteam-sidebar
+    v-if="!hideSidebarLeft"
+    v-model="drawerLeftState"
+    :elevation="sidebarLeftElevation"
+    :show-header-bottom-border="sidebarLeftShowHeaderBottomBorder"
+    :show-rail-button="sidebarLeftShowRailButton"
+    :icon-rail-button-color="sidebarLeftIconRailButtonColor"
+    :background-color="sidebarLeftBackgroundColor"
+    :show-border="sidebarLeftShowBorder"
+    :rail="rail"
+    @update:rail="updateRail"
+  >
     <template #header="{ rail }">
       <slot name="sidebar-left-header" :rail="rail"></slot>
     </template>
@@ -14,7 +25,13 @@
     v-if="!hideSidebarRight"
     v-model:drawer="drawerRightState"
     v-model:selected="selectedModel"
-    :items="itemsSidebarRight"
+    :items="sidebarRightItems"
+    :width="sidebarRightWidth"
+    :height="sidebarRightHeight"
+    :background="sidebarRightBackground"
+    :show-left-border="sidebarRightShowBorder"
+    :rounded="sidebarRightRounded"
+    :elevation="sidebarRightElevation"
   >
     <template #default>
       <slot name="sidebar-right"></slot>
@@ -23,6 +40,10 @@
   <slickteam-toolbar
     v-if="!hideToolbar"
     :sidebar-right-icon="!hideSidebarRight && !drawerRightState"
+    :show-bottom-border="toolbarShowBottomBorder"
+    :color="toolbarColor"
+    :elevation="toolbarElevation"
+    :height="toolbarHeight"
     @toggle:menu="drawerLeftState = !drawerLeftState"
     @toggle:right-menu="drawerRightState = !drawerRightState"
   >
@@ -40,7 +61,13 @@
     </div>
     <Transition name="slide-fade">
       <div v-if="!hideSidebarRight && drawerRightState && selectedModel" class="sidebar-menu-wrapper">
-        <v-card class="sidebar-menu d-flex flex-column elevation-4" rounded="lg" :style="{ height: `${$vuetify.display.height - 72}px` }">
+        <v-card
+          class="sidebar-menu d-flex flex-column"
+          :elevation="menuRightElevation"
+          :rounded="menuRightRounded"
+          :color="menuRightColor"
+          :style="{ height: `${$vuetify.display.height - 72}px` }"
+        >
           <v-card-title class="sidebar-menu-padding">
             <slot name="sidebar-right-menu-header" :selected="selectedModel"></slot>
           </v-card-title>
@@ -71,13 +98,49 @@ withDefaults(
     hideToolbar?: boolean;
     hideSidebarLeft?: boolean;
     hideSidebarRight?: boolean;
-    itemsSidebarRight?: { icon: string; text: string; color: string; value: string; count: number | undefined }[];
+    sidebarLeftElevation?: string | number;
+    sidebarLeftShowHeaderBottomBorder?: boolean;
+    sidebarLeftShowRailButton?: boolean;
+    sidebarLeftIconRailButtonColor?: string;
+    sidebarLeftBackgroundColor?: string;
+    sidebarLeftShowBorder?: boolean;
+    toolbarShowBottomBorder?: boolean;
+    toolbarColor?: string;
+    toolbarElevation?: string | number;
+    toolbarHeight?: number;
+    sidebarRightItems?: { icon: string; text: string; color: string; value: string; count: number | undefined }[];
+    sidebarRightWidth?: number;
+    sidebarRightHeight?: number;
+    sidebarRightBackground?: string;
+    sidebarRightShowBorder?: boolean;
+    sidebarRightRounded?: string | number | boolean;
+    sidebarRightElevation?: string | number;
+    menuRightElevation?: string | number;
+    menuRightRounded?: string | number | boolean;
+    menuRightColor?: string;
   }>(),
   {
     hideToolbar: false,
     hideSidebarLeft: false,
     hideSidebarRight: false,
-    itemsSidebarRight: () => [],
+    sidebarLeftElevation: '2',
+    sidebarLeftShowHeaderBottomBorder: true,
+    sidebarLeftShowRailButton: true,
+    sidebarLeftIconRailButtonColor: `aaaaaa`,
+    sidebarLeftBackgroundColor: '#ffffff',
+    sidebarLeftShowBorder: true,
+    toolbarShowBottomBorder: true,
+    toolbarColor: 'background',
+    toolbarElevation: 0,
+    toolbarHeight: 56,
+    sidebarRightItems: () => [],
+    sidebarRightWidth: 65,
+    sidebarRightRounded: 'sm',
+    sidebarRightElevation: '2',
+    sidebarRightShowBorder: true,
+    menuRightElevation: '4',
+    menuRightRounded: 'lg',
+    menuRightColor: '#ffffff',
   },
 );
 
