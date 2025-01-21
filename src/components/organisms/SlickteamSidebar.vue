@@ -10,7 +10,11 @@
   >
     <div
       class="sidebar-header"
-      :style="{ padding: !rail ? '8px 12px' : '', borderBottom: showHeaderBottomBorder ? 'solid 1px #aaaaaa' : '' }"
+      :style="{
+        backgroundColor: backgroundColor,
+        padding: !rail ? '8px 12px' : '',
+        borderBottom: showHeaderBottomBorder ? 'solid 1px #aaaaaa' : '',
+      }"
     >
       <slot name="header" :rail="rail"></slot>
       <v-btn
