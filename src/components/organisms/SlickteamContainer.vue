@@ -84,12 +84,13 @@
 </template>
 
 <script lang="ts" setup>
-import { shallowRef } from 'vue';
+import { shallowRef, watch } from 'vue';
 import { useDisplay } from 'vuetify';
 
 import SlickteamSidebar from './SlickteamSidebar.vue';
 import SlickteamSidebarIcon from './SlickteamSidebarIcon.vue';
 import SlickteamToolbar from './SlickteamToolbar.vue';
+import { onMounted } from 'vue';
 
 const { mobile } = useDisplay();
 const selectedModel = defineModel<string | undefined>('selected', { default: undefined });
@@ -148,6 +149,23 @@ withDefaults(
 const drawerLeftState = shallowRef(!mobile.value);
 const drawerRightState = shallowRef(!mobile.value);
 const rail = shallowRef(false);
+
+onMounted(() => {
+  if (selectedModel.value === undefined) {
+    drawerRightState.value = false;
+  }
+});
+
+watch(selectedModel, (value) => {
+  if (value !== undefined) {
+    drawerRightState.value = true;
+  }
+});
+watch(drawerRightState, (value) => {
+  if (!value) {
+    selectedModel.value = undefined;
+  }
+});
 
 function updateRail(value: boolean) {
   rail.value = value;
