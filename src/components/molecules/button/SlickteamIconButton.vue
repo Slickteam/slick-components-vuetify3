@@ -15,9 +15,9 @@
 </template>
 
 <script lang="ts" setup>
+import { sanitizeUrl } from '@braintree/sanitize-url';
 import { computed } from 'vue';
 import { useDisplay } from 'vuetify';
-import { sanitizeUrl } from '@braintree/sanitize-url';
 
 const emit = defineEmits<{
   (e: 'click'): void;

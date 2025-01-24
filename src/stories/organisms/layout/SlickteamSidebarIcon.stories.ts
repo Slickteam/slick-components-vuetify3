@@ -1,7 +1,8 @@
 import { fn } from '@storybook/test';
 import type { Meta, StoryObj } from '@storybook/vue3';
-import type { ComponentProps } from 'vue-component-type-helpers';
 import { shallowRef, watch } from 'vue';
+import type { ComponentProps } from 'vue-component-type-helpers';
+
 import SlickteamSidebarIcon from '../../../components/organisms/SlickteamSidebarIcon.vue';
 
 type PageSlickteamSidebarIconArgs = ComponentProps<typeof SlickteamSidebarIcon> & { selectedModel?: string; drawerModel?: boolean };

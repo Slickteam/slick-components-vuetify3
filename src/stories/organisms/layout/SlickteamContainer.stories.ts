@@ -1,7 +1,8 @@
 import { fn } from '@storybook/test';
 import type { Meta, StoryObj } from '@storybook/vue3';
-import type { ComponentProps } from 'vue-component-type-helpers';
 import { shallowRef, watch } from 'vue';
+import type { ComponentProps } from 'vue-component-type-helpers';
+
 import SlickteamContainer from '../../../components/organisms/SlickteamContainer.vue';
 
 type PageSlickteamContainerArgs = ComponentProps<typeof SlickteamContainer> & { selectedModel?: string };

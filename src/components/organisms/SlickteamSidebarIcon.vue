@@ -69,7 +69,7 @@
 </template>
 
 <script lang="ts" setup>
-import { shallowRef, onMounted, computed, watch } from 'vue';
+import { computed, onMounted, shallowRef, watch } from 'vue';
 
 const selectedModel = defineModel<string | undefined>('selected', { default: undefined });
 const drawerModel = defineModel<boolean>('drawer', { default: false });

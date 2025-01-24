@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
+
 import SlickteamDataTable from '../../../components/organisms/SlickteamDataTable.vue';
 
 const meta: Meta<typeof SlickteamDataTable> = {

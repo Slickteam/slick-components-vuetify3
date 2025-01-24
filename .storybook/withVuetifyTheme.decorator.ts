@@ -1,6 +1,6 @@
-export const DEFAULT_THEME = 'light';
-
 import { VApp, VMain } from 'vuetify/components';
+
+export const DEFAULT_THEME = 'light';
 
 export const withVuetifyTheme = (story, context) => {
   const globalTheme = context.globals.theme || DEFAULT_THEME;

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
+
 import SlickteamTextIconButton from '../../../components/molecules/button/SlickteamTextIconButton.vue';
 
 const meta: Meta<typeof SlickteamTextIconButton> = {

@@ -1,10 +1,11 @@
 // .storybook/preview.js
-import { setup } from '@storybook/vue3';
-import { useArgs } from '@storybook/client-api';
-import { withVuetifyTheme, DEFAULT_THEME } from './withVuetifyTheme.decorator';
 import '@mdi/font/css/materialdesignicons.css';
-import 'vuetify/styles';
+import { useArgs } from '@storybook/client-api';
+import { setup } from '@storybook/vue3';
 import { createVuetify } from 'vuetify';
+import 'vuetify/styles';
+
+import { DEFAULT_THEME, withVuetifyTheme } from './withVuetifyTheme.decorator';
 
 async function loadFonts() {
   const webFontLoader = await import(/* webpackChunkName: "webfontloader" */ 'webfontloader');

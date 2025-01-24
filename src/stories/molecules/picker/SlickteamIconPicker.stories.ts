@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
+
 import SlickteamIconPicker from '../../../components/molecules/picker/SlickteamIconPicker.vue';
 
 const meta: Meta<typeof SlickteamIconPicker> = {

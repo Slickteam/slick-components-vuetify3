@@ -45,8 +45,9 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
 import { useDisplay } from 'vuetify';
-import { formatDate } from '@/components/utils';
+
 import SlickteamClipboardButton from '@/components/molecules/button/SlickteamClipboardButton.vue';
+import { formatDate } from '@/components/utils';
 
 const { name } = useDisplay();
 

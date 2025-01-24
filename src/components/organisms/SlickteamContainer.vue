@@ -86,9 +86,10 @@
 <script lang="ts" setup>
 import { shallowRef } from 'vue';
 import { useDisplay } from 'vuetify';
+
 import SlickteamSidebar from './SlickteamSidebar.vue';
-import SlickteamToolbar from './SlickteamToolbar.vue';
 import SlickteamSidebarIcon from './SlickteamSidebarIcon.vue';
+import SlickteamToolbar from './SlickteamToolbar.vue';
 
 const { mobile } = useDisplay();
 const selectedModel = defineModel<string | undefined>('selected', { default: undefined });

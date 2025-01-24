@@ -12,8 +12,9 @@ npm i -S @slickteam/components-vuetify3
 
 ```js
 //...
-import '@slickteam/components-vuetify3/style.css';
 import { VuetifyLibrary } from '@slickteam/components-vuetify3';
+import '@slickteam/components-vuetify3/style.css';
+
 // options are optional
 const options = {
   theme: {

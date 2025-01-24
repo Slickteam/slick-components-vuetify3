@@ -13,6 +13,7 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue';
+
 import { icons } from '@/components/icons';
 
 const model = defineModel<string | undefined>({ default: undefined });
