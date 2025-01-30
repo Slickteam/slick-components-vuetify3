@@ -1,6 +1,6 @@
 import '@mdi/font/css/materialdesignicons.min.css';
 import type { App } from 'vue';
-import { createVuetify } from 'vuetify';
+import { type VuetifyOptions, createVuetify } from 'vuetify';
 // @ts-ignore
 import 'vuetify/styles';
 
@@ -31,7 +31,7 @@ const SlickComponentLibrary = {
 };
 
 const VuetifyLibrary = {
-  install(app: App<Element>, options: any) {
+  install(app: App<Element>, options: VuetifyOptions) {
     const defaultOptions = options ?? {
       theme: {
         themes: {
@@ -49,6 +49,10 @@ const VuetifyLibrary = {
             },
           },
         },
+      },
+      locale: {
+        locale: 'fr',
+        fallback: 'en',
       },
     };
 
