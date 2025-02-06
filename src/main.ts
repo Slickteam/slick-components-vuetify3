@@ -1,6 +1,9 @@
 import '@mdi/font/css/materialdesignicons.min.css';
 import type { App } from 'vue';
 import { type VuetifyOptions, createVuetify } from 'vuetify';
+import { VDateInput } from 'vuetify/labs/VDateInput';
+import { VNumberInput } from 'vuetify/labs/VNumberInput';
+import { VTreeview, VTreeviewGroup, VTreeviewItem } from 'vuetify/labs/VTreeview';
 // @ts-ignore
 import 'vuetify/styles';
 
@@ -53,6 +56,13 @@ const VuetifyLibrary = {
       locale: {
         locale: 'fr',
         fallback: 'en',
+      },
+      components: {
+        VDateInput,
+        VTreeview,
+        VTreeviewGroup,
+        VTreeviewItem,
+        VNumberInput,
       },
     };
 
