@@ -1,6 +1,23 @@
 import '@mdi/font/css/materialdesignicons.min.css';
 import type { App } from 'vue';
 import { type VuetifyOptions, createVuetify } from 'vuetify';
+import {
+  VCalendar,
+  VCalendarDay,
+  VCalendarHeader,
+  VCalendarInterval,
+  VCalendarIntervalEvent,
+  VCalendarMonthDay,
+} from 'vuetify/labs/VCalendar';
+import { VDateInput } from 'vuetify/labs/VDateInput';
+import { VFileUpload, VFileUploadItem } from 'vuetify/labs/VFileUpload';
+import { VNumberInput } from 'vuetify/labs/VNumberInput';
+import { VPicker, VPickerTitle } from 'vuetify/labs/VPicker';
+import { VPullToRefresh } from 'vuetify/labs/VPullToRefresh';
+import { VSnackbarQueue } from 'vuetify/labs/VSnackbarQueue';
+import { VStepperVertical, VStepperVerticalActions, VStepperVerticalItem } from 'vuetify/labs/VStepperVertical';
+import { VTimePicker, VTimePickerClock, VTimePickerControls } from 'vuetify/labs/VTimePicker';
+import { VTreeview, VTreeviewGroup, VTreeviewItem } from 'vuetify/labs/VTreeview';
 // @ts-ignore
 import 'vuetify/styles';
 
@@ -76,15 +93,28 @@ export {
   SlickteamSidebarIcon,
   SlickteamSidebar,
   SlickteamDataTable,
+  // Labs comps
+  VCalendar,
+  VCalendarDay,
+  VCalendarHeader,
+  VCalendarInterval,
+  VCalendarIntervalEvent,
+  VCalendarMonthDay,
+  VDateInput,
+  VFileUpload,
+  VFileUploadItem,
+  VNumberInput,
+  VPicker,
+  VPickerTitle,
+  VPullToRefresh,
+  VSnackbarQueue,
+  VStepperVertical,
+  VStepperVerticalActions,
+  VStepperVerticalItem,
+  VTimePicker,
+  VTimePickerClock,
+  VTimePickerControls,
+  VTreeview,
+  VTreeviewGroup,
+  VTreeviewItem,
 };
-
-export * from 'vuetify/labs/VCalendar';
-export * from 'vuetify/labs/VDateInput';
-export * from 'vuetify/labs/VFileUpload';
-export * from 'vuetify/labs/VNumberInput';
-export * from 'vuetify/labs/VPicker';
-export * from 'vuetify/labs/VPullToRefresh';
-export * from 'vuetify/labs/VSnackbarQueue';
-export * from 'vuetify/labs/VStepperVertical';
-export * from 'vuetify/labs/VTimePicker';
-export * from 'vuetify/labs/VTreeview';
