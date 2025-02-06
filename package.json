@@ -1,7 +1,7 @@
 {
   "name": "@slickteam/components-vuetify3",
   "description": "Components for Vuetify 3 / Vue 3",
-  "version": "0.5.6",
+  "version": "0.5.7",
   "type": "module",
   "keywords": [
     "slickteam",

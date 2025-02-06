@@ -18,6 +18,7 @@ import { VSnackbarQueue } from 'vuetify/labs/VSnackbarQueue';
 import { VStepperVertical, VStepperVerticalActions, VStepperVerticalItem } from 'vuetify/labs/VStepperVertical';
 import { VTimePicker, VTimePickerClock, VTimePickerControls } from 'vuetify/labs/VTimePicker';
 import { VTreeview, VTreeviewGroup, VTreeviewItem } from 'vuetify/labs/VTreeview';
+import { en, fr } from 'vuetify/locale';
 // @ts-ignore
 import 'vuetify/styles';
 
@@ -70,6 +71,7 @@ const VuetifyLibrary = {
       locale: {
         locale: 'fr',
         fallback: 'en',
+        messages: { fr, en },
       },
     };
 
