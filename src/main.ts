@@ -1,9 +1,6 @@
 import '@mdi/font/css/materialdesignicons.min.css';
 import type { App } from 'vue';
 import { type VuetifyOptions, createVuetify } from 'vuetify';
-import { VDateInput } from 'vuetify/labs/VDateInput';
-import { VNumberInput } from 'vuetify/labs/VNumberInput';
-import { VTreeview, VTreeviewGroup, VTreeviewItem } from 'vuetify/labs/VTreeview';
 // @ts-ignore
 import 'vuetify/styles';
 
@@ -57,13 +54,6 @@ const VuetifyLibrary = {
         locale: 'fr',
         fallback: 'en',
       },
-      components: {
-        VDateInput,
-        VTreeview,
-        VTreeviewGroup,
-        VTreeviewItem,
-        VNumberInput,
-      },
     };
 
     const vuetify = createVuetify(defaultOptions);
@@ -87,3 +77,14 @@ export {
   SlickteamSidebar,
   SlickteamDataTable,
 };
+
+export * from 'vuetify/labs/VCalendar';
+export * from 'vuetify/labs/VDateInput';
+export * from 'vuetify/labs/VFileUpload';
+export * from 'vuetify/labs/VNumberInput';
+export * from 'vuetify/labs/VPicker';
+export * from 'vuetify/labs/VPullToRefresh';
+export * from 'vuetify/labs/VSnackbarQueue';
+export * from 'vuetify/labs/VStepperVertical';
+export * from 'vuetify/labs/VTimePicker';
+export * from 'vuetify/labs/VTreeview';
