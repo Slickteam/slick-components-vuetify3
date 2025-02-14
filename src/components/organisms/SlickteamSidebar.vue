@@ -86,6 +86,7 @@ const { mobile } = useDisplay();
 }
 .sidebar-content-container {
   margin-top: 57px;
+  height: calc(100% - 57px);
 }
 :deep(::-webkit-scrollbar) {
   width: 0;

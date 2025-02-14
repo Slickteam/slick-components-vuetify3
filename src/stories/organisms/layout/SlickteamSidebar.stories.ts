@@ -65,6 +65,10 @@ const meta: Meta<PageSlickteamSidebarIconArgs> = {
     /* html */
     template: `<SlickteamSidebar v-bind="args" :rail="railValue" @update:rail="onUpdateRail" @update:model-value="onUpdateModel">
       <template #header="{ rail }">R={{rail}} </template>
+      <template #default>
+        <p>Content</p>
+      </template>
+      <template #footer>Footer</template>
     </SlickteamSidebar>`,
   }),
 };
