@@ -42,6 +42,9 @@ const meta: Meta<PageSlickteamContainerArgs> = {
     sidebarLeftShowBorder: {
       control: 'boolean',
     },
+    sidebarLeftWidth: {
+      control: 'text',
+    },
     toolbarShowBottomBorder: {
       control: 'boolean',
     },
@@ -147,6 +150,7 @@ export const Default = {
     sidebarLeftIconRailButtonColor: `aaaaaa`,
     sidebarLeftBackgroundColor: '#ffffff',
     sidebarLeftShowBorder: true,
+    sidebarLeftWidth: '256',
     toolbarShowBottomBorder: true,
     toolbarColor: 'background',
     toolbarElevation: '0',
@@ -194,6 +198,7 @@ export const NotDefaultSelected = {
     sidebarLeftShowRailButton: true,
     sidebarLeftIconRailButtonColor: `aaaaaa`,
     sidebarLeftBackgroundColor: '#ffffff',
+    sidebarLeftWidth: '256',
     sidebarLeftShowBorder: true,
     toolbarShowBottomBorder: true,
     toolbarColor: 'background',

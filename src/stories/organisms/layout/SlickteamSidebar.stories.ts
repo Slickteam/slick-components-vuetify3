@@ -24,6 +24,9 @@ const meta: Meta<PageSlickteamSidebarIconArgs> = {
     elevation: {
       control: 'text',
     },
+    width: {
+      control: 'text',
+    },
     showHeaderBottomBorder: {
       control: 'boolean',
     },
@@ -86,6 +89,7 @@ export const Default = {
     iconRailButtonColor: '#aaaaaa',
     showRailButton: true,
     backgroundColor: '#ffffff',
+    width: '256',
     showBorder: true,
   },
 } satisfies Story;
@@ -99,6 +103,7 @@ export const Inverted = {
     iconRailButtonColor: '#aaaaaa',
     showRailButton: true,
     backgroundColor: '#f5f5f5',
+    width: '256',
     showBorder: false,
   },
 } satisfies Story;

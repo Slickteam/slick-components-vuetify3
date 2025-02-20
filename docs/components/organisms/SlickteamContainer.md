@@ -61,6 +61,7 @@ import { SlickteamContainer } from '@slickteam/components-vuetify3';
 | `sidebar-left-show-header-bottom-border` |                                            | `boolean`                                                        | `true`       |
 | `sidebar-left-show-rail-button`          |                                            | `boolean`                                                        | `true`       |
 | `sidebar-left-show-border`               |                                            | `boolean`                                                        | `true`       |
+| `sidebar-left-width`                     | width of sidebar                           | `string` \| `number`                                             | `256`        |
 | `toolbar-show-bottom-border`             |                                            | `boolean`                                                        | `true`       |
 | `toolbar-color`                          |                                            | `string`                                                         | `background` |
 | `toolbar-elevation`                      |                                            | `string` \| `number`                                             | `2`          |

@@ -8,6 +8,7 @@
     :icon-rail-button-color="sidebarLeftIconRailButtonColor"
     :background-color="sidebarLeftBackgroundColor"
     :show-border="sidebarLeftShowBorder"
+    :width="sidebarLeftWidth"
     :rail="rail"
     @update:rail="updateRail"
   >
@@ -106,6 +107,7 @@ withDefaults(
     sidebarLeftIconRailButtonColor?: string;
     sidebarLeftBackgroundColor?: string;
     sidebarLeftShowBorder?: boolean;
+    sidebarLeftWidth?: string | number;
     toolbarShowBottomBorder?: boolean;
     toolbarColor?: string;
     toolbarElevation?: string | number;
@@ -131,6 +133,7 @@ withDefaults(
     sidebarLeftIconRailButtonColor: `aaaaaa`,
     sidebarLeftBackgroundColor: '#ffffff',
     sidebarLeftShowBorder: true,
+    sidebarLeftWidth: '256',
     toolbarShowBottomBorder: true,
     toolbarColor: 'background',
     toolbarElevation: 0,

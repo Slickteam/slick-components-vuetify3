@@ -4,6 +4,7 @@
     :elevation="elevation"
     :rail="!mobile && rail"
     :color="backgroundColor"
+    :width="width"
     :border="false"
     :style="{ border: showBorder ? '' : 'none' }"
     @click="emit('update:rail', false)"
@@ -57,6 +58,7 @@ withDefaults(
     iconRailButtonColor?: string;
     backgroundColor?: string;
     showBorder?: boolean;
+    width?: string | number;
   }>(),
   {
     rail: false,
