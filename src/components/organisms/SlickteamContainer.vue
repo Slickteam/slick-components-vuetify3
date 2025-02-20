@@ -57,7 +57,7 @@
   </slickteam-toolbar>
 
   <div class="page-container">
-    <div class="page-container-content">
+    <div class="page-container-content" :style="{ padding: `${paddingY} ${paddingX}` }">
       <slot></slot>
     </div>
     <Transition name="slide-fade">
@@ -122,6 +122,8 @@ withDefaults(
     menuRightElevation?: string | number;
     menuRightRounded?: string | number | boolean;
     menuRightColor?: string;
+    paddingX?: string;
+    paddingY?: string;
   }>(),
   {
     hideToolbar: false,
@@ -146,6 +148,8 @@ withDefaults(
     menuRightElevation: '4',
     menuRightRounded: 'lg',
     menuRightColor: '#ffffff',
+    paddingX: '24px',
+    paddingY: '12px',
   },
 );
 
@@ -184,7 +188,6 @@ function updateRail(value: boolean) {
 }
 
 .page-container-content {
-  padding: 12px 24px !important;
   flex-grow: 3;
 }
 

@@ -87,6 +87,12 @@ const meta: Meta<PageSlickteamContainerArgs> = {
     menuRightColor: {
       control: 'color',
     },
+    paddingX: {
+      control: 'text',
+    },
+    paddingY: {
+      control: 'text',
+    },
   },
   render: (args, { updateArgs }) => ({
     components: { SlickteamContainer },
@@ -184,6 +190,8 @@ export const Default = {
     menuRightElevation: '4',
     menuRightRounded: 'lg',
     menuRightColor: '#ffffff',
+    paddingX: '24px',
+    paddingY: '12px',
   },
 } satisfies Story;
 
@@ -233,5 +241,7 @@ export const NotDefaultSelected = {
     menuRightElevation: '4',
     menuRightRounded: 'lg',
     menuRightColor: '#ffffff',
+    paddingX: '24px',
+    paddingY: '12px',
   },
 } satisfies Story;

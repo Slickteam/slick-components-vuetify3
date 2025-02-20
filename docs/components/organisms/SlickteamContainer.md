@@ -76,6 +76,8 @@ import { SlickteamContainer } from '@slickteam/components-vuetify3';
 | `menu-right-elevation`                   |                                            | `string` \| `number`                                             | `4`          |
 | `menu-right-rounded`                     |                                            | `string` \| `number`\| `boolean`                                 | `lg`         |
 | `menu-right-color`                       |                                            | `string`                                                         | `#ffffff`    |
+| `padding-x`                              |                                            | `string`                                                         | `24px`       |
+| `padding-y`                              |                                            | `string`                                                         | `12px`       |
 
 ### Events
 
