@@ -167,7 +167,7 @@ function updateSelected(values: string[]) {
   background: transparent;
 }
 .sidebar-icon-top-button {
-  margin: 0 8px 2px 8px;
+  margin: 4px 8px 8px 8px;
   color: #aaaaaa;
 }
 </style>
