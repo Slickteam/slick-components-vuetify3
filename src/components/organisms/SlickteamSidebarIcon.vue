@@ -14,9 +14,11 @@
   >
     <slot>
       <v-btn
-        icon="mdi-page-layout-sidebar-right"
+        icon="mdi-dock-right"
         class="sidebar-icon-top-button"
         variant="text"
+        size="small"
+        elevation="0"
         rounded="0"
         @click="drawerModel = !drawerModel"
       />
@@ -165,7 +167,7 @@ function updateSelected(values: string[]) {
   background: transparent;
 }
 .sidebar-icon-top-button {
-  margin: 0 4px 2px 4px;
+  margin: 0 8px 2px 8px;
   color: #aaaaaa;
 }
 </style>
