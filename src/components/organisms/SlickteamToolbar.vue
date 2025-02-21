@@ -13,7 +13,15 @@
 
       <v-tooltip v-if="sidebarRightIcon" text="Ouvrir le menu d'édition">
         <template #activator="{ props }">
-          <v-btn icon="mdi-page-layout-sidebar-right" variant="text" rounded="0" v-bind="props" @click="emit('toggle:right-menu')" />
+          <v-btn
+            icon="mdi-dock-right"
+            variant="text"
+            size="small"
+            elevation="0"
+            rounded="0"
+            v-bind="props"
+            @click="emit('toggle:right-menu')"
+          />
         </template>
       </v-tooltip>
     </template>
