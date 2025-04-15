@@ -11,13 +11,13 @@ import {
 } from 'vuetify/labs/VCalendar';
 import { VDateInput } from 'vuetify/labs/VDateInput';
 import { VFileUpload, VFileUploadItem } from 'vuetify/labs/VFileUpload';
-import { VNumberInput } from 'vuetify/labs/VNumberInput';
+import { VIconBtn } from 'vuetify/labs/VIconBtn';
 import { VPicker, VPickerTitle } from 'vuetify/labs/VPicker';
 import { VPullToRefresh } from 'vuetify/labs/VPullToRefresh';
-import { VSnackbarQueue } from 'vuetify/labs/VSnackbarQueue';
 import { VStepperVertical, VStepperVerticalActions, VStepperVerticalItem } from 'vuetify/labs/VStepperVertical';
 import { VTimePicker, VTimePickerClock, VTimePickerControls } from 'vuetify/labs/VTimePicker';
 import { VTreeview, VTreeviewGroup, VTreeviewItem } from 'vuetify/labs/VTreeview';
+import { createRulesPlugin, useRules } from 'vuetify/labs/rules';
 import { en, fr } from 'vuetify/locale';
 // @ts-ignore
 import 'vuetify/styles';
@@ -34,7 +34,7 @@ import SlickteamSidebarIcon from '@/components/organisms/SlickteamSidebarIcon.vu
 import SlickteamToolbar from '@/components/organisms/SlickteamToolbar.vue';
 
 const SlickComponentLibrary = {
-  install: (app: App<Element>) => {
+  install: (app: App) => {
     app.component('SlickteamClipboardButton', SlickteamClipboardButton);
     app.component('SlickteamIconButton', SlickteamIconButton);
     app.component('SlickteamTextIconButton', SlickteamTextIconButton);
@@ -49,7 +49,7 @@ const SlickComponentLibrary = {
 };
 
 const VuetifyLibrary = {
-  install(app: App<Element>, options: VuetifyOptions) {
+  install(app: App, options: VuetifyOptions) {
     const defaultOptions = options ?? {
       theme: {
         themes: {
@@ -105,11 +105,10 @@ export {
   VDateInput,
   VFileUpload,
   VFileUploadItem,
-  VNumberInput,
+  VIconBtn,
   VPicker,
   VPickerTitle,
   VPullToRefresh,
-  VSnackbarQueue,
   VStepperVertical,
   VStepperVerticalActions,
   VStepperVerticalItem,
@@ -119,4 +118,6 @@ export {
   VTreeview,
   VTreeviewGroup,
   VTreeviewItem,
+  createRulesPlugin,
+  useRules,
 };
