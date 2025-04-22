@@ -7,9 +7,9 @@ Component use to have a full container
 ```vue
 <template>
   <slickteam-container v-model:selected="selected" :items="items">
-    <template #sidebar-left-header="{ rail }">Header {{ rail }}</template>
-    <template #sidebar-left="{ rail }">Content </template>
-    <template #sidebar-left-footer="{ rail }">Footer </template>
+    <template #sidebar-left-header>Header</template>
+    <template #sidebar-left>Content </template>
+    <template #sidebar-left-footer>Footer </template>
     <template #toolbar-left>left</template>
     <template #toolbar-right>right</template>
     <template #sidebar-right-menu-header>Title</template>
@@ -57,9 +57,7 @@ import { SlickteamContainer } from '@slickteam/components-vuetify3';
 | `hide-sidebar-right`                     |                                            | `boolean`                                                        | `false`      |
 | `sidebar-left-background-color`          |                                            | `string`                                                         | `#ffffff`    |
 | `sidebar-left-elevation`                 |                                            | `string` \| `number`                                             | `2`          |
-| `sidebar-left-icon-rail-button-color`    |                                            | `string`                                                         | `#aaaaaa`    |
 | `sidebar-left-show-header-bottom-border` |                                            | `boolean`                                                        | `true`       |
-| `sidebar-left-show-rail-button`          |                                            | `boolean`                                                        | `true`       |
 | `sidebar-left-show-border`               |                                            | `boolean`                                                        | `true`       |
 | `sidebar-left-width`                     | width of sidebar                           | `string` \| `number`                                             | `256`        |
 | `toolbar-show-bottom-border`             |                                            | `boolean`                                                        | `true`       |
@@ -73,8 +71,7 @@ import { SlickteamContainer } from '@slickteam/components-vuetify3';
 | `sidebar-right-show-border`              |                                            | `boolean`                                                        | `true`       |
 | `sidebar-right-rounded`                  |                                            | `string` \| `number`\| `boolean`                                 | `sm`         |
 | `sidebar-right-elevation`                |                                            | `string` \| `number`                                             | `2`          |
-| `menu-right-elevation`                   |                                            | `string` \| `number`                                             | `4`          |
-| `menu-right-rounded`                     |                                            | `string` \| `number`\| `boolean`                                 | `lg`         |
+| `menu-right-border`                      |                                            | `string`                                                         | `undefined`  |
 | `menu-right-color`                       |                                            | `string`                                                         | `#ffffff`    |
 | `padding-x`                              |                                            | `string`                                                         | `24px`       |
 | `padding-y`                              |                                            | `string`                                                         | `12px`       |
@@ -90,9 +87,9 @@ import { SlickteamContainer } from '@slickteam/components-vuetify3';
 | Name                         | Description                                 | Value                  |
 | ---------------------------- | ------------------------------------------- | ---------------------- |
 | `default`                    | Slot for container content                  | `never`                |
-| `sidebar-left`               | Slot for sidebar left content               | `{ rail: boolean }`    |
-| `sidebar-left-header`        | Slot for sidebar left header content        | `{ rail: boolean }`    |
-| `sidebar-left-footer`        | Slot for sidebar left footer content        | `{ rail: boolean }`    |
+| `sidebar-left`               | Slot for sidebar left content               | `never`                |
+| `sidebar-left-header`        | Slot for sidebar left header content        | `never`                |
+| `sidebar-left-footer`        | Slot for sidebar left footer content        | `never`                |
 | `toolbar-left`               | Slot for toolbar left content               | `never`                |
 | `toolbar-right`              | Slot for toolbar right content              | `never`                |
 | `sidebar-right-menu`         | Slot for sidebar right menu content         | `{ selected: string }` |

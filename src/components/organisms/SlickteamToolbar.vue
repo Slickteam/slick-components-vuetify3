@@ -52,7 +52,7 @@ withDefaults(
     showBottomBorder: true,
     color: 'background',
     elevation: 0,
-    height: 56,
+    height: 64,
   },
 );
 const { mobile } = useDisplay();

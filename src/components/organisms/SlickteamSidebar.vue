@@ -2,75 +2,47 @@
   <v-navigation-drawer
     v-model="modelDrawer"
     :elevation="elevation"
-    :rail="!mobile && rail"
     :color="backgroundColor"
     :width="width"
     :border="false"
     :style="{ border: showBorder ? '' : 'none' }"
-    @click="emit('update:rail', false)"
   >
     <div
       class="sidebar-header"
       :style="{
         backgroundColor: backgroundColor,
-        padding: !rail ? '8px 12px' : '',
         borderBottom: showHeaderBottomBorder ? 'solid 1px #aaaaaa' : '',
       }"
     >
-      <slot name="header" :rail="rail"></slot>
-      <v-btn
-        v-if="showRailButton && !rail && !mobile"
-        density="compact"
-        icon
-        rounded="0"
-        width="24"
-        height="24"
-        elevation="0"
-        :color="backgroundColor"
-        @click.stop="emit('update:rail', !rail)"
-      >
-        <v-icon icon="mdi-chevron-left" :color="iconRailButtonColor" />
-      </v-btn>
+      <slot name="header"></slot>
     </div>
     <div class="sidebar-content-container">
-      <slot :rail="rail"></slot>
+      <slot></slot>
     </div>
     <template v-slot:append>
-      <slot name="footer" :rail="rail"></slot>
+      <slot name="footer"></slot>
     </template>
   </v-navigation-drawer>
 </template>
 
 <script lang="ts" setup>
-import { useDisplay } from 'vuetify';
-
 const modelDrawer = defineModel<boolean>({ default: true });
-const emit = defineEmits<{
-  (e: 'update:rail', value: boolean): void;
-}>();
 
 withDefaults(
   defineProps<{
-    rail?: boolean;
     elevation?: string | number;
     showHeaderBottomBorder?: boolean;
-    showRailButton?: boolean;
-    iconRailButtonColor?: string;
     backgroundColor?: string;
     showBorder?: boolean;
     width?: string | number;
   }>(),
   {
-    rail: false,
     elevation: '2',
     showHeaderBottomBorder: true,
-    showRailButton: true,
-    iconRailButtonColor: '#aaaaaa',
     backgroundColor: '#ffffff',
     showBorder: true,
   },
 );
-const { mobile } = useDisplay();
 </script>
 
 <style scoped>
@@ -79,7 +51,7 @@ const { mobile } = useDisplay();
   top: 0;
   width: 100%;
   z-index: 100;
-  height: 56px;
+  height: 64px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -87,8 +59,8 @@ const { mobile } = useDisplay();
   align-items: center;
 }
 .sidebar-content-container {
-  margin-top: 57px;
-  height: calc(100% - 57px);
+  margin-top: 65px;
+  height: calc(100% - 65px);
 }
 :deep(::-webkit-scrollbar) {
   width: 0;

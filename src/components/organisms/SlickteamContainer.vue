@@ -4,22 +4,18 @@
     v-model="drawerLeftState"
     :elevation="sidebarLeftElevation"
     :show-header-bottom-border="sidebarLeftShowHeaderBottomBorder"
-    :show-rail-button="sidebarLeftShowRailButton"
-    :icon-rail-button-color="sidebarLeftIconRailButtonColor"
     :background-color="sidebarLeftBackgroundColor"
     :show-border="sidebarLeftShowBorder"
     :width="sidebarLeftWidth"
-    :rail="rail"
-    @update:rail="updateRail"
   >
-    <template #header="{ rail }">
-      <slot name="sidebar-left-header" :rail="rail"></slot>
+    <template #header>
+      <slot name="sidebar-left-header"></slot>
     </template>
-    <template #default="{ rail }">
-      <slot name="sidebar-left" :rail="rail"></slot>
+    <template #default>
+      <slot name="sidebar-left"></slot>
     </template>
-    <template #footer="{ rail }">
-      <slot name="sidebar-left-footer" :rail="rail"></slot>
+    <template #footer>
+      <slot name="sidebar-left-footer"></slot>
     </template>
   </slickteam-sidebar>
   <slickteam-sidebar-icon
@@ -64,10 +60,10 @@
       <div v-if="!hideSidebarRight && drawerRightState && selectedModel" class="sidebar-menu-wrapper">
         <v-card
           class="sidebar-menu d-flex flex-column"
-          :elevation="menuRightElevation"
-          :rounded="menuRightRounded"
+          :elevation="0"
+          :rounded="0"
           :color="menuRightColor"
-          :style="{ height: `${$vuetify.display.height - 72}px` }"
+          :style="{ height: `${$vuetify.display.height - 64}px`, borderLeft: menuRightBorder ? `1px solid ${menuRightBorder}` : '' }"
         >
           <v-card-title class="sidebar-menu-padding">
             <slot name="sidebar-right-menu-header" :selected="selectedModel"></slot>
@@ -103,8 +99,6 @@ withDefaults(
     hideSidebarRight?: boolean;
     sidebarLeftElevation?: string | number;
     sidebarLeftShowHeaderBottomBorder?: boolean;
-    sidebarLeftShowRailButton?: boolean;
-    sidebarLeftIconRailButtonColor?: string;
     sidebarLeftBackgroundColor?: string;
     sidebarLeftShowBorder?: boolean;
     sidebarLeftWidth?: string | number;
@@ -112,15 +106,14 @@ withDefaults(
     toolbarColor?: string;
     toolbarElevation?: string | number;
     toolbarHeight?: number;
-    sidebarRightItems?: { icon: string; text: string; color: string; value: string; count: number | undefined }[];
+    sidebarRightItems?: { icon: string; text: string; color?: string; value: string; count?: number }[];
     sidebarRightWidth?: number;
     sidebarRightHeight?: number;
     sidebarRightBackground?: string;
     sidebarRightShowBorder?: boolean;
     sidebarRightRounded?: string | number | boolean;
     sidebarRightElevation?: string | number;
-    menuRightElevation?: string | number;
-    menuRightRounded?: string | number | boolean;
+    menuRightBorder?: string;
     menuRightColor?: string;
     paddingX?: string;
     paddingY?: string;
@@ -131,8 +124,6 @@ withDefaults(
     hideSidebarRight: false,
     sidebarLeftElevation: '2',
     sidebarLeftShowHeaderBottomBorder: true,
-    sidebarLeftShowRailButton: true,
-    sidebarLeftIconRailButtonColor: `aaaaaa`,
     sidebarLeftBackgroundColor: '#ffffff',
     sidebarLeftShowBorder: true,
     sidebarLeftWidth: '256',
@@ -145,8 +136,6 @@ withDefaults(
     sidebarRightRounded: 'sm',
     sidebarRightElevation: '2',
     sidebarRightShowBorder: true,
-    menuRightElevation: '4',
-    menuRightRounded: 'lg',
     menuRightColor: '#ffffff',
     paddingX: '24px',
     paddingY: '12px',
@@ -155,7 +144,6 @@ withDefaults(
 
 const drawerLeftState = shallowRef(!mobile.value);
 const drawerRightState = shallowRef(!mobile.value);
-const rail = shallowRef(false);
 
 onMounted(() => {
   if (selectedModel.value === undefined) {
@@ -173,10 +161,6 @@ watch(drawerRightState, (value) => {
     selectedModel.value = undefined;
   }
 });
-
-function updateRail(value: boolean) {
-  rail.value = value;
-}
 </script>
 
 <style scoped>
@@ -192,8 +176,7 @@ function updateRail(value: boolean) {
 }
 
 .sidebar-menu-wrapper {
-  padding: 8px 8px 8px 0px !important;
-  width: 291px !important;
+  width: 283px !important;
 }
 
 .sidebar-menu {

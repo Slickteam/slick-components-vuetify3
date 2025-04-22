@@ -51,6 +51,6 @@ export const Default = {
     showBottomBorder: true,
     color: 'background',
     elevation: '0',
-    height: 56,
+    height: 64,
   },
 } satisfies Story;
