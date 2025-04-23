@@ -28,14 +28,16 @@ import { SlickteamSidebar } from '@slickteam/components-vuetify3';
 
 ### Props
 
-| Name                        | Description               | Type                 | Default     |
-| --------------------------- | ------------------------- | -------------------- | ----------- |
-| `background-color`          | color of sidebar          | `string`             | `#ffffff`   |
-| `elevation`                 | elevation of sidebar      | `string` \| `number` | `2`         |
-| `model-value`               | show or non sidebar       | `boolean`            | `true`      |
-| `show-border`               | show border               | `boolean`            | `true`      |
-| `show-header-bottom-border` | show header bottom border | `boolean`            | `true`      |
-| `width`                     | width of sidebar          | `string` \| `number` | `undefined` |
+| Name                        | Description                 | Type                 | Default     |
+| --------------------------- | --------------------------- | -------------------- | ----------- |
+| `elevation`                 | elevation of sidebar        | `string` \| `number` | `2`         |
+| `show-header-bottom-border` | show header bottom border   | `boolean`            | `true`      |
+| `background-color`          | color of sidebar            | `string`             | `#ffffff`   |
+| `show-border-right`         | show border right           | `boolean`            | `true`      |
+| `border-color`              | border color                | `string`             | `#aaa`      |
+| `model-value`               | show or non sidebar         | `boolean`            | `true`      |
+| `width`                     | width of sidebar            | `string` \| `number` | `undefined` |
+| `height-header`             | height of header of sidebar | `string` \| `number` | `64`        |
 
 ### Events
 

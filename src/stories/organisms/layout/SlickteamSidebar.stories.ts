@@ -20,14 +20,20 @@ const meta: Meta<PageSlickteamSidebarIconArgs> = {
     width: {
       control: 'text',
     },
-    showHeaderBottomBorder: {
-      control: 'boolean',
-    },
     backgroundColor: {
       control: 'color',
     },
-    showBorder: {
+    showHeaderBottomBorder: {
       control: 'boolean',
+    },
+    showBorderRight: {
+      control: 'boolean',
+    },
+    borderColor: {
+      control: 'color',
+    },
+    heightHeader: {
+      control: 'text',
     },
   },
   render: (args, { updateArgs }) => ({
@@ -60,7 +66,9 @@ export const Default = {
     showHeaderBottomBorder: true,
     backgroundColor: '#ffffff',
     width: '256',
-    showBorder: true,
+    borderColor: '#aaa',
+    showBorderRight: true,
+    heightHeader: '64',
   },
 } satisfies Story;
 
@@ -71,6 +79,8 @@ export const Inverted = {
     showHeaderBottomBorder: false,
     backgroundColor: '#f5f5f5',
     width: '256',
-    showBorder: false,
+    borderColor: '#aaa',
+    showBorderRight: false,
+    heightHeader: '64',
   },
 } satisfies Story;

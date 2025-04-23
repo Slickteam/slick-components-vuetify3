@@ -5,18 +5,24 @@
     :color="backgroundColor"
     :width="width"
     :border="false"
-    :style="{ border: showBorder ? '' : 'none' }"
+    :style="{ border: 'none', borderRight: showBorderRight ? `1px solid ${borderColor}` : 'none' }"
   >
     <div
       class="sidebar-header"
       :style="{
         backgroundColor: backgroundColor,
-        borderBottom: showHeaderBottomBorder ? 'solid 1px #aaaaaa' : '',
+        borderBottom: showHeaderBottomBorder ? `solid 1px ${borderColor}` : '',
+        height: `${heightHeader}px`,
       }"
     >
       <slot name="header"></slot>
     </div>
-    <div class="sidebar-content-container">
+    <div
+      :style="{
+        marginTop: `calc(${heightHeader}px + 1px)`,
+        height: `calc(100% - ${heightHeader}px - 1px)`,
+      }"
+    >
       <slot></slot>
     </div>
     <template v-slot:append>
@@ -33,14 +39,18 @@ withDefaults(
     elevation?: string | number;
     showHeaderBottomBorder?: boolean;
     backgroundColor?: string;
-    showBorder?: boolean;
+    showBorderRight?: boolean;
+    borderColor?: string;
     width?: string | number;
+    heightHeader?: string | number;
   }>(),
   {
     elevation: '2',
     showHeaderBottomBorder: true,
     backgroundColor: '#ffffff',
-    showBorder: true,
+    showBorderRight: true,
+    borderColor: '#aaa',
+    heightHeader: '64',
   },
 );
 </script>
@@ -51,16 +61,11 @@ withDefaults(
   top: 0;
   width: 100%;
   z-index: 100;
-  height: 64px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-}
-.sidebar-content-container {
-  margin-top: 65px;
-  height: calc(100% - 65px);
 }
 :deep(::-webkit-scrollbar) {
   width: 0;

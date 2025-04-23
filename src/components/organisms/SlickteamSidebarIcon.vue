@@ -16,6 +16,10 @@
       <v-btn
         icon="mdi-dock-right"
         class="sidebar-icon-top-button"
+        :style="{
+          marginTop: `${marginYCloseButton}px`,
+          marginBottom: `calc(${marginYCloseButton}px + 4px)`,
+        }"
         variant="text"
         size="small"
         elevation="0"
@@ -35,7 +39,7 @@
           :key="`sidebar-icon-${item.value}`"
           active-class="sidebar-icon-menu-active"
           :style="{
-            color: item.active ? `${item.color ?? 'var(--v-primary-base)'} !important` : '#CCCCCC',
+            color: getColorItem(item),
           }"
           :active="item.active"
           class="sidebar-icon-item-container"
@@ -45,29 +49,29 @@
           <div
             class="sidebar-icon-menu-item-icon"
             :style="{
-              'border-color': item.active ? (item.color ?? 'orange') : '#CCCCCC',
+              'border-color': getColorItem(item),
             }"
           >
             <template v-if="item.count !== undefined">
               <v-badge
-                :color="item.active ? (item.color ?? 'primary') : '#CCCCCC'"
+                :color="getColorItem(item)"
                 :content="item.count > 9 ? '9+' : item.count"
                 bordered
                 :offset-x="item.count > 9 ? 2 : -4"
                 :offset-y="-4"
               >
-                <v-icon size="24" :color="item.active ? (item.color ?? 'primary') : '#CCCCCC'">{{ item.icon }}</v-icon>
+                <v-icon size="24" :color="getColorItem(item)">{{ item.icon }}</v-icon>
               </v-badge>
             </template>
             <template v-else>
-              <v-icon size="24" :color="item.active ? (item.color ?? 'primary') : '#CCCCCC'">{{ item.icon }}</v-icon>
+              <v-icon size="24" :color="getColorItem(item)">{{ item.icon }}</v-icon>
             </template>
           </div>
           <p
             class="sidebar-icon-menu-item-text"
             align="center"
             :style="{
-              color: item.active ? (item.color ?? 'orange') : '#CCCCCC',
+              color: getColorItem(item),
             }"
           >
             {{ item.text }}
@@ -87,18 +91,22 @@ const drawerModel = defineModel<boolean>('drawer', { default: false });
 const props = withDefaults(
   defineProps<{
     items?: { icon: string; text: string; color?: string; value: string; count?: number }[];
-    width?: number;
-    height?: number;
+    width?: string | number;
+    height?: string | number;
     background?: string;
     showLeftBorder?: boolean;
     rounded?: string | number | boolean;
+    defaultActiveColor?: string;
+    marginYCloseButton?: string | number;
     elevation?: string | number;
   }>(),
   {
     items: () => [],
-    width: 65,
+    width: '65',
     rounded: 'sm',
     elevation: '2',
+    defaultActiveColor: 'var(--v-primary-base)',
+    marginYCloseButton: '10',
     showLeftBorder: true,
   },
 );
@@ -126,6 +134,10 @@ const convertedItems = computed(() => props.items.map((i) => ({ ...i, active: se
 function updateSelected(values: string[]) {
   internalModel.value = values;
   selectedModel.value = values?.[0];
+}
+function getColorItem(item: { active?: boolean; color?: string }) {
+  const activeColor = item.color ?? props.defaultActiveColor;
+  return item.active ? `${activeColor} !important` : '#CCCCCC';
 }
 </script>
 
@@ -172,7 +184,8 @@ function updateSelected(values: string[]) {
   background: transparent;
 }
 .sidebar-icon-top-button {
-  margin: 10px 8px 14px 8px;
+  margin-left: 8px;
+  margin-right: 8px;
   color: #cccccc;
 }
 </style>

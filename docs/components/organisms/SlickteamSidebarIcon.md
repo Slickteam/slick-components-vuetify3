@@ -36,17 +36,19 @@ import { SlickteamSidebarIcon } from '@slickteam/components-vuetify3';
 
 ### Props
 
-| Name                   | Description                   | Type                                                             | Default     |
-| ---------------------- | ----------------------------- | ---------------------------------------------------------------- | ----------- |
-| `background`           | background of sidebar         | `string`                                                         | `undefined` |
-| `elevation`            | elevation of sidebar          | `string` \| `number`                                             | `2`         |
-| `height`               | height of sidebar             | `string`                                                         | `undefined` |
-| `items`                | selected item value           | `[{ icon: string, text: string, color: string, value: string }]` | `[]`        |
-| `model-value:drawer`   | show or non sidebar           | `boolean`                                                        | `undefined` |
-| `model-value:selected` | selected item value           | `string`                                                         | `undefined` |
-| `rounded`              | rounded sidebar               | `string`                                                         | `'sm'`      |
-| `show-left-border`     | show left border of component | `boolean`                                                        | `true`      |
-| `width`                | width of sidebar              | `number`                                                         | `65`        |
+| Name                    | Description                   | Type                                                                              | Default                 |
+| ----------------------- | ----------------------------- | --------------------------------------------------------------------------------- | ----------------------- |
+| `background`            | background of sidebar         | `string`                                                                          | `undefined`             |
+| `elevation`             | elevation of sidebar          | `string` \| `number`                                                              | `2`                     |
+| `height`                | height of sidebar             | `string` \| `number`                                                              | `undefined`             |
+| `items`                 | selected item value           | `[{ icon: string, text: string, color?: string, value: string, count?: number }]` | `[]`                    |
+| `model-value:drawer`    | show or non sidebar           | `boolean`                                                                         | `undefined`             |
+| `model-value:selected`  | selected item value           | `string`                                                                          | `undefined`             |
+| `rounded`               | rounded sidebar               | `string`                                                                          | `'sm'`                  |
+| `show-left-border`      | show left border of component | `boolean`                                                                         | `true`                  |
+| `width`                 | width of sidebar              | `string` \| `number`                                                              | `65`                    |
+| `default-active-color`  | default color of active item  | `string`                                                                          | `var(--v-primary-base)` |
+| `margin-y-close-button` | margin close button           | `string` \| `number`                                                              | `10`                    |
 
 ### Events
 

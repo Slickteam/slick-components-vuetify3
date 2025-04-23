@@ -34,7 +34,13 @@ const meta: Meta<PageSlickteamSidebarIconArgs> = {
       },
       options: ['0', 'xs', 'sm', 'lg', 'md', 'xl', 'pill', 'circle', 'shaped'],
     },
+    defaultActiveColor: {
+      control: 'color',
+    },
     elevation: {
+      control: 'text',
+    },
+    marginYCloseButton: {
       control: 'text',
     },
     items: {
@@ -93,13 +99,15 @@ export const Default = {
     height: 800,
     background: '#ffffff',
     showLeftBorder: true,
+    defaultActiveColor: '#ff0000',
+    marginYCloseButton: 10,
     items: [
       { icon: 'mdi-home', text: 'Menu 01', color: '#3729DD', value: 'menu01', count: 4 },
-      { icon: 'mdi-home', text: 'Menu 02', color: '#4EBC1A', value: 'menu02', count: undefined },
+      { icon: 'mdi-home', text: 'Menu 02', color: undefined, value: 'menu02', count: undefined },
       { icon: 'mdi-home', text: 'Menu 03', color: '#40fC1A', value: 'menu03', count: 19 },
       { icon: 'mdi-home', text: 'Menu 04', color: '#3EBC1A', value: 'menu04', count: 5 },
       { icon: 'mdi-home', text: 'Menu 05', color: '#4EBC10', value: 'menu05', count: 4 },
-      { icon: 'mdi-home', text: 'Menu 06', color: '#4EBCaA', value: 'menu06', count: 6 },
+      { icon: 'mdi-home', text: 'Menu 06', color: undefined, value: 'menu06', count: 6 },
       { icon: 'mdi-home', text: 'Menu 07', color: '#99BC1A', value: 'menu07', count: undefined },
       { icon: 'mdi-home', text: 'Menu 08', color: '#00BC1A', value: 'menu08', count: 7 },
       { icon: 'mdi-home', text: 'Menu 09', color: '#9EBC1A', value: 'menu09', count: undefined },
