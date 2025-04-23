@@ -28,6 +28,9 @@ const meta: Meta<PageSlickteamSidebarIconArgs> = {
     showLeftBorder: {
       control: 'boolean',
     },
+    borderColor: {
+      control: 'color',
+    },
     rounded: {
       control: {
         type: 'select',
@@ -99,6 +102,7 @@ export const Default = {
     height: 800,
     background: '#ffffff',
     showLeftBorder: true,
+    borderColor: '#aaa',
     defaultActiveColor: '#ff0000',
     marginYCloseButton: 10,
     items: [

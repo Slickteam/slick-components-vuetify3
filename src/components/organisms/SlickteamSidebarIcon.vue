@@ -5,7 +5,8 @@
     :style="{
       height: height ? `${height}px` : '',
       background: background ?? '',
-      border: showLeftBorder ? '' : 'none',
+      border: 'none',
+      borderLeft: showLeftBorder ? `1px solid ${borderColor}` : 'none',
     }"
     location="right"
     permanent
@@ -95,6 +96,7 @@ const props = withDefaults(
     height?: string | number;
     background?: string;
     showLeftBorder?: boolean;
+    borderColor?: string;
     rounded?: string | number | boolean;
     defaultActiveColor?: string;
     marginYCloseButton?: string | number;
@@ -108,6 +110,7 @@ const props = withDefaults(
     defaultActiveColor: 'var(--v-primary-base)',
     marginYCloseButton: '10',
     showLeftBorder: true,
+    borderColor: '#aaa',
   },
 );
 

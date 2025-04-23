@@ -5,8 +5,10 @@
     :elevation="sidebarLeftElevation"
     :show-header-bottom-border="sidebarLeftShowHeaderBottomBorder"
     :background-color="sidebarLeftBackgroundColor"
-    :show-border="sidebarLeftShowBorder"
+    :show-border-right="sidebarLeftShowBorderRight"
+    :border-color="sidebarLeftBorderColor"
     :width="sidebarLeftWidth"
+    :height-header="sidebarLeftHeightHeader"
   >
     <template #header>
       <slot name="sidebar-left-header"></slot>
@@ -29,6 +31,9 @@
     :show-left-border="sidebarRightShowBorder"
     :rounded="sidebarRightRounded"
     :elevation="sidebarRightElevation"
+    :border-color="sidebarRightBorderColor"
+    :margin-y-close-button="sidebarRightMarginYCloseButton"
+    :default-active-color="sidebarRightDefaultActiveColor"
   >
     <template #default>
       <slot name="sidebar-right"></slot>
@@ -100,8 +105,10 @@ withDefaults(
     sidebarLeftElevation?: string | number;
     sidebarLeftShowHeaderBottomBorder?: boolean;
     sidebarLeftBackgroundColor?: string;
-    sidebarLeftShowBorder?: boolean;
+    sidebarLeftShowBorderRight?: boolean;
+    sidebarLeftBorderColor?: string;
     sidebarLeftWidth?: string | number;
+    sidebarLeftHeightHeader?: string | number;
     toolbarShowBottomBorder?: boolean;
     toolbarColor?: string;
     toolbarElevation?: string | number;
@@ -113,6 +120,9 @@ withDefaults(
     sidebarRightShowBorder?: boolean;
     sidebarRightRounded?: string | number | boolean;
     sidebarRightElevation?: string | number;
+    sidebarRightBorderColor?: string;
+    sidebarRightDefaultActiveColor?: string;
+    sidebarRightMarginYCloseButton?: string | number;
     menuRightBorder?: string;
     menuRightColor?: string;
     paddingX?: string;
@@ -125,8 +135,10 @@ withDefaults(
     sidebarLeftElevation: '2',
     sidebarLeftShowHeaderBottomBorder: true,
     sidebarLeftBackgroundColor: '#ffffff',
-    sidebarLeftShowBorder: true,
+    sidebarLeftShowBorderRight: true,
+    sidebarLeftBorderColor: '#aaa',
     sidebarLeftWidth: '256',
+    sidebarLeftHeightHeader: '64',
     toolbarShowBottomBorder: true,
     toolbarColor: 'background',
     toolbarElevation: 0,
@@ -136,6 +148,9 @@ withDefaults(
     sidebarRightRounded: 'sm',
     sidebarRightElevation: '2',
     sidebarRightShowBorder: true,
+    sidebarRightBorderColor: '#aaa',
+    sidebarRightDefaultActiveColor: 'var(--v-primary-base)',
+    sidebarRightMarginYCloseButton: '10',
     menuRightColor: '#ffffff',
     paddingX: '24px',
     paddingY: '12px',

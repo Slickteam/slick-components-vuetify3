@@ -46,6 +46,7 @@ import { SlickteamSidebarIcon } from '@slickteam/components-vuetify3';
 | `model-value:selected`  | selected item value           | `string`                                                                          | `undefined`             |
 | `rounded`               | rounded sidebar               | `string`                                                                          | `'sm'`                  |
 | `show-left-border`      | show left border of component | `boolean`                                                                         | `true`                  |
+| `border-color`          | border color                  | `string`                                                                          | `#aaa`                  |
 | `width`                 | width of sidebar              | `string` \| `number`                                                              | `65`                    |
 | `default-active-color`  | default color of active item  | `string`                                                                          | `var(--v-primary-base)` |
 | `margin-y-close-button` | margin close button           | `string` \| `number`                                                              | `10`                    |

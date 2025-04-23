@@ -33,10 +33,16 @@ const meta: Meta<PageSlickteamContainerArgs> = {
     sidebarLeftBackgroundColor: {
       control: 'color',
     },
-    sidebarLeftShowBorder: {
+    sidebarLeftShowBorderRight: {
       control: 'boolean',
     },
+    sidebarLeftBorderColor: {
+      control: 'color',
+    },
     sidebarLeftWidth: {
+      control: 'text',
+    },
+    sidebarLeftHeightHeader: {
       control: 'text',
     },
     toolbarShowBottomBorder: {
@@ -71,6 +77,15 @@ const meta: Meta<PageSlickteamContainerArgs> = {
     },
     sidebarRightShowBorder: {
       control: 'boolean',
+    },
+    sidebarRightBorderColor: {
+      control: 'color',
+    },
+    sidebarRightDefaultActiveColor: {
+      control: 'color',
+    },
+    sidebarRightMarginYCloseButton: {
+      control: 'text',
     },
     menuRightBorder: {
       control: 'color',
@@ -144,8 +159,10 @@ export const Default = {
     sidebarLeftElevation: '2',
     sidebarLeftShowHeaderBottomBorder: true,
     sidebarLeftBackgroundColor: '#ffffff',
-    sidebarLeftShowBorder: true,
+    sidebarLeftShowBorderRight: true,
+    sidebarLeftBorderColor: '#aaa',
     sidebarLeftWidth: '256',
+    sidebarLeftHeightHeader: '64',
     toolbarShowBottomBorder: true,
     toolbarColor: 'background',
     toolbarElevation: '0',
@@ -176,6 +193,9 @@ export const Default = {
     sidebarRightRounded: 'sm',
     sidebarRightElevation: '2',
     sidebarRightShowBorder: true,
+    sidebarRightBorderColor: '#aaa',
+    sidebarRightDefaultActiveColor: '#ff0000',
+    sidebarRightMarginYCloseButton: '10',
     menuRightRounded: 'lg',
     paddingX: '24px',
     paddingY: '12px',
@@ -192,7 +212,9 @@ export const NotDefaultSelected = {
     sidebarLeftShowHeaderBottomBorder: true,
     sidebarLeftBackgroundColor: '#ffffff',
     sidebarLeftWidth: '256',
-    sidebarLeftShowBorder: true,
+    sidebarLeftShowBorderRight: true,
+    sidebarLeftBorderColor: '#aaa',
+    sidebarLeftHeightHeader: '56',
     toolbarShowBottomBorder: true,
     toolbarColor: 'background',
     toolbarElevation: '0',
@@ -223,6 +245,9 @@ export const NotDefaultSelected = {
     sidebarRightRounded: 'sm',
     sidebarRightElevation: '2',
     sidebarRightShowBorder: true,
+    sidebarRightBorderColor: '#aaa',
+    sidebarRightDefaultActiveColor: '#ff0000',
+    sidebarRightMarginYCloseButton: '10',
     menuRightElevation: '4',
     menuRightRounded: 'lg',
     menuRightColor: '#ffffff',
