@@ -46,6 +46,7 @@
     :color="toolbarColor"
     :elevation="toolbarElevation"
     :height="toolbarHeight"
+    :bottom-border-color="toolbarBottomBorderColor"
     @toggle:menu="drawerLeftState = !drawerLeftState"
     @toggle:right-menu="drawerRightState = !drawerRightState"
   >
@@ -110,6 +111,7 @@ withDefaults(
     sidebarLeftWidth?: string | number;
     sidebarLeftHeightHeader?: string | number;
     toolbarShowBottomBorder?: boolean;
+    toolbarBottomBorderColor?: string;
     toolbarColor?: string;
     toolbarElevation?: string | number;
     toolbarHeight?: number;
@@ -141,6 +143,7 @@ withDefaults(
     sidebarLeftHeightHeader: '64',
     toolbarShowBottomBorder: true,
     toolbarColor: 'background',
+    toolbarBottomBorderColor: '#aaa',
     toolbarElevation: 0,
     toolbarHeight: 56,
     sidebarRightItems: () => [],

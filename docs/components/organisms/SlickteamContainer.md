@@ -49,32 +49,37 @@ import { SlickteamContainer } from '@slickteam/components-vuetify3';
 
 ### Props
 
-| Name                                     | Description                                | Type                                                             | Default      |
-| ---------------------------------------- | ------------------------------------------ | ---------------------------------------------------------------- | ------------ |
-| `model-value:selected`                   | value of selected item (for sidebar right) | `string`                                                         | `undefined`  |
-| `hide-toolbar`                           |                                            | `boolean`                                                        | `false`      |
-| `hide-sidebar-left`                      |                                            | `boolean`                                                        | `false`      |
-| `hide-sidebar-right`                     |                                            | `boolean`                                                        | `false`      |
-| `sidebar-left-background-color`          |                                            | `string`                                                         | `#ffffff`    |
-| `sidebar-left-elevation`                 |                                            | `string` \| `number`                                             | `2`          |
-| `sidebar-left-show-header-bottom-border` |                                            | `boolean`                                                        | `true`       |
-| `sidebar-left-show-border`               |                                            | `boolean`                                                        | `true`       |
-| `sidebar-left-width`                     | width of sidebar                           | `string` \| `number`                                             | `256`        |
-| `toolbar-show-bottom-border`             |                                            | `boolean`                                                        | `true`       |
-| `toolbar-color`                          |                                            | `string`                                                         | `background` |
-| `toolbar-elevation`                      |                                            | `string` \| `number`                                             | `2`          |
-| `toolbar-height`                         |                                            | `number`                                                         | `56`         |
-| `sidebar-right-items`                    |                                            | `[{ icon: string, text: string, color: string, value: string }]` | `[]`         |
-| `sidebar-right-height`                   |                                            | `number`                                                         | `undefined`  |
-| `sidebar-right-width`                    |                                            | `number`                                                         | `65`         |
-| `sidebar-right-background`               |                                            | `string`                                                         | `undefined`  |
-| `sidebar-right-show-border`              |                                            | `boolean`                                                        | `true`       |
-| `sidebar-right-rounded`                  |                                            | `string` \| `number`\| `boolean`                                 | `sm`         |
-| `sidebar-right-elevation`                |                                            | `string` \| `number`                                             | `2`          |
-| `menu-right-border`                      |                                            | `string`                                                         | `undefined`  |
-| `menu-right-color`                       |                                            | `string`                                                         | `#ffffff`    |
-| `padding-x`                              |                                            | `string`                                                         | `24px`       |
-| `padding-y`                              |                                            | `string`                                                         | `12px`       |
+| Name                                     | Description                                | Type                                                                              | Default      |
+| ---------------------------------------- | ------------------------------------------ | --------------------------------------------------------------------------------- | ------------ |
+| `model-value:selected`                   | value of selected item (for sidebar right) | `string`                                                                          | `undefined`  |
+| `hide-toolbar`                           |                                            | `boolean`                                                                         | `false`      |
+| `hide-sidebar-left`                      |                                            | `boolean`                                                                         | `false`      |
+| `hide-sidebar-right`                     |                                            | `boolean`                                                                         | `false`      |
+| `sidebar-left-background-color`          |                                            | `string`                                                                          | `#ffffff`    |
+| `sidebar-left-elevation`                 |                                            | `string` \| `number`                                                              | `2`          |
+| `sidebar-left-show-header-bottom-border` |                                            | `boolean`                                                                         | `true`       |
+| `sidebar-left-show-border-right`         |                                            | `boolean`                                                                         | `true`       |
+| `sidebar-left-border-color`              |                                            | `string`                                                                          | `#aaa`       |
+| `sidebar-left-width`                     | width of sidebar                           | `string` \| `number`                                                              | `256`        |
+| `sidebar-left-height-header`             |                                            | `string` \| `number`                                                              | `56`         |
+| `toolbar-show-bottom-border`             |                                            | `boolean`                                                                         | `true`       |
+| `toolbar-color`                          |                                            | `string`                                                                          | `background` |
+| `toolbar-bottom-border-color`            |                                            | `string`                                                                          | `#aaa`       |
+| `toolbar-elevation`                      |                                            | `string` \| `number`                                                              | `2`          |
+| `toolbar-height`                         |                                            | `number`                                                                          | `56`         |
+| `sidebar-right-items`                    |                                            | `[{ icon: string, text: string, color?: string, value: string, count?: number }]` | `[]`         |
+| `sidebar-right-height`                   |                                            | `number`                                                                          | `undefined`  |
+| `sidebar-right-width`                    |                                            | `number`                                                                          | `65`         |
+| `sidebar-right-background`               |                                            | `string`                                                                          | `undefined`  |
+| `sidebar-right-show-border`              |                                            | `boolean`                                                                         | `true`       |
+| `sidebar-right-rounded`                  |                                            | `string` \| `number`\| `boolean`                                                  | `sm`         |
+| `sidebar-right-elevation`                |                                            | `string` \| `number`                                                              | `2`          |
+| `sidebar-right-border-color`             |                                            | `string`                                                                          | `#aaa`       |
+| `sidebar-right-margin-y-close-button`    |                                            | `string` \| `number`                                                              | `10`         |
+| `menu-right-border`                      |                                            | `string`                                                                          | `undefined`  |
+| `menu-right-color`                       |                                            | `string`                                                                          | `#ffffff`    |
+| `padding-x`                              |                                            | `string`                                                                          | `24px`       |
+| `padding-y`                              |                                            | `string`                                                                          | `12px`       |
 
 ### Events
 

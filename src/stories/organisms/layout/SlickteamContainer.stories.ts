@@ -51,6 +51,9 @@ const meta: Meta<PageSlickteamContainerArgs> = {
     toolbarColor: {
       control: 'color',
     },
+    toolbarBottomBorderColor: {
+      control: 'color',
+    },
     toolbarElevation: {
       control: 'text',
     },
@@ -165,6 +168,7 @@ export const Default = {
     sidebarLeftHeightHeader: '64',
     toolbarShowBottomBorder: true,
     toolbarColor: 'background',
+    toolbarBottomBorderColor: '#aaa',
     toolbarElevation: '0',
     toolbarHeight: 64,
     sidebarRightItems: [
@@ -217,6 +221,7 @@ export const NotDefaultSelected = {
     sidebarLeftHeightHeader: '56',
     toolbarShowBottomBorder: true,
     toolbarColor: 'background',
+    toolbarBottomBorderColor: '#aaa',
     toolbarElevation: '0',
     toolbarHeight: 64,
     sidebarRightItems: [

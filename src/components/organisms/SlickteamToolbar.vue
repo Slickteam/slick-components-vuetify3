@@ -1,6 +1,6 @@
 <template>
   <v-app-bar
-    :style="{ height: `${height}px`, borderBottom: showBottomBorder ? 'solid 1px #aaaaaa' : '' }"
+    :style="{ height: `${height}px`, borderBottom: showBottomBorder ? `solid 1px ${bottomBorderColor}` : '' }"
     :color="color"
     :elevation="elevation"
     :height="height"
@@ -43,6 +43,7 @@ withDefaults(
   defineProps<{
     sidebarRightIcon?: boolean;
     showBottomBorder?: boolean;
+    bottomBorderColor?: string;
     color?: string;
     elevation?: string | number;
     height?: number;
@@ -50,6 +51,7 @@ withDefaults(
   {
     sidebarRightIcon: false,
     showBottomBorder: true,
+    bottomBorderColor: '#aaa',
     color: 'background',
     elevation: 0,
     height: 64,

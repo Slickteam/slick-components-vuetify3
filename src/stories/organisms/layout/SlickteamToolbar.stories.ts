@@ -21,6 +21,9 @@ const meta: Meta<PageSlickteamSidebarIconArgs> = {
     showBottomBorder: {
       control: 'boolean',
     },
+    bottomBorderColor: {
+      control: 'color',
+    },
     elevation: {
       control: 'text',
     },
@@ -49,6 +52,7 @@ export const Default = {
   args: {
     sidebarRightIcon: false,
     showBottomBorder: true,
+    bottomBorderColor: '#aaa',
     color: 'background',
     elevation: '0',
     height: 64,
