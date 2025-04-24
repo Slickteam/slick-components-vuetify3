@@ -76,6 +76,7 @@ import { SlickteamContainer } from '@slickteam/components-vuetify3';
 | `sidebar-right-elevation`                |                                            | `string` \| `number`                                                              | `2`          |
 | `sidebar-right-border-color`             |                                            | `string`                                                                          | `#aaa`       |
 | `sidebar-right-margin-y-close-button`    |                                            | `string` \| `number`                                                              | `10`         |
+| `sidebar-right-default-item-color`       |                                            | `string`                                                                          | `#ccc`       |
 | `menu-right-border`                      |                                            | `string`                                                                          | `undefined`  |
 | `menu-right-color`                       |                                            | `string`                                                                          | `#ffffff`    |
 | `padding-x`                              |                                            | `string`                                                                          | `24px`       |

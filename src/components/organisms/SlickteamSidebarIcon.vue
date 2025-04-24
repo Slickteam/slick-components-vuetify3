@@ -18,6 +18,7 @@
         icon="mdi-dock-right"
         class="sidebar-icon-top-button"
         :style="{
+          color: defaultItemColor,
           marginTop: `${marginYCloseButton}px`,
           marginBottom: `calc(${marginYCloseButton}px + 4px)`,
         }"
@@ -98,6 +99,7 @@ const props = withDefaults(
     showLeftBorder?: boolean;
     borderColor?: string;
     rounded?: string | number | boolean;
+    defaultItemColor?: string;
     defaultActiveColor?: string;
     marginYCloseButton?: string | number;
     elevation?: string | number;
@@ -108,6 +110,7 @@ const props = withDefaults(
     rounded: 'sm',
     elevation: '2',
     defaultActiveColor: 'var(--v-primary-base)',
+    defaultItemColor: '#ccc',
     marginYCloseButton: '10',
     showLeftBorder: true,
     borderColor: '#aaa',
@@ -140,7 +143,7 @@ function updateSelected(values: string[]) {
 }
 function getColorItem(item: { active?: boolean; color?: string }) {
   const activeColor = item.color ?? props.defaultActiveColor;
-  return item.active ? `${activeColor} !important` : '#CCCCCC';
+  return item.active ? `${activeColor} !important` : props.defaultItemColor;
 }
 </script>
 
@@ -189,6 +192,5 @@ function getColorItem(item: { active?: boolean; color?: string }) {
 .sidebar-icon-top-button {
   margin-left: 8px;
   margin-right: 8px;
-  color: #cccccc;
 }
 </style>

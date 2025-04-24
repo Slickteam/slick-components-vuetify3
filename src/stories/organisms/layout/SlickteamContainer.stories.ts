@@ -87,6 +87,9 @@ const meta: Meta<PageSlickteamContainerArgs> = {
     sidebarRightDefaultActiveColor: {
       control: 'color',
     },
+    sidebarRightDefaultItemColor: {
+      control: 'color',
+    },
     sidebarRightMarginYCloseButton: {
       control: 'text',
     },
@@ -199,6 +202,7 @@ export const Default = {
     sidebarRightShowBorder: true,
     sidebarRightBorderColor: '#aaa',
     sidebarRightDefaultActiveColor: '#ff0000',
+    sidebarRightDefaultItemColor: '#ccc',
     sidebarRightMarginYCloseButton: '10',
     menuRightRounded: 'lg',
     paddingX: '24px',
@@ -253,6 +257,7 @@ export const NotDefaultSelected = {
     sidebarRightBorderColor: '#aaa',
     sidebarRightDefaultActiveColor: '#ff0000',
     sidebarRightMarginYCloseButton: '10',
+    sidebarRightDefaultItemColor: '#ccc',
     menuRightElevation: '4',
     menuRightRounded: 'lg',
     menuRightColor: '#ffffff',

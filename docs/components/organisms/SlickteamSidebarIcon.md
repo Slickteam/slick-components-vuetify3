@@ -49,6 +49,7 @@ import { SlickteamSidebarIcon } from '@slickteam/components-vuetify3';
 | `border-color`          | border color                  | `string`                                                                          | `#aaa`                  |
 | `width`                 | width of sidebar              | `string` \| `number`                                                              | `65`                    |
 | `default-active-color`  | default color of active item  | `string`                                                                          | `var(--v-primary-base)` |
+| `default-item-color`    |                               | `string`                                                                          | `#ccc`                  |
 | `margin-y-close-button` | margin close button           | `string` \| `number`                                                              | `10`                    |
 
 ### Events

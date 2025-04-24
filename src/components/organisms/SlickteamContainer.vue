@@ -34,6 +34,7 @@
     :border-color="sidebarRightBorderColor"
     :margin-y-close-button="sidebarRightMarginYCloseButton"
     :default-active-color="sidebarRightDefaultActiveColor"
+    :default-item-color="sidebarRightDefaultItemColor"
   >
     <template #default>
       <slot name="sidebar-right"></slot>
@@ -123,6 +124,7 @@ withDefaults(
     sidebarRightRounded?: string | number | boolean;
     sidebarRightElevation?: string | number;
     sidebarRightBorderColor?: string;
+    sidebarRightDefaultItemColor?: string;
     sidebarRightDefaultActiveColor?: string;
     sidebarRightMarginYCloseButton?: string | number;
     menuRightBorder?: string;
@@ -153,6 +155,7 @@ withDefaults(
     sidebarRightShowBorder: true,
     sidebarRightBorderColor: '#aaa',
     sidebarRightDefaultActiveColor: 'var(--v-primary-base)',
+    sidebarRightDefaultItemColor: '#ccc',
     sidebarRightMarginYCloseButton: '10',
     menuRightColor: '#ffffff',
     paddingX: '24px',

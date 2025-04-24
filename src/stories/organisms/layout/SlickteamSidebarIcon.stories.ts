@@ -40,6 +40,9 @@ const meta: Meta<PageSlickteamSidebarIconArgs> = {
     defaultActiveColor: {
       control: 'color',
     },
+    defaultItemColor: {
+      control: 'color',
+    },
     elevation: {
       control: 'text',
     },
@@ -104,7 +107,8 @@ export const Default = {
     showLeftBorder: true,
     borderColor: '#aaa',
     defaultActiveColor: '#ff0000',
-    marginYCloseButton: 10,
+    defaultItemColor: '#ccc',
+    marginYCloseButton: '10',
     items: [
       { icon: 'mdi-home', text: 'Menu 01', color: '#3729DD', value: 'menu01', count: 4 },
       { icon: 'mdi-home', text: 'Menu 02', color: undefined, value: 'menu02', count: undefined },
