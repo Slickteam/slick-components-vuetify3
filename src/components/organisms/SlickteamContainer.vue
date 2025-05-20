@@ -64,13 +64,23 @@
       <slot></slot>
     </div>
     <Transition name="slide-fade">
-      <div v-if="!hideSidebarRight && drawerRightState && selectedModel" class="sidebar-menu-wrapper">
+      <div
+        v-if="stateMenuRight"
+        :style="{
+          width: `${menuRightWidth} !important`,
+        }"
+      >
         <v-card
           class="sidebar-menu d-flex flex-column"
-          :elevation="0"
-          :rounded="0"
+          :elevation="menuRightElevation"
+          :rounded="menuRightRounded"
           :color="menuRightColor"
-          :style="{ height: `${$vuetify.display.height - 64}px`, borderLeft: menuRightBorder ? `1px solid ${menuRightBorder}` : '' }"
+          :style="{
+            height: `calc(${$vuetify.display.height - 64}px - ${menuRightMarginY} - ${menuRightMarginY})`,
+            borderLeft: menuRightBorder ? `1px solid ${menuRightBorder}` : '',
+            top: `${toolbarHeight}px`,
+            margin: `${menuRightMarginY} ${menuRightMarginY}`,
+          }"
         >
           <v-card-title class="sidebar-menu-padding">
             <slot name="sidebar-right-menu-header" :selected="selectedModel"></slot>
@@ -88,7 +98,7 @@
 </template>
 
 <script lang="ts" setup>
-import { shallowRef, watch } from 'vue';
+import { computed, shallowRef, watch } from 'vue';
 import { onMounted } from 'vue';
 import { useDisplay } from 'vuetify';
 
@@ -99,7 +109,7 @@ import SlickteamToolbar from './SlickteamToolbar.vue';
 const { mobile } = useDisplay();
 const selectedModel = defineModel<string | undefined>('selected', { default: undefined });
 
-withDefaults(
+const props = withDefaults(
   defineProps<{
     hideToolbar?: boolean;
     hideSidebarLeft?: boolean;
@@ -129,6 +139,12 @@ withDefaults(
     sidebarRightMarginYCloseButton?: string | number;
     menuRightBorder?: string;
     menuRightColor?: string;
+    menuRightElevation?: string;
+    menuRightRounded?: string;
+    menuRightMarginX?: string;
+    menuRightMarginY?: string;
+    menuRightForceShow?: boolean;
+    menuRightWidth?: string;
     paddingX?: string;
     paddingY?: string;
   }>(),
@@ -158,6 +174,12 @@ withDefaults(
     sidebarRightDefaultItemColor: '#ccc',
     sidebarRightMarginYCloseButton: '10',
     menuRightColor: '#ffffff',
+    menuRightElevation: '0',
+    menuRightRounded: '0',
+    menuRightMarginX: '0px',
+    menuRightMarginY: '0px',
+    menuRightForceShow: false,
+    menuRightWidth: '283px',
     paddingX: '24px',
     paddingY: '12px',
   },
@@ -165,6 +187,10 @@ withDefaults(
 
 const drawerLeftState = shallowRef(!mobile.value);
 const drawerRightState = shallowRef(!mobile.value);
+
+const stateMenuRight = computed(
+  () => props.menuRightForceShow || (!props.hideSidebarRight && drawerRightState.value && selectedModel.value),
+);
 
 onMounted(() => {
   if (selectedModel.value === undefined) {
@@ -196,13 +222,8 @@ watch(drawerRightState, (value) => {
   flex-grow: 3;
 }
 
-.sidebar-menu-wrapper {
-  width: 283px !important;
-}
-
 .sidebar-menu {
   position: sticky;
-  top: 64px;
   bottom: 0px;
 }
 

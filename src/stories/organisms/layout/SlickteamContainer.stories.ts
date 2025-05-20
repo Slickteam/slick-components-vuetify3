@@ -99,6 +99,24 @@ const meta: Meta<PageSlickteamContainerArgs> = {
     menuRightColor: {
       control: 'color',
     },
+    menuRightElevation: {
+      control: 'text',
+    },
+    menuRightRounded: {
+      control: 'text',
+    },
+    menuRightMarginX: {
+      control: 'text',
+    },
+    menuRightMarginY: {
+      control: 'text',
+    },
+    menuRightForceShow: {
+      control: 'boolean',
+    },
+    menuRightWidth: {
+      control: 'text',
+    },
     paddingX: {
       control: 'text',
     },
@@ -204,7 +222,12 @@ export const Default = {
     sidebarRightDefaultActiveColor: '#ff0000',
     sidebarRightDefaultItemColor: '#ccc',
     sidebarRightMarginYCloseButton: '10',
-    menuRightRounded: 'lg',
+    menuRightElevation: '0',
+    menuRightRounded: '0',
+    menuRightMarginX: '0px',
+    menuRightMarginY: '0px',
+    menuRightForceShow: false,
+    menuRightWidth: '283px',
     paddingX: '24px',
     paddingY: '12px',
   },
@@ -258,9 +281,13 @@ export const NotDefaultSelected = {
     sidebarRightDefaultActiveColor: '#ff0000',
     sidebarRightMarginYCloseButton: '10',
     sidebarRightDefaultItemColor: '#ccc',
+    menuRightColor: '#ffffff',
     menuRightElevation: '4',
     menuRightRounded: 'lg',
-    menuRightColor: '#ffffff',
+    menuRightMarginX: '0px',
+    menuRightMarginY: '0px',
+    menuRightForceShow: false,
+    menuRightWidth: '283px',
     paddingX: '24px',
     paddingY: '12px',
   },

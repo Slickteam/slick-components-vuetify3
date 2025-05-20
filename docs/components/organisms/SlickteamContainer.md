@@ -79,6 +79,12 @@ import { SlickteamContainer } from '@slickteam/components-vuetify3';
 | `sidebar-right-default-item-color`       |                                            | `string`                                                                          | `#ccc`       |
 | `menu-right-border`                      |                                            | `string`                                                                          | `undefined`  |
 | `menu-right-color`                       |                                            | `string`                                                                          | `#ffffff`    |
+| `menu-right-elevation`                   |                                            | `string`                                                                          | `0`          |
+| `menu-right-rounded`                     |                                            | `string`                                                                          | `0`          |
+| `menu-right-margin-x`                    |                                            | `string`                                                                          | `0px`        |
+| `menu-right-margin-y`                    |                                            | `string`                                                                          | `0px`        |
+| `menu-right-force-show`                  |                                            | `boolean`                                                                         | `false`      |
+| `menu-right-width`                       |                                            | `string`                                                                          | `283px`      |
 | `padding-x`                              |                                            | `string`                                                                          | `24px`       |
 | `padding-y`                              |                                            | `string`                                                                          | `12px`       |
 

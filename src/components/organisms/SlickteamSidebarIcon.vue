@@ -56,17 +56,17 @@
           >
             <template v-if="item.count !== undefined">
               <v-badge
-                :color="getColorItem(item)"
+                :color="getColorItem(item, true)"
                 :content="item.count > 9 ? '9+' : item.count"
                 bordered
                 :offset-x="item.count > 9 ? 2 : -4"
                 :offset-y="-4"
               >
-                <v-icon size="24" :color="getColorItem(item)">{{ item.icon }}</v-icon>
+                <v-icon size="24" :color="getColorItem(item, true)">{{ item.icon }}</v-icon>
               </v-badge>
             </template>
             <template v-else>
-              <v-icon size="24" :color="getColorItem(item)">{{ item.icon }}</v-icon>
+              <v-icon size="24" :color="getColorItem(item, true)">{{ item.icon }}</v-icon>
             </template>
           </div>
           <p
@@ -141,9 +141,10 @@ function updateSelected(values: string[]) {
   internalModel.value = values;
   selectedModel.value = values?.[0];
 }
-function getColorItem(item: { active?: boolean; color?: string }) {
+function getColorItem(item: { active?: boolean; color?: string }, withoutImportant?: boolean) {
   const activeColor = item.color ?? props.defaultActiveColor;
-  return item.active ? `${activeColor} !important` : props.defaultItemColor;
+  const importantParam = withoutImportant ? '' : ' !important';
+  return item.active ? `${activeColor}${importantParam}` : props.defaultItemColor;
 }
 </script>
 
