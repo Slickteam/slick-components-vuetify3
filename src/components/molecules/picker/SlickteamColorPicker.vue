@@ -1,7 +1,7 @@
 <template>
   <v-menu v-model="menu" top :close-on-content-click="false">
     <template #activator="{ props }">
-      <v-text-field v-model="modelValue" v-bind="props" label="Couleur" class="mt-4" :variant="variant" clearable readonly>
+      <v-text-field v-model="modelValue" v-bind="props" label="Couleur" :variant="variant" clearable readonly>
         <template #prepend-inner>
           <v-avatar :color="colorDisplay" :border="colorDisplay === 'transparent'"></v-avatar>
         </template>
