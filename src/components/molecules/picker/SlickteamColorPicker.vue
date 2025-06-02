@@ -1,9 +1,9 @@
 <template>
-  <v-menu v-model="menu" top nudge-bottom="105" nudge-left="16" :close-on-content-click="false">
+  <v-menu v-model="menu" top :close-on-content-click="false">
     <template #activator="{ props }">
-      <v-text-field v-model="modelValue" v-bind="props" label="Couleur" class="mt-4" :color="modelValue" readonly>
-        <template #prepend>
-          <v-chip variant="flat" :color="modelValue"></v-chip>
+      <v-text-field v-model="modelValue" v-bind="props" label="Couleur" class="mt-4" :variant="variant" clearable readonly>
+        <template #prepend-inner>
+          <v-avatar :color="colorDisplay" :border="colorDisplay === 'transparent'"></v-avatar>
         </template>
       </v-text-field>
     </template>
@@ -12,10 +12,16 @@
 </template>
 
 <script lang="ts" setup>
-import { shallowRef } from 'vue';
+import { computed, shallowRef } from 'vue';
 
-const modelValue = defineModel<string>({ default: '#1976D2' });
+const modelValue = defineModel<string | undefined | null>({ default: undefined });
 const menu = shallowRef<boolean>(false);
+
+const colorDisplay = computed(() => modelValue.value ?? 'transparent');
+
+defineProps<{
+  variant?: 'filled' | 'outlined' | 'plain' | 'underlined' | 'solo' | 'solo-inverted' | 'solo-filled';
+}>();
 </script>
 
 <style scoped>

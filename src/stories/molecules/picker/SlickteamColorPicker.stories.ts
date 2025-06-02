@@ -6,10 +6,25 @@ const meta: Meta<typeof SlickteamColorPicker> = {
   title: 'Molecules/form/SlickteamColorPicker',
   component: SlickteamColorPicker,
   tags: ['docsPage'],
-  args: {},
   argTypes: {
-    // onClick: {},
+    variant: {
+      control: {
+        type: 'select',
+      },
+      options: ['filled', 'outlined', 'plain', 'underlined', 'solo', 'solo-inverted', 'solo-filled'],
+    },
   },
+
+  render: (args) => ({
+    components: { SlickteamColorPicker },
+    setup() {
+      return { args };
+    },
+    /* html */
+    template: `
+        <div style="width:300px"><SlickteamColorPicker v-bind="args"/></div>
+      `,
+  }),
 };
 export default meta;
 

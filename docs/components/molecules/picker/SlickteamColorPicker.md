@@ -28,9 +28,10 @@ import { SlickteamColorPicker } from '@slickteam/components-vuetify3';
 
 ### Props
 
-| Name          | Description    | Type     | Default     |
-| ------------- | -------------- | -------- | ----------- |
-| `model-value` | value of color | `string` | `'#1976D2'` |
+| Name          | Description           | Type                                                                                           | Default     |
+| ------------- | --------------------- | ---------------------------------------------------------------------------------------------- | ----------- |
+| `model-value` | value of color        | `string`                                                                                       | `undefined` |
+| `variant`     | Variant of text-field | `filled` \| `outlined` \| `plain` \| `underlined` \| `solo` \| `solo-inverted`\| `solo-filled` | `'text'`    |
 
 ### Events
 
