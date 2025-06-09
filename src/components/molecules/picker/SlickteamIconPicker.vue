@@ -4,7 +4,7 @@
     :label="label"
     :items="iconsTransformedList"
     :density="density"
-    :prepend-inner-icon="model ? `mdi-${model}` : undefined"
+    :prepend-inner-icon="model"
     :clearable="clearable"
     :variant="variant"
     item-props
@@ -31,5 +31,5 @@ withDefaults(
   },
 );
 
-const iconsTransformedList = computed(() => icons.map((i) => ({ title: i, value: i, prependIcon: `mdi-${i}` })));
+const iconsTransformedList = computed(() => icons.map((i) => ({ title: i, value: `mdi-${i}` })));
 </script>
