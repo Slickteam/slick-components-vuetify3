@@ -7,6 +7,7 @@
     :prepend-inner-icon="model"
     :clearable="clearable"
     :variant="variant"
+    hide-details
     item-props
   />
 </template>
