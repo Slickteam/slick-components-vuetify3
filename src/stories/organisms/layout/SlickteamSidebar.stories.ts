@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite';
 import type { ComponentProps } from 'vue-component-type-helpers';
+import { VApp, VMain } from 'vuetify/components';
 
 import SlickteamSidebar from '../../../components/organisms/SlickteamSidebar.vue';
 
@@ -8,8 +9,7 @@ type PageSlickteamSidebarIconArgs = ComponentProps<typeof SlickteamSidebar> & {}
 const meta: Meta<PageSlickteamSidebarIconArgs> = {
   title: 'Organisms/layout/SlickteamSidebar',
   component: SlickteamSidebar,
-  tags: ['docsPage'],
-  args: {},
+  tags: ['autodocs'],
   argTypes: {
     modelValue: {
       control: 'boolean',
@@ -37,7 +37,7 @@ const meta: Meta<PageSlickteamSidebarIconArgs> = {
     },
   },
   render: (args, { updateArgs }) => ({
-    components: { SlickteamSidebar },
+    components: { VApp, VMain, SlickteamSidebar },
     setup() {
       function onUpdateModel(value: boolean) {
         updateArgs({ modelValue: value });
@@ -45,13 +45,19 @@ const meta: Meta<PageSlickteamSidebarIconArgs> = {
       return { args, onUpdateModel };
     },
     /* html */
-    template: `<SlickteamSidebar v-bind="args" @update:model-value="onUpdateModel">
-      <template #header>Header</template>
-      <template #default>
-        <p>Content</p>
-      </template>
-      <template #footer>Footer</template>
-    </SlickteamSidebar>`,
+    template: `<div style="height: 300px;">
+      <v-app theme="light">
+        <v-main class="d-flex flex-column">
+          <SlickteamSidebar v-bind="args" @update:model-value="onUpdateModel">
+            <template #header>Header</template>
+            <template #default>
+              <p>Content</p>
+            </template>
+            <template #footer>Footer</template>
+          </SlickteamSidebar>
+        </v-main>
+      </v-app>
+    </div>`,
   }),
 };
 
@@ -59,7 +65,7 @@ export default meta;
 
 type Story = StoryObj<PageSlickteamSidebarIconArgs>;
 
-export const Default = {
+export const Default: Story = {
   args: {
     modelValue: true,
     elevation: '2',
@@ -70,9 +76,9 @@ export const Default = {
     showBorderRight: true,
     heightHeader: '64',
   },
-} satisfies Story;
+};
 
-export const Inverted = {
+export const Inverted: Story = {
   args: {
     modelValue: true,
     elevation: '0',
@@ -83,4 +89,4 @@ export const Inverted = {
     showBorderRight: false,
     heightHeader: '64',
   },
-} satisfies Story;
+};

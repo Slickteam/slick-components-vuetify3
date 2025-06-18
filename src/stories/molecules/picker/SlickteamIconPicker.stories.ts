@@ -5,7 +5,7 @@ import SlickteamIconPicker from '../../../components/molecules/picker/SlickteamI
 const meta: Meta<typeof SlickteamIconPicker> = {
   title: 'Molecules/form/SlickteamIconPicker',
   component: SlickteamIconPicker,
-  tags: ['docsPage'],
+  tags: ['autodocs'],
   args: {},
   argTypes: {
     // onClick: {},
@@ -26,13 +26,23 @@ const meta: Meta<typeof SlickteamIconPicker> = {
       description: 'Label of form',
     },
   },
+  render: (args) => ({
+    components: { SlickteamIconPicker },
+    setup() {
+      return { args };
+    },
+    /* html */
+    template: `
+        <div style="width:300px"><SlickteamIconPicker v-bind="args"/></div>
+      `,
+  }),
 };
 export default meta;
 
 type Story = StoryObj<typeof SlickteamIconPicker>;
 
-export const Primary = {
+export const Primary: Story = {
   args: {
     label: 'Icône',
   },
-} satisfies Story;
+};

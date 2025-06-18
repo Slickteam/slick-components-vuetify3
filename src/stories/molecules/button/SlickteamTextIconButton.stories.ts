@@ -5,12 +5,8 @@ import SlickteamTextIconButton from '../../../components/molecules/button/Slickt
 const meta: Meta<typeof SlickteamTextIconButton> = {
   title: 'Molecules/button/SlickteamTextIconButton',
   component: SlickteamTextIconButton,
-  tags: ['button', 'molecule'],
-  args: {
-    text: 'Click me',
-  },
+  tags: ['autodocs'],
   argTypes: {
-    // onClick: {},
     size: {
       control: {
         type: 'select',
@@ -50,14 +46,17 @@ const meta: Meta<typeof SlickteamTextIconButton> = {
       control: 'text',
     },
   },
+  args: {
+    text: 'Click me',
+  },
 };
 export default meta;
 
 type Story = StoryObj<typeof SlickteamTextIconButton>;
 
-export const Primary = {
+export const Primary: Story = {
   args: {
     size: 'default',
     text: 'Click me',
   },
-} satisfies Story;
+};

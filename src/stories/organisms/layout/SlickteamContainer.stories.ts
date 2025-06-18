@@ -1,7 +1,8 @@
-import { fn } from 'storybook/test';
 import type { Meta, StoryObj } from '@storybook/vue3-vite';
+import { fn } from 'storybook/test';
 import { shallowRef, watch } from 'vue';
 import type { ComponentProps } from 'vue-component-type-helpers';
+import { VApp, VMain } from 'vuetify/components';
 
 import SlickteamContainer from '../../../components/organisms/SlickteamContainer.vue';
 
@@ -10,7 +11,7 @@ type PageSlickteamContainerArgs = ComponentProps<typeof SlickteamContainer> & { 
 const meta: Meta<PageSlickteamContainerArgs> = {
   title: 'Organisms/layout/SlickteamContainer',
   component: SlickteamContainer,
-  tags: ['docsPage'],
+  tags: ['autodocs'],
   args: {
     'onUpdate:selected': fn(),
   },
@@ -125,7 +126,7 @@ const meta: Meta<PageSlickteamContainerArgs> = {
     },
   },
   render: (args, { updateArgs }) => ({
-    components: { SlickteamContainer },
+    components: { VApp, VMain, SlickteamContainer },
     setup() {
       const selectedModel = shallowRef(args.selectedModel);
       // Optional: Keeps v-model in sync with storybook args
@@ -148,33 +149,37 @@ const meta: Meta<PageSlickteamContainerArgs> = {
       return { args, selectedModel, onUpdateModelSelected, selectMenu01, unselectMenu };
     },
     /* html */
-    template: `<SlickteamContainer
-      v-bind="args"
-      v-model:selected="selectedModel"
-      @update:selected="onUpdateModelSelected">
-        <template #sidebar-left-header>Header</template>
-        <template #sidebar-left>Content </template>
-        <template #sidebar-left-footer>Footer </template>
-        <template #toolbar-left>left</template>
-        <template #toolbar-right>right</template>
-        <template #sidebar-right-menu-header>Title</template>
-        <template #sidebar-right-menu={selected}>
-          {{ selected }}
-        </template>
-        <template #sidebar-right-menu-actions>Actions</template>
-        <div style="border: 2px dashed #BBBBBB; height: 1000px">
-          <p>Content</p>
-          <button style="background-color: #008CBA;color: white;padding: 15px 32px;border: none;text-align: center;margin: 4px 2px;cursor: pointer;" @click="selectMenu01">Select menu 01</button>
-          <button style="background-color: #e7e7e7;color: black;padding: 15px 32px;border: none;text-align: center;margin: 4px 2px;cursor: pointer;" @click="unselectMenu">Unselect menu</button>
-        </div>
-    </SlickteamContainer>`,
+    template: `<v-app theme="light">
+        <v-main class="d-flex flex-column">
+          <SlickteamContainer
+            v-bind="args"
+            v-model:selected="selectedModel"
+            @update:selected="onUpdateModelSelected">
+              <template #sidebar-left-header>Header</template>
+              <template #sidebar-left>Content </template>
+              <template #sidebar-left-footer>Footer </template>
+              <template #toolbar-left>left</template>
+              <template #toolbar-right>right</template>
+              <template #sidebar-right-menu-header>Title</template>
+              <template #sidebar-right-menu={selected}>
+                {{ selected }}
+              </template>
+              <template #sidebar-right-menu-actions>Actions</template>
+              <div style="border: 2px dashed #BBBBBB; height: 1000px">
+                <p>Content</p>
+                <button style="background-color: #008CBA;color: white;padding: 15px 32px;border: none;text-align: center;margin: 4px 2px;cursor: pointer;" @click="selectMenu01">Select menu 01</button>
+                <button style="background-color: #e7e7e7;color: black;padding: 15px 32px;border: none;text-align: center;margin: 4px 2px;cursor: pointer;" @click="unselectMenu">Unselect menu</button>
+              </div>
+          </SlickteamContainer>
+        </v-main>
+      </v-app>`,
   }),
 };
 export default meta;
 
 type Story = StoryObj;
 
-export const Default = {
+export const Default: Story = {
   args: {
     selectedModel: 'menu01',
     hideSidebarLeft: false,
@@ -231,9 +236,9 @@ export const Default = {
     paddingX: '24px',
     paddingY: '12px',
   },
-} satisfies Story;
+};
 
-export const NotDefaultSelected = {
+export const NotDefaultSelected: Story = {
   args: {
     selectedModel: undefined,
     hideSidebarLeft: false,
@@ -291,4 +296,4 @@ export const NotDefaultSelected = {
     paddingX: '24px',
     paddingY: '12px',
   },
-} satisfies Story;
+};

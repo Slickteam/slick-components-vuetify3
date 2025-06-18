@@ -1,7 +1,8 @@
-import { fn } from 'storybook/test';
 import type { Meta, StoryObj } from '@storybook/vue3-vite';
+import { fn } from 'storybook/test';
 import { shallowRef, watch } from 'vue';
 import type { ComponentProps } from 'vue-component-type-helpers';
+import { VApp, VMain } from 'vuetify/components';
 
 import SlickteamSidebarIcon from '../../../components/organisms/SlickteamSidebarIcon.vue';
 
@@ -10,7 +11,7 @@ type PageSlickteamSidebarIconArgs = ComponentProps<typeof SlickteamSidebarIcon> 
 const meta: Meta<PageSlickteamSidebarIconArgs> = {
   title: 'Organisms/layout/SlickteamSidebarIcon',
   component: SlickteamSidebarIcon,
-  tags: ['docsPage'],
+  tags: ['autodocs'],
   args: {
     'onUpdate:drawer': fn(),
     'onUpdate:selected': fn(),
@@ -54,7 +55,7 @@ const meta: Meta<PageSlickteamSidebarIconArgs> = {
     },
   },
   render: (args, { updateArgs }) => ({
-    components: { SlickteamSidebarIcon },
+    components: { VApp, VMain, SlickteamSidebarIcon },
     setup() {
       const selectedModel = shallowRef(args.selectedModel);
       const drawerModel = shallowRef(args.drawerModel);
@@ -82,20 +83,26 @@ const meta: Meta<PageSlickteamSidebarIconArgs> = {
       return { args, selectedModel, drawerModel, onUpdateModelDrawer, onUpdateModelSelected };
     },
     /* html */
-    template: `<SlickteamSidebarIcon
-      v-bind="args"
-      v-model:selected="selectedModel"
-      v-model:drawer="drawerModel"
-      @update:drawer="onUpdateModelDrawer"
-      @update:selected="onUpdateModelSelected"
-    />`,
+    template: `<div style="height: 300px;">
+      <v-app theme="light">
+        <v-main class="d-flex flex-column">
+          <SlickteamSidebarIcon
+            v-bind="args"
+            v-model:selected="selectedModel"
+            v-model:drawer="drawerModel"
+            @update:drawer="onUpdateModelDrawer"
+            @update:selected="onUpdateModelSelected"
+          />
+        </v-main>
+      </v-app>
+    </div>`,
   }),
 };
 export default meta;
 
 type Story = StoryObj<PageSlickteamSidebarIconArgs>;
 
-export const Default = {
+export const Default: Story = {
   args: {
     selectedModel: 'menu01',
     drawerModel: true,
@@ -132,4 +139,4 @@ export const Default = {
       { icon: 'mdi-home', text: 'Menu 20', color: '#aEB01A', value: 'menu20', count: undefined },
     ],
   },
-} satisfies Story;
+};

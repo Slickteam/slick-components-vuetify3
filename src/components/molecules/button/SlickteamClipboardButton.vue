@@ -2,7 +2,7 @@
   <v-tooltip :text="tooltip" :open-delay="500">
     <template #activator="{ props }">
       <v-btn v-bind="props" variant="text" :size="calculatedSize" @click="copieValue">
-        <v-icon>mdi-clipboard-outline</v-icon>
+        <v-icon :color="color">mdi-clipboard-outline</v-icon>
       </v-btn>
     </template>
   </v-tooltip>
@@ -27,7 +27,6 @@ const props2 = withDefaults(
   }>(),
   {
     tooltip: 'Clipboard',
-    color: 'secondary',
   },
 );
 

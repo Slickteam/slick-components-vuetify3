@@ -5,7 +5,7 @@ import SlickteamColorPicker from '../../../components/molecules/picker/Slickteam
 const meta: Meta<typeof SlickteamColorPicker> = {
   title: 'Molecules/form/SlickteamColorPicker',
   component: SlickteamColorPicker,
-  tags: ['docsPage'],
+  tags: ['autodocs'],
   argTypes: {
     variant: {
       control: {
@@ -30,6 +30,6 @@ export default meta;
 
 type Story = StoryObj<typeof SlickteamColorPicker>;
 
-export const Primary = {
+export const Primary: Story = {
   args: {},
-} satisfies Story;
+};

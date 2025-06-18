@@ -5,7 +5,7 @@ import SlickteamDataTable from '../../../components/organisms/SlickteamDataTable
 const meta: Meta<typeof SlickteamDataTable> = {
   title: 'Organisms/widget/SlickteamDataTable',
   component: SlickteamDataTable,
-  tags: ['docsPage'],
+  tags: ['autodocs'],
   args: {
     data: [
       { id: '12345', text: 'Menu 01', color: '#3729DD', createdAt: new Date() },
@@ -42,6 +42,6 @@ export default meta;
 
 type Story = StoryObj<typeof SlickteamDataTable>;
 
-export const Primary = {
+export const Primary: Story = {
   args: {},
-} satisfies Story;
+};

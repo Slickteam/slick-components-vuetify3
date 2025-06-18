@@ -1,11 +1,7 @@
-// .storybook/preview.js
 import '@mdi/font/css/materialdesignicons.css';
-import { useArgs } from 'storybook/preview-api';
-import { setup } from '@storybook/vue3-vite';
+import { type Preview, setup } from '@storybook/vue3-vite';
 import { createVuetify } from 'vuetify';
 import 'vuetify/styles';
-
-import { DEFAULT_THEME, withVuetifyTheme } from './withVuetifyTheme.decorator';
 
 async function loadFonts() {
   const webFontLoader = await import(/* webpackChunkName: "webfontloader" */ 'webfontloader');
@@ -41,28 +37,35 @@ setup((app) => {
   app.use(vuetify);
 });
 
-export const globalTypes = {
-  theme: {
-    name: 'Theme',
-    description: 'Global theme for components',
-    defaultValue: DEFAULT_THEME,
-    toolbar: {
-      icon: 'paintbrush',
-      // Array of plain string values or MenuItem shape (see below)
-      items: [{ value: 'light', title: 'Light', left: '🌞' }],
+const preview: Preview = {
+  parameters: {
+    controls: {
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/i,
+      },
+    },
+    layout: 'centered',
+    globalTypes: {
+      theme: {
+        name: 'Theme',
+        description: 'Global theme for components',
+        defaultValue: 'light',
+        toolbar: {
+          icon: 'paintbrush',
+          // Array of plain string values or MenuItem shape (see below)
+          items: [{ value: 'light', title: 'Light', left: '🌞' }],
+        },
+      },
+    },
+
+    a11y: {
+      // 'todo' - show a11y violations in the test UI only
+      // 'error' - fail CI on a11y violations
+      // 'off' - skip a11y checks entirely
+      test: 'todo',
     },
   },
 };
 
-export const parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
-  layout: 'fullscreen',
-};
-
-export const decorators = [
-  withVuetifyTheme,
-  (story, context) => {
-    const [_, updateArgs] = useArgs();
-    return story({ ...context, updateArgs });
-  },
-];
+export default preview;
