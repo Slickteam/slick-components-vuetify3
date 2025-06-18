@@ -1,9 +1,18 @@
 <template>
   <v-menu v-model="menu" top :close-on-content-click="false">
     <template #activator="{ props }">
-      <v-text-field v-model="modelValue" v-bind="props" label="Couleur" :variant="variant" clearable readonly>
+      <v-text-field
+        v-model="modelValue"
+        v-bind="props"
+        :label="label"
+        :variant="variant"
+        hide-details
+        :density="density"
+        clearable
+        readonly
+      >
         <template #prepend-inner>
-          <v-avatar :color="colorDisplay" :border="colorDisplay === 'transparent'"></v-avatar>
+          <v-avatar :size="autoSizeAvatar" :color="colorDisplay" :border="colorDisplay === 'transparent'" />
         </template>
       </v-text-field>
     </template>
@@ -19,9 +28,28 @@ const menu = shallowRef<boolean>(false);
 
 const colorDisplay = computed(() => modelValue.value ?? 'transparent');
 
-defineProps<{
-  variant?: 'filled' | 'outlined' | 'plain' | 'underlined' | 'solo' | 'solo-inverted' | 'solo-filled';
-}>();
+const props = withDefaults(
+  defineProps<{
+    density?: 'default' | 'comfortable' | 'compact';
+    variant?: 'filled' | 'outlined' | 'plain' | 'underlined' | 'solo' | 'solo-inverted' | 'solo-filled';
+    label?: string;
+  }>(),
+  {
+    label: 'Couleur',
+  },
+);
+
+const autoSizeAvatar = computed<number>(() => {
+  let size;
+  if (props.density === 'comfortable') {
+    size = 32;
+  } else if (props.density === 'compact') {
+    size = 24;
+  } else {
+    size = 38;
+  }
+  return size;
+});
 </script>
 
 <style scoped>

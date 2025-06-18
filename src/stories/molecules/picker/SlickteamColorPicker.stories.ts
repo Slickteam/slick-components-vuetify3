@@ -11,7 +11,19 @@ const meta: Meta<typeof SlickteamColorPicker> = {
       control: {
         type: 'select',
       },
+      description: 'Variable of text-field',
       options: ['filled', 'outlined', 'plain', 'underlined', 'solo', 'solo-inverted', 'solo-filled'],
+    },
+    label: {
+      control: 'text',
+      description: 'Label of text-field',
+    },
+    density: {
+      control: {
+        type: 'select',
+      },
+      description: 'Density of text-field',
+      options: ['default', 'comfortable', 'compact'],
     },
   },
 
@@ -31,5 +43,7 @@ export default meta;
 type Story = StoryObj<typeof SlickteamColorPicker>;
 
 export const Primary: Story = {
-  args: {},
+  args: {
+    label: 'Couleur',
+  },
 };
