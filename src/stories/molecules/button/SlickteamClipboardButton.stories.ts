@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/vue3';
+import type { Meta, StoryObj } from '@storybook/vue3-vite';
 
 import SlickteamClipboardButton from '../../../components/molecules/button/SlickteamClipboardButton.vue';
 

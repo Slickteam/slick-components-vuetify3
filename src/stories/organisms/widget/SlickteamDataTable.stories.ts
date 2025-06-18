@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/vue3';
+import type { Meta, StoryObj } from '@storybook/vue3-vite';
 
 import SlickteamDataTable from '../../../components/organisms/SlickteamDataTable.vue';
 

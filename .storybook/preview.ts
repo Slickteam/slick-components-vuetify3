@@ -1,7 +1,7 @@
 // .storybook/preview.js
 import '@mdi/font/css/materialdesignicons.css';
-import { useArgs } from '@storybook/preview-api';
-import { setup } from '@storybook/vue3';
+import { useArgs } from 'storybook/preview-api';
+import { setup } from '@storybook/vue3-vite';
 import { createVuetify } from 'vuetify';
 import 'vuetify/styles';
 
