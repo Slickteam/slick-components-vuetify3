@@ -17,7 +17,6 @@ import { VPullToRefresh } from 'vuetify/labs/VPullToRefresh';
 import { VStepperVertical, VStepperVerticalActions, VStepperVerticalItem } from 'vuetify/labs/VStepperVertical';
 import { VTimePicker, VTimePickerClock, VTimePickerControls } from 'vuetify/labs/VTimePicker';
 import { VTreeview, VTreeviewGroup, VTreeviewItem } from 'vuetify/labs/VTreeview';
-import { createRulesPlugin, useRules } from 'vuetify/labs/rules';
 import { en, fr } from 'vuetify/locale';
 // @ts-ignore
 import 'vuetify/styles';
@@ -118,6 +117,4 @@ export {
   VTreeview,
   VTreeviewGroup,
   VTreeviewItem,
-  createRulesPlugin,
-  useRules,
 };
