@@ -9,14 +9,17 @@ import {
   VCalendarIntervalEvent,
   VCalendarMonthDay,
 } from 'vuetify/labs/VCalendar';
+import { VColorInput } from 'vuetify/labs/VColorInput';
 import { VDateInput } from 'vuetify/labs/VDateInput';
 import { VFileUpload, VFileUploadItem } from 'vuetify/labs/VFileUpload';
+import { VHotkey } from 'vuetify/labs/VHotkey';
 import { VIconBtn } from 'vuetify/labs/VIconBtn';
+import { VMaskInput } from 'vuetify/labs/VMaskInput';
 import { VPicker, VPickerTitle } from 'vuetify/labs/VPicker';
+import { VPie, VPieSegment, VPieTooltip } from 'vuetify/labs/VPie';
 import { VPullToRefresh } from 'vuetify/labs/VPullToRefresh';
 import { VStepperVertical, VStepperVerticalActions, VStepperVerticalItem } from 'vuetify/labs/VStepperVertical';
-import { VTimePicker, VTimePickerClock, VTimePickerControls } from 'vuetify/labs/VTimePicker';
-import { VTreeview, VTreeviewGroup, VTreeviewItem } from 'vuetify/labs/VTreeview';
+import { VVideo, VVideoControls, VVideoVolume } from 'vuetify/labs/VVideo';
 import { en, fr } from 'vuetify/locale';
 // @ts-ignore
 import 'vuetify/styles';
@@ -111,10 +114,13 @@ export {
   VStepperVertical,
   VStepperVerticalActions,
   VStepperVerticalItem,
-  VTimePicker,
-  VTimePickerClock,
-  VTimePickerControls,
-  VTreeview,
-  VTreeviewGroup,
-  VTreeviewItem,
+  VColorInput,
+  VHotkey,
+  VMaskInput,
+  VPie,
+  VPieSegment,
+  VPieTooltip,
+  VVideo,
+  VVideoControls,
+  VVideoVolume,
 };
