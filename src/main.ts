@@ -1,18 +1,9 @@
 import '@mdi/font/css/materialdesignicons.min.css';
 import type { App } from 'vue';
 import { type VuetifyOptions, createVuetify } from 'vuetify';
-import {
-  VCalendar,
-  VCalendarDay,
-  VCalendarHeader,
-  VCalendarInterval,
-  VCalendarIntervalEvent,
-  VCalendarMonthDay,
-} from 'vuetify/labs/VCalendar';
 import { VColorInput } from 'vuetify/labs/VColorInput';
 import { VDateInput } from 'vuetify/labs/VDateInput';
 import { VFileUpload, VFileUploadItem } from 'vuetify/labs/VFileUpload';
-import { VHotkey } from 'vuetify/labs/VHotkey';
 import { VIconBtn } from 'vuetify/labs/VIconBtn';
 import { VMaskInput } from 'vuetify/labs/VMaskInput';
 import { VPicker, VPickerTitle } from 'vuetify/labs/VPicker';
@@ -98,12 +89,6 @@ export {
   SlickteamSidebar,
   SlickteamDataTable,
   // Labs comps
-  VCalendar,
-  VCalendarDay,
-  VCalendarHeader,
-  VCalendarInterval,
-  VCalendarIntervalEvent,
-  VCalendarMonthDay,
   VDateInput,
   VFileUpload,
   VFileUploadItem,
@@ -115,7 +100,6 @@ export {
   VStepperVerticalActions,
   VStepperVerticalItem,
   VColorInput,
-  VHotkey,
   VMaskInput,
   VPie,
   VPieSegment,
