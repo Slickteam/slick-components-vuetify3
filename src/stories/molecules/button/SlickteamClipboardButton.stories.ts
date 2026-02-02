@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite';
-import { fn } from 'storybook/internal/test';
+import { fn } from 'storybook/test';
 
 import SlickteamClipboardButton from '../../../components/molecules/button/SlickteamClipboardButton.vue';
 
