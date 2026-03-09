@@ -1,7 +1,7 @@
 {
   "name": "@slickteam/components-vuetify3",
   "description": "Components for Vuetify 3 / Vue 3",
-  "version": "0.8.4",
+  "version": "1.0.0",
   "type": "module",
   "keywords": [
     "slickteam",
@@ -54,8 +54,8 @@
   "dependencies": {
     "@braintree/sanitize-url": "7.1.2",
     "date-fns": "4.1.0",
-    "vue": "3.5.29",
-    "vuetify": "3.12.2",
+    "vue": "3.5.30",
+    "vuetify": "4.0.1",
     "webfontloader": "1.6.28"
   },
   "devDependencies": {
@@ -82,6 +82,5 @@
     "vue-component-type-helpers": "3.2.5",
     "vue-tsc": "3.2.5"
   },
-  "prettier": "@slickteam/prettier",
-  "packageManager": "pnpm@10.31.0"
+  "prettier": "@slickteam/prettier"
 }

@@ -45,6 +45,7 @@ const VuetifyLibrary = {
   install(app: App, options: VuetifyOptions) {
     const defaultOptions = options ?? {
       theme: {
+        defaultTheme: 'light',
         themes: {
           light: {
             dark: false,
@@ -74,37 +75,23 @@ const VuetifyLibrary = {
 };
 
 export {
-  VuetifyLibrary,
   SlickComponentLibrary,
   // Molecules
-  SlickteamClipboardButton,
-  SlickteamIconButton,
-  SlickteamTextIconButton,
-  SlickteamColorPicker,
-  SlickteamIconPicker,
+  SlickteamClipboardButton, SlickteamColorPicker,
   // Organisms
-  SlickteamContainer,
-  SlickteamToolbar,
-  SlickteamSidebarIcon,
-  SlickteamSidebar,
-  SlickteamDataTable,
+  SlickteamContainer, SlickteamDataTable, SlickteamIconButton, SlickteamIconPicker, SlickteamSidebar, SlickteamSidebarIcon, SlickteamTextIconButton, SlickteamToolbar, VColorInput,
   // Labs comps
   VDateInput,
   VFileUpload,
   VFileUploadItem,
-  VIconBtn,
-  VPicker,
-  VPickerTitle,
-  VPullToRefresh,
+  VIconBtn, VMaskInput, VPicker,
+  VPickerTitle, VPie,
+  VPieSegment,
+  VPieTooltip, VPullToRefresh,
   VStepperVertical,
   VStepperVerticalActions,
-  VStepperVerticalItem,
-  VColorInput,
-  VMaskInput,
-  VPie,
-  VPieSegment,
-  VPieTooltip,
-  VVideo,
+  VStepperVerticalItem, VVideo,
   VVideoControls,
-  VVideoVolume,
+  VVideoVolume, VuetifyLibrary
 };
+
